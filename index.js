@@ -202,7 +202,7 @@ function draw() {
           .attr("fill", d=>colorScale2(d.subCategory))
           .call(enter => enter
             .transition()
-            .duration(1000)
+            .duration(800)
             .attr("y",(d,i)=>yScale2(d.Percent_Grads))
             .attr("height", (d,i)=>innerHeight-yScale2(d.Percent_Grads))
             .delay((d,i)=>i*200)
@@ -233,7 +233,7 @@ function draw() {
           .attr("opacity",0)
           .call(enter => enter
             .transition()
-            .duration(1000)
+            .duration(800)
             .delay((d,i)=>i*200)
             .attr("x", (d, i) => xScale2(d.subCategory)+xScale2.bandwidth()/2)
             .attr("y", d=>yScale2(d.Percent_Grads)+25)

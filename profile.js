@@ -1,12 +1,16 @@
-const margin = {top: 30, right: 50, bottom: 20, left: 30},
+const margin = {top: 30, right: 150, bottom: 20, left: 100},
     width =  window.innerWidth*.8, //- margin.left - margin.right,
     height =  window.innerHeight*.8 //- margin.top - margin.bottom;
+
+let legendRectSize = 15,
+    legendSpacing = 5,
+    legendHeight = legendRectSize + legendSpacing;
 
 /*********** FIRST STACKED BAR CHART ***********/
 
 const svg1 = d3.select("#container")
   .append("svg")
-    .attr("width", width/2 + margin.left + margin.right)
+    .attr("width", width/2)// + margin.left + margin.right)
     .attr("height", height/2 + margin.top + margin.bottom)
   .append("g")
     .attr("transform", `translate(${margin.left},${margin.top})`);
@@ -30,7 +34,7 @@ d3.csv('./Dataset/ProfileEthnicity.csv')
       .attr("transform", `translate(${0}, ${0})`)
       .call(d3.axisLeft(yAxis).tickSizeOuter(0))
       .append("text")
-        .attr("x", margin.left+width/4)
+        .attr("x", width/4)
         .attr("y", height/2)
         .attr("fill","black")
         .attr("text-anchor","end")
@@ -41,7 +45,7 @@ d3.csv('./Dataset/ProfileEthnicity.csv')
     /* X AXIS */
   const xAxis = d3.scaleLinear()
     .domain([0, 100])
-    .range([width/2, 0]);
+    .range([width/2-margin.right-margin.left, 0]);
 
   const color = d3.scaleOrdinal()
     .domain(ethnicities) 
@@ -54,7 +58,7 @@ d3.csv('./Dataset/ProfileEthnicity.csv')
   console.log(stackedData[0])
 
     /* ELEMENT */
-    let groups = svg1.append("g")
+  let groups = svg1.append("g")
     .selectAll("g")
     .data(stackedData)
     .join("g")
@@ -81,17 +85,42 @@ d3.csv('./Dataset/ProfileEthnicity.csv')
               return "none";}
         })
         .style("font-size","12px")
-        .attr("text-anchor", "start");
+        .attr("text-anchor", "start")
+   
+  let legend1 = svg1.selectAll(".legend")
+        .data(d3.reverse(ethnicities))
+        .enter()          
+        .append("g")       
+        .attr("class","legend")
+        .attr("transform", (d,i) => `translate(${20},${((i*legendHeight)-40)})`) 
+
+  legend1.append("rect") 
+        .attr("width", legendRectSize)
+        .attr("height", legendRectSize)
+        .attr("rx", 5)
+        .attr("ry", 5) 
+        .attr("x", width/2-margin.right-margin.left)
+        .attr("y", 80)     
+        .style("fill", d=>color(d))
+        .style("stroke", color)
+
+  legend1.append("text")
+        .attr("x", 20 +width/2-margin.right-margin.left)
+        .attr("y", 90)
+        .text(d=>d)
+        .style("fill", "#190707")
+        .style("font-size", "12px") 
+        .style("font-weight", "bold") 
 })
 
 /*********** SECOND STACKED BAR CHART ***********/
 
 const svg2 = d3.select("#container")
   .append("svg")
-    .attr("width", width/2 + margin.left + margin.right)
+    .attr("width", width/2)// + margin.left + margin.right)
     .attr("height", height/2 + margin.top + margin.bottom)
   .append("g")
-    .attr("transform", `translate(${margin.left+50},${margin.top})`);
+    .attr("transform", `translate(${margin.left},${margin.top})`);
 
 d3.csv('./Dataset/ProfileLocation.csv')
   .then((data2) =>{
@@ -113,7 +142,7 @@ d3.csv('./Dataset/ProfileLocation.csv')
       .attr("transform", `translate(${0}, ${0})`)
       .call(d3.axisLeft(yAxis).tickSizeOuter(0))
       .append("text")
-        .attr("x", margin.left+width/4)
+        .attr("x", width/4)
         .attr("y", height/2)
         .attr("fill","black")
         .attr("text-anchor","end")
@@ -124,7 +153,7 @@ d3.csv('./Dataset/ProfileLocation.csv')
     /* X AXIS */
   const xAxis = d3.scaleLinear()
     .domain([0, 100])
-    .range([ width/2, 0]);
+    .range([width/2-margin.right-margin.left, 0]);
 
   const color = d3.scaleOrdinal()
     .domain(boroughs) 
@@ -158,7 +187,32 @@ d3.csv('./Dataset/ProfileLocation.csv')
         .text(d => (d[1]-d[0]).toFixed(1))
         .style("fill","black")
         .style("font-size","12px")
-        .attr("text-anchor", "start");
+        .attr("text-anchor", "start")
+
+  let legend2 = svg2.selectAll(".legend")
+        .data(d3.reverse(boroughs))
+        .enter()          
+        .append("g")       
+        .attr("class","legend")
+        .attr("transform", (d,i) => `translate(${20},${((i*legendHeight)-40)})`) 
+
+  legend2.append("rect") 
+        .attr("width", legendRectSize)
+        .attr("height", legendRectSize)
+        .attr("rx", 5)
+        .attr("ry", 5) 
+        .attr("x", width/2-margin.right-margin.left)
+        .attr("y", 80)     
+        .style("fill", d=>color(d))
+        .style("stroke", color)
+
+  legend2.append("text")
+        .attr("x", 20 +width/2-margin.right-margin.left)
+        .attr("y", 90)
+        .text(d=>d)
+        .style("fill", "#190707")
+        .style("font-size", "12px") 
+        .style("font-weight", "bold") 
   
 });
 
@@ -175,14 +229,12 @@ let state = {
 
 let angleGen, arcGen, svg3, svg4, svg5;
 let legend3, legend4, legend5;
+let title3, title4, title5;
 let ECOdata, ELLdata, SWDdata;
 
 let w = 300, h = 300,
     outerRadius = w/3,
     innerRadius = 75;
-let legendRectSize = 15,
-    legendSpacing = 5,
-    legendHeight = legendRectSize + legendSpacing;
 
 d3.csv('./Dataset/All.csv')
   .then(rawdata => {
@@ -212,21 +264,45 @@ function init(){
             .attr("width", width/3)
             .attr("height", height/2)
           .append("g")
-           .attr("transform",`translate(${width/6},${height/4})`)
+           .attr("transform",`translate(${width/6+margin.left},${height/4+margin.top})`)
   
+  svg3.append("text")
+            .attr("x",-margin.left)
+            .attr("y",margin.top-margin.bottom-height/4)
+            .attr("fill","black")
+            .attr("font-weight","bold")
+            .attr("font-size","14px")
+            .text("Students by Economic Needs")
+
   svg4 = d3.select("#chart")
            .append("svg")
              .attr("width", width/3)
              .attr("height", height/2)
            .append("g")
-            .attr("transform",`translate(${width/6},${height/4})`);
+            .attr("transform",`translate(${width/6+margin.left},${height/4+margin.top})`);
   
+  svg4.append("text")
+            .attr("x",-margin.left)
+            .attr("y",margin.top-margin.bottom-height/4)
+            .attr("fill","black")
+            .attr("font-weight","bold")
+            .attr("font-size","14px")
+            .text("Students by English Learning")
+
   svg5 = d3.select("#chart")
             .append("svg")
               .attr("width", width/3)
               .attr("height", height/2)
             .append("g")
-             .attr("transform",`translate(${width/6},${height/4})`);
+             .attr("transform",`translate(${width/6+margin.left},${height/4+margin.top})`);
+
+  svg5.append("text")
+             .attr("x",-margin.left)
+             .attr("y",margin.top-margin.bottom-height/4)
+             .attr("fill","black")
+             .attr("font-weight","bold")
+             .attr("font-size","14px")
+             .text("Needs of Special Education")  
 
   // manual drop-down menu for year selection
   const selectElement = d3.select("#dropdown")      
@@ -339,9 +415,20 @@ function draw() {
       .attr("x", 20)
       .attr("y", 30)
       .text(d=> d.data.subCategory)
-      .style("fill", "#190707")
-      .style("font-size", "14px") 
-      .style("font-weight", "bold")     
+        .style("fill", "#190707")
+        .style("font-size", "14px") 
+        .style("font-weight", "bold")
+      
+    title3 = svg3.selectAll(".title")
+      .append("text")
+        .attr("x", margin.left)
+        .attr("y", margin.top)//height/3+margin.top+margin.bottom)
+        .attr("fill","black")
+        .attr("text-anchor","end")
+        .attr("font-size","14px")
+        .text("Students by Economic Needs")
+        .style("font-weight", "bold");
+
   } 
   setTimeout(rest3,1000);
    

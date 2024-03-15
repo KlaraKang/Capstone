@@ -36,6 +36,11 @@ h5{
   font-size: 1.3em;
   color: rgb(9, 53, 12);  
 }
+.newText{
+  font-size: 12px;
+  font-weight: bold;
+  color:#190707;
+}
 .chart-title{
   font-size: 0.8em;
   color: rgb(9, 53, 12);  

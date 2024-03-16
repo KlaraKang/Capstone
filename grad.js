@@ -1,15 +1,16 @@
  
   /* CONSTANTS AND GLOBALS */
-const width = window.innerWidth*.7,
-      height = window.innerHeight*.7,
+const width = window.innerWidth*.8,
+      height = window.innerHeight*.8,
       margin = {top:20, bottom:50, left:50, right:50},
       innerWidth = width - margin.right - margin.left, 
       innerHeight = height - margin.top - margin.bottom;
   
 let xScale1, yScale1, xScale2, yScale2, xScale3, yScale3;
-let xAxis3, xAxisGroup2;//xAxis1, xAxisGroup1, xAxis2, xAxisGroup2, 
+let xAxisGroup2; 
 let colorScale1, colorScale2, colorScale3;
-let svg2, lineGen, data2, borough;
+let svg2, svg3, lineGen, tooltip;
+let data2, borough;
 
     /* LOAD DATA */
 d3.csv('./Dataset/All.csv', d3.autoType)
@@ -41,9 +42,9 @@ d3.csv('./Dataset/All.csv', d3.autoType)
               .y(d => yScale1(data1.Percent_Grads)) 
   */      
   /* ELEMENTS */
-  const container1 = d3.select("#container_top1")
+  const container1 = d3.select("#container_top")
                     .append("svg")
-                      .attr("width",width/2 + margin.right + margin.left)
+                      .attr("width",width/2)// + margin.right + margin.left)
                       .attr("height",height/2 + margin.top + margin.bottom)
                     .append("g")
                       .attr("transform",`translate(${0},${0})`);
@@ -57,6 +58,7 @@ d3.csv('./Dataset/All.csv', d3.autoType)
               .attr("fill","black")
               .attr("text-anchor","end")
               .attr("font-size","14px")
+              .style("font-weight", "bold")
               .text("Graduation Rates by Borough")
     
   /* For the first chart: SELECT - DATA JOIN - DRAW */
@@ -147,10 +149,10 @@ d3.csv('./Dataset/GradByEthBoro.csv', d3.autoType)
       //.range(["#358d8f","#8ac082","#2471A3","#f16b69","#32c1d7","#eea057","#5499C7","#2980B9","#2471A3","#1F618D","#1A5276"])
     
   /* ELEMENTS */
-  const container2 = d3.select("#container_top2")
+  const container2 = d3.select("#container_bottom")
   
   svg2 = container2.append("svg")
-                      .attr("width",width/2 + margin.right + margin.left)
+                      .attr("width",width/2)// + margin.right + margin.left)
                       .attr("height",height/2 + margin.top + margin.bottom)
                     .append("g")
                       .attr("transform",`translate(${0},${0})`);
@@ -163,7 +165,8 @@ d3.csv('./Dataset/GradByEthBoro.csv', d3.autoType)
               .attr("y",margin.bottom)
               .attr("fill","black")
               .attr("text-anchor","end")
-              .attr("font-size","14px")
+              .attr("font-size","14px")              
+              .style("font-weight", "bold")
               .text("Graduation Rates by Ethnicity")
 
     // + UI ELEMENT SETUP
@@ -260,7 +263,147 @@ function draw() {
         .attr("y", 0)
         .remove("data-labels")   
         )  
-
-
-
 }
+
+  /* LOAD DATA */
+d3.csv('./Dataset/GradByEthDistrict.csv', d3.autoType)
+    .then(data => {
+    
+// CHART 1. Vertical Bar Chart: Grad Rates by Borough for Cohort Year 2018
+   /* Filter data */
+  const ethnicity = [... new Set(data.map(d=>d.Category))]
+  const district = [... new Set(data.map(d=>d.District))]
+
+  console.log("ethnicity",ethnicity)
+  console.log("district",district)
+
+  /* APPEND SVG */
+  svg3 = d3.select("#container_right")
+          .append("svg")
+            .attr("width", width/2 - margin.left - margin.right)
+            .attr("height", height)// - margin.top - margin.bottom)
+          .append("g")
+            .attr("transform", `translate(${0},${margin.top})`);
+
+  /* X AXIS SCALE*/    
+  xScale3 = d3.scaleBand()
+            .range([margin.right, innerWidth/2-margin.right])
+            .domain(ethnicity)
+            .padding(0.05);
+    
+  svg3.append("g")
+      .attr("transform", `translate(${0},${innerHeight})`)
+      .call(d3.axisBottom(xScale3).tickSize(0))
+      .style("font-size", "10px")
+      .select(".domain").remove()
+
+  /* Y AXIS SCALE */
+  yScale3 = d3.scaleBand()
+          .range([margin.top,innerHeight])
+          .domain(district)
+          .padding(0.1);
+
+  svg3.append("g")
+      .style("font-size", "10px")
+      .attr("transform", `translate(${margin.right},${0})`)
+      .call(d3.axisLeft(yScale3).tickSize(0))      
+      .select(".domain").remove()
+      
+  /* COLOR SCALE */
+  colorScale3 = d3.scaleSequential([40, 100], d3.interpolateGreens);
+  /*
+  colorScale3 = d3.scaleSequential()
+    .interpolator(d3.interpolateInferno)
+    .domain([20,100])
+  */
+  /* TOOLTIPS */
+  tooltip = svg3.append("div.tooltip")              
+              .attr("class", "tooltip")
+              .style("visibility", "hidden")
+      /*        .attr("x",0)
+              .attr("y",0)
+              .style("top", 0)
+              .style("left", 0)              
+              .style("background-color", "white")
+              .style("border", "solid")
+              .style("border-width", "2px")
+              .style("border-radius", "2px")
+              .style("padding", "0.5px")
+  
+  tooltip.append("text")
+          .attr("fill","black")
+          .style("pointer-events","none");
+*/
+  // TOOLTIP FUNCTIONS 
+  const mouseover = function(event, d) {
+    tooltip
+      .style("opacity", 1)
+      .style("visibility","visible")
+
+    d3.select(this)
+      .style("stroke", "black")
+      .style("opacity", 1)
+  }
+  const mousemove = function(event, d, i) {
+    const [mx, my] = d3.pointer(event);
+    tooltip
+      .html(`"Grad Rate: " ${d.Percent_Grads}`)
+      .style("visibility","visible")
+      .style("left", `${mx}px`)
+      .style("top", `${my}px`)
+  }
+  const mouseleave = function(event,d) {
+    tooltip
+      .style("opacity", 0)
+
+    d3.select(this)
+      .style("stroke", "none")
+      .style("opacity", 0.8)
+  }
+              
+  /* SELECT - JOIN - DATA FOR THE SQUARES */
+  svg3.selectAll()
+    .data(data, d=>d.id)
+    .join("rect")
+      .attr("x", d => xScale3(d.Category))
+      .attr("y", d => yScale3(d.District))
+      .attr("rx", 2)
+      .attr("ry", 2)
+      .attr("width", xScale3.bandwidth())
+      .attr("height", yScale3.bandwidth())
+      .style("fill", d => colorScale3(d.Percent_Grads))
+      .style("stroke-width", 4)
+      .style("stroke", "none")
+      .style("opacity", 0.8)
+        .on("mouseover", mouseover)
+        .on("mousemove", mousemove)
+        .on("mouseleave", mouseleave)
+        
+      /*
+        .on("mouseover", function(event, d){
+            tooltip
+              .html(`${d.Percent_Grads}+"%"`)
+              .style("visibility", "visible")
+          }) 
+        .on("mousemove", function(event){
+            tooltip
+              .style("left", (event.pageX + 30 + "px"))
+              .style("top", (event.pageY + "px"))
+          })         
+        .on("mouseout", function(event,d){
+            tooltip
+            .html(``)
+            .style("visibility", "hidden");
+          }) 
+      */
+  /* HEATMAP TITLE */
+  svg3.append("text")
+        .attr("x", innerWidth/4)
+        .attr("y", 0)
+        .attr("text-anchor", "middle")
+        .style("font-size", "14px")
+        .style("font-weight", "bold")
+        .text("Graduation Rates by Ethnicity and District");  
+    
+})
+

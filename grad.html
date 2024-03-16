@@ -7,16 +7,18 @@
     <script src="https://d3js.org/d3.v7.min.js"></script>
 </head>
 <body>
-  <main data-router-wrapper>
-    <section data-router-view="Grad Growth"> 
+  <main>
+    <section> 
       <h4>4-Year Graduation Rates for Cohort Year 2018 (Class of 2022)</h4>
       <h3>Percent students who entered NYC public high schools in 
-        2018 and graduated in August 2022 by borough and student demographics</h3>    
+        2018 and graduated in August 2022 by borough, district, and student ethnicity</h3>   
       
-      <div><select id="dropdown" name="dropdown"></select></div>
-      <div id="container_top1"></div>
-      <div id="container_top2"></div>
-      <div id="container_bottom"></div>   
+      <div id="container_top" class="left"></div>  
+      <div class="leftbottom">
+        <select id="dropdown" name="dropdown" width="30%"></select>
+        <div id="container_bottom"></div>        
+      </div>
+      <div id="container_right" class="right" class="tooltip"></div> 
       <script src="grad.js"></script>
       </div>
     </section>

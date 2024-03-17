@@ -29,7 +29,7 @@ d3.csv('./Dataset/All.csv', d3.autoType)
   /* INITIALIZING FUNCTION */
 function init() {
 
-// PART1. Vertical Bar Chart by Cohort Year
+// PART1. Vertical Bar Chart: Grad Rates by Cohort Year
    /* Filter data */
   const data1 = state.data.filter(d => d.Category === "All") 
 
@@ -124,7 +124,7 @@ function init() {
                 .on("end", ()=>{d3.select(this).transition();})
              );
   */
-// PART 2. Bar Chart by Ethnicity for Cohort Year 2018 
+// PART 2. Bar Chart: Grad Rates by Ethnicity for all Cohorts
   /* Filter data */
   data2 = state.data.filter(d => d.Category === "Ethnicity")
   //console.log("data2",data2)

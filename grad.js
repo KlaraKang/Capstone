@@ -24,7 +24,7 @@ d3.csv('./Dataset/All.csv', d3.autoType)
     /* SCALES */
   xScale1 = d3.scaleBand()
           .domain(data1.map(d=> d.subCategory))
-          .range([0, innerWidth/2])
+          .range([0, innerWidth/2-margin.right])
           .padding(.15)          
    
   yScale1 = d3.scaleLinear()
@@ -44,8 +44,8 @@ d3.csv('./Dataset/All.csv', d3.autoType)
   /* ELEMENTS */
   const container1 = d3.select("#container_top")
                     .append("svg")
-                      .attr("width",width/2)// + margin.right + margin.left)
-                      .attr("height",height/2 + margin.top + margin.bottom)
+                      .attr("width", width/2)// + margin.right + margin.left)
+                      .attr("height", height/2 + margin.top + margin.bottom)
                     .append("g")
                       .attr("transform",`translate(${0},${0})`);
   
@@ -88,12 +88,35 @@ d3.csv('./Dataset/All.csv', d3.autoType)
               .transition()
                 .duration(800)
                 .delay((d,i) => i*200)
-                .attr("y", d => yScale1(d.Percent_Grads)+25)
+                .attr("y", d => yScale1(d.Percent_Grads)-10)
                 .attr("font-size","12px")
                 .style("fill","#190707")
-               // .style("font-weight","bold")
+                .style("font-weight","bold")
                 .attr("text-anchor", "middle")
                 .attr("opacity",1);
+
+    
+  /* GRID LINE FOR THE CITY AVERAGE VALUE */
+  container1.selectAll("line.grid")
+            .data(yScale1.ticks(5))
+            .enter()
+            .append("line")
+              .attr("class", "grid")
+              .attr("x1", 0)
+              .attr("y1", yScale1(83.7))
+              .attr("x2", innerWidth/2 - margin.right)
+              .attr("y2", yScale1(83.7))
+              .style("stroke", "red")
+              .style("stroke-width", 0.5)
+              .style("stroke-dasharray", "4 4");
+
+  container1.append("text")
+            .attr("x", innerWidth/2 - margin.right +10) 
+            .attr("y", yScale1(83.7)) 
+            .style("fill","red")
+            .style("font-size","11px")
+            .text("City Average: 83.7%"); 
+
   /*
   container1.selectAll(".path")
             .data(data1, d=>d.id)
@@ -122,7 +145,7 @@ let state = {
     selection: "All" //default selection
 }; 
   /* LOAD DATA */
-d3.csv('./Dataset/GradByEthBoro.csv', d3.autoType)
+d3.csv('./Dataset/GradBoroEth.csv', d3.autoType)
     .then(rawdata => {
       state.data = rawdata;
       init();
@@ -265,14 +288,15 @@ function draw() {
         )  
 }
 
+/********* HEATMAP: GRADUATION BY ETHNICITY FOR ALL SCHOOL DISTRICTS  */
+
   /* LOAD DATA */
-d3.csv('./Dataset/GradByEthDistrict.csv', d3.autoType)
+d3.csv('./Dataset/GradDistEth.csv', d3.autoType)
     .then(data => {
-    
-// CHART 1. Vertical Bar Chart: Grad Rates by Borough for Cohort Year 2018
+
    /* Filter data */
-  const ethnicity = [... new Set(data.map(d=>d.Category))]
-  const district = [... new Set(data.map(d=>d.District))]
+  const ethnicity = [... new Set(data.map(d=>d.subCategory))];
+  const district = [... new Set(data.map(d=>d.District))];
 
   console.log("ethnicity",ethnicity)
   console.log("district",district)
@@ -280,7 +304,7 @@ d3.csv('./Dataset/GradByEthDistrict.csv', d3.autoType)
   /* APPEND SVG */
   svg3 = d3.select("#container_right")
           .append("svg")
-            .attr("width", width/2 - margin.left - margin.right)
+            .attr("width", width/2)//- margin.left - margin.right)
             .attr("height", height)// - margin.top - margin.bottom)
           .append("g")
             .attr("transform", `translate(${0},${margin.top})`);
@@ -365,7 +389,7 @@ d3.csv('./Dataset/GradByEthDistrict.csv', d3.autoType)
   svg3.selectAll()
     .data(data, d=>d.id)
     .join("rect")
-      .attr("x", d => xScale3(d.Category))
+      .attr("x", d => xScale3(d.subCategory))
       .attr("y", d => yScale3(d.District))
       .attr("rx", 2)
       .attr("ry", 2)
@@ -379,8 +403,8 @@ d3.csv('./Dataset/GradByEthDistrict.csv', d3.autoType)
         .on("mousemove", mousemove)
         .on("mouseleave", mouseleave)
         
-      /*
-        .on("mouseover", function(event, d){
+     
+       /*  .on("mouseover", function(event, d){
             tooltip
               .html(`${d.Percent_Grads}+"%"`)
               .style("visibility", "visible")

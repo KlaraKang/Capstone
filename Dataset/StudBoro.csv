@@ -12,5 +12,30 @@ id,Category,Borough,Percent_Stud
 11,Economic Disadv,Bronx,81.2
 12,Economic Disadv,Brooklyn,75.2
 13,Economic Disadv,Manhattan,66.9
-14,Economic Disadv,Queens,72.0
+14,Economic Disadv,Queens,72
 15,Economic Disadv,Staten Island,58.5
+16,SWD,Bronx,24.6
+17,SWD,Brooklyn,19.1
+18,SWD,Manhattan,18.3
+19,SWD,Queens,17.3
+20,SWD,Staten Island,23.3
+21,Asian,Bronx,7.5
+22,Asian,Brooklyn,19.2
+23,Asian,Manhattan,14.6
+24,Asian,Queens,28.3
+25,Asian,Staten Island,13.6
+26,Black,Bronx,26.1
+27,Black,Brooklyn,33.5
+28,Black,Manhattan,19.7
+29,Black,Queens,18.6
+30,Black,Staten Island,14.1
+31,Hispanic,Bronx,59.3
+32,Hispanic,Brooklyn,28.6
+33,Hispanic,Manhattan,46.7
+34,Hispanic,Queens,38.0
+35,Hispanic,Staten Island,26.4
+36,White,Bronx,5.0
+37,White,Brooklyn,16.3
+38,White,Manhattan,15.0
+39,White,Queens,11.3
+40,White,Staten Island,43.9

@@ -117,24 +117,7 @@ d3.csv('./Dataset/All.csv', d3.autoType)
             .style("font-size","11px")
             .text("City Average: 83.7%"); 
 
-  /*
-  container1.selectAll(".path")
-            .data(data1, d=>d.id)
-            .join("path")
-            .attr("class","line_thick")
-            .attr("d", d => lineGen(d.Percent_Grads))
-            .style("stroke", "red")
-            .call(enter => enter
-              .transition()
-                .duration(1500)
-                .attrTween("stroke-dasharray", function(){
-                  const l = this.getTotalLength(),
-                    i = d3.interpolateString("0,"+l, l+","+l);
-                    return function(t){return i(t)};
-                })
-                .on("end", ()=>{d3.select(this).transition();})
-             );
-  */
+ 
 })
 // CHART 2. Bar Chart with Selection for Borough: Grad Rates by ethnicity in each borough for Cohort Year 2018 
   

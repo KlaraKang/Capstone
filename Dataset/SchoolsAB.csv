@@ -1,0 +1,13 @@
+id,Borough,Status,Total
+1,Manhattan,Above,86
+2,Manhattan,Below,35
+3,Bronx,Above,67
+4,Bronx,Below,52
+5,Brooklyn,Above,78
+6,Brooklyn,Below,53
+7,Queens,Above,67
+8,Queens,Below,18
+9,Staten Island,Above,8
+10,Staten Island,Below,4
+11,All,Above,306
+12,All,Below,162

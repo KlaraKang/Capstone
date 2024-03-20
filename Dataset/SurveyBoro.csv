@@ -1,0 +1,31 @@
+id,Category,Borough,Percent
+1,Rigorous Instruction,Manhattan,78
+2,Rigorous Instruction,Bronx,77
+3,Rigorous Instruction,Brooklyn,75
+4,Rigorous Instruction,Queens,77
+5,Rigorous Instruction,Staten Island,79
+6,Collaborative Teachers,Manhattan,83
+7,Collaborative Teachers,Bronx,83
+8,Collaborative Teachers,Brooklyn,83
+9,Collaborative Teachers,Queens,83
+10,Collaborative Teachers,Staten Island,86
+11,Supportive Environment,Manhattan,79
+12,Supportive Environment,Bronx,77
+13,Supportive Environment,Brooklyn,76
+14,Supportive Environment,Queens,77
+15,Supportive Environment,Staten Island,77
+16,Effective School Leadership,Manhattan,81
+17,Effective School Leadership,Bronx,82
+18,Effective School Leadership,Brooklyn,82
+19,Effective School Leadership,Queens,81
+20,Effective School Leadership,Staten Island,83
+21,Strong Family-Community Ties,Manhattan,85
+22,Strong Family-Community Ties,Bronx,85
+23,Strong Family-Community Ties,Brooklyn,84
+24,Strong Family-Community Ties,Queens,84
+25,Strong Family-Community Ties,Staten Island,82
+26,Trust,Manhattan,88
+27,Trust,Bronx,87
+28,Trust,Brooklyn,87
+29,Trust,Queens,87
+30,Trust,Staten Island,88

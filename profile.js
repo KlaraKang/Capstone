@@ -229,7 +229,7 @@ let state = {
 
 let angleGen, arcGen, svg3, svg4, svg5;
 let legend3, legend4, legend5;
-let title3, title4, title5;
+//let title3, title4, title5;
 let ECOdata, ELLdata, SWDdata;
 
 let w = 300, h = 300,
@@ -418,16 +418,6 @@ function draw() {
         .style("fill", "#190707")
         .style("font-size", "14px") 
         .style("font-weight", "bold")
-      
-    title3 = svg3.selectAll(".title")
-      .append("text")
-        .attr("x", margin.left)
-        .attr("y", margin.top)//height/3+margin.top+margin.bottom)
-        .attr("fill","black")
-        .attr("text-anchor","end")
-        .attr("font-size","14px")
-        .text("Students by Economic Needs")
-        .style("font-weight", "bold");
 
   } 
   setTimeout(rest3,1000);

@@ -346,7 +346,7 @@ d3.csv('./Dataset/GradDistByCategory.csv', d3.autoType)
    let svg = d3.select("#container2")
         .append("svg")
           .attr("width", width/2 + margin.right)
-          .attr("height", height/2 + margin.bottom + margin.top)
+          .attr("height", height/2 + margin.bottom*2 + margin.top)
         .append("g")
           .attr("transform", `translate(${margin.right},${0})`);
 
@@ -357,14 +357,14 @@ d3.csv('./Dataset/GradDistByCategory.csv', d3.autoType)
           .padding(0.05);
   
    svg.append("g")
-      .attr("transform", `translate(${0},${height/2 + margin.top})`)
+      .attr("transform", `translate(${0},${height/2 + margin.top + margin.bottom})`)
       .call(d3.axisBottom(xScale).tickSize(0))
       .style("font-size", "10px")
       .select(".domain").remove()
 
    /* Y AXIS SCALE */
    let yScale = d3.scaleBand()
-        .range([margin.top, height/2 + margin.top])
+        .range([margin.top, height/2 + margin.top + margin.bottom])
         .domain(district)
         .padding(0.1);
 
@@ -402,7 +402,7 @@ tooltip.append("text")
        .style("visibility","visible")
 
      d3.select(this)
-       .style("stroke", "black")
+       .style("stroke", "grey")
        .style("opacity", 1)
    }
    const mousemove = function(event, d, i) {
@@ -435,7 +435,7 @@ tooltip.append("text")
        .style("fill", d => colorScale(d.Percent_Grads))
        .style("stroke-width", 4)
        .style("stroke", "none")
-       .style("opacity", 0.8)
+       .style("opacity", 1)
          .on("mouseover", mouseover)
          .on("mousemove", mousemove)
          .on("mouseleave", mouseleave)

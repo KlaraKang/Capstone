@@ -485,7 +485,6 @@ let colorScale4 = d3.scaleOrdinal()
         .style("fill","red")
         .style("font-size","11px")
         .text("City Average: 19.7%");
-
         
 /***** CHART 6. HEATMAP: STUDENT POPULATION BY ETHNICITY IN BORO */
    /* FILTER DATA */
@@ -534,7 +533,7 @@ console.log("boro",boro)
   let colorSI = d3.scaleSequential([0, 60], d3.interpolatePuBuGn);
 
   /* TOOLTIPS */
-  tooltip = container5.append("div.tooltip")              
+  tooltip = container5.append("div")              
             .attr("class", "tooltip")
             .style("visibility", "hidden")
             .attr("x",0)
@@ -558,13 +557,14 @@ console.log("boro",boro)
        .style("visibility","visible")
 
      d3.select(this)
-       .style("stroke", "black")
+       .style("stroke", "grey")
        .style("opacity", 1)
   }
+ 
   const mousemove = function(event, d, i) {
   const [mx, my] = d3.pointer(event);
      tooltip
-       .html(`"Grad Rate: " ${d.Percent_Stud}`)
+       .html(`<div>"Grad Rate: " ${d.Percent_Stud}</div>`)
        .style("visibility","visible")
        .style("left", `${mx}px`)
        .style("top", `${my}px`)
@@ -609,7 +609,7 @@ console.log("boro",boro)
        } )
        .style("stroke-width", 4)
        .style("stroke", "none")
-       .style("opacity", 0.8)
+       .style("opacity", 1)
          .on("mouseover", mouseover)
          .on("mousemove", mousemove)
          .on("mouseleave", mouseleave)

@@ -348,7 +348,7 @@ d3.csv('./Dataset/GradDistEth.csv', d3.autoType)
       .style("visibility","visible")
 
     d3.select(this)
-      .style("stroke", "black")
+      .style("stroke", "grey")
       .style("opacity", 1)
   }
   const mousemove = function(event, d, i) {
@@ -381,7 +381,7 @@ d3.csv('./Dataset/GradDistEth.csv', d3.autoType)
       .style("fill", d => colorScale3(d.Percent_Grads))
       .style("stroke-width", 4)
       .style("stroke", "none")
-      .style("opacity", 0.8)
+      .style("opacity", 1)
         .on("mouseover", mouseover)
         .on("mousemove", mousemove)
         .on("mouseleave", mouseleave)

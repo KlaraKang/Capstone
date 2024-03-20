@@ -16,7 +16,7 @@ d3.csv('./Dataset/FundingPerSchool.csv', (d, i, columns) => {
     
     // DATA MANIPULATION
     borough = data.columns.slice(2) 
-     
+     console.log("borough",borough)
     const FPdata = data.filter(d=> d.Category === "Funding_per_Pupil");
     const IMdata = data.filter(d=> d.Category === "Instructional_Media");
     const PSdata = data.filter(d=> d.Category === "Pupil_Support_Services");
@@ -133,7 +133,7 @@ d3.csv('./Dataset/FundingPerSchool.csv', (d, i, columns) => {
           .style("stroke", d => colorScale(d.id))
           .call(enter => enter
             .transition()
-              .duration(9500)
+              .duration(2000)
               .attrTween("stroke-dasharray", function(){
                 const l = this.getTotalLength(),
                   i = d3.interpolateString("0,"+l, l+","+l);
@@ -150,7 +150,7 @@ d3.csv('./Dataset/FundingPerSchool.csv', (d, i, columns) => {
             .attr("opacity",0)
             .attr("x", 0)
            .transition()              
-              .duration(9000)
+              .duration(2000)
               .attr("transform", d=> `translate(${innerWidth/2-margin.right},${yScale1(d.value.fund/1000)})`)
               .attr("x", 5)              
               .attr("opacity",1)
@@ -223,7 +223,7 @@ d3.csv('./Dataset/FundingPerSchool.csv', (d, i, columns) => {
           .style("stroke", d => colorScale(d.id))
           .call(enter => enter
             .transition()
-              .duration(9500)
+              .duration(2000)
               .attrTween("stroke-dasharray", function(){               
                 const l = this.getTotalLength(),
                   i = d3.interpolateString("0,"+l, l+","+l);
@@ -240,7 +240,7 @@ d3.csv('./Dataset/FundingPerSchool.csv', (d, i, columns) => {
             .attr("opacity",0)
             .attr("x", 0)
            .transition()              
-              .duration(9000)
+              .duration(2000)
               .attr("transform", d=> `translate(${innerWidth/2-margin.right},${yScale2(d.value.fund/1000)})`)
               .attr("x", 5)              
               .attr("opacity",1)
@@ -316,7 +316,7 @@ d3.csv('./Dataset/FundingPerSchool.csv', (d, i, columns) => {
           .style("stroke", d => colorScale(d.id))
           .call(enter => enter
             .transition()
-              .duration(9500)
+              .duration(2000)
               .attrTween("stroke-dasharray", function(){
                 const l = this.getTotalLength(),
                   i = d3.interpolateString("0,"+l, l+","+l);          
@@ -333,7 +333,7 @@ d3.csv('./Dataset/FundingPerSchool.csv', (d, i, columns) => {
             .attr("opacity",0)
             .attr("x", 0)
            .transition()              
-              .duration(9000)
+              .duration(2000)
               .attr("transform", d=> `translate(${innerWidth/2-margin.right},${yScale3(d.value.fund/1000)})`)
               .attr("x", 5)            
               .attr("opacity",1)

@@ -2,7 +2,7 @@
   /* CONSTANTS AND GLOBALS */
 const width = window.innerWidth*.8,
       height = window.innerHeight*.8,
-      margin = {top:20, bottom:50, left:50, right:50},
+      margin = {top:20, bottom:30, left:30, right:50},
       innerWidth = width - margin.right - margin.left, 
       innerHeight = height - margin.top - margin.bottom;
   
@@ -28,7 +28,7 @@ d3.csv('./Dataset/All.csv', d3.autoType)
           .padding(.15)          
    
   yScale1 = d3.scaleLinear()
-          .domain([55, 100])
+          .domain([60, 100])
           .range([innerHeight/2, 0])
                 
   colorScale1 = d3.scaleOrdinal()
@@ -44,17 +44,17 @@ d3.csv('./Dataset/All.csv', d3.autoType)
   /* ELEMENTS */
   const container1 = d3.select("#container_top")
                     .append("svg")
-                      .attr("width", width/2)// + margin.right + margin.left)
-                      .attr("height", height/2 + margin.top + margin.bottom)
+                      .attr("width", width/2)
+                      .attr("height", height/2)
                     .append("g")
                       .attr("transform",`translate(${0},${0})`);
   
   container1.append("g")
             .call(d3.axisBottom(xScale1).tickSizeOuter(0))
-              .attr("transform", `translate(${0},${innerHeight/2})`)            
+              .attr("transform", `translate(${margin.left},${innerHeight/2-margin.bottom})`)            
             .append("text")
               .attr("x",innerWidth/3)
-              .attr("y",margin.bottom)
+              .attr("y",margin.bottom + 20)
               .attr("fill","black")
               .attr("text-anchor","end")
               .attr("font-size","14px")
@@ -67,13 +67,13 @@ d3.csv('./Dataset/All.csv', d3.autoType)
             .join("rect")
             .attr("width", xScale1.bandwidth())
             .attr("height", 0)
-            .attr("x", d =>xScale1(d.subCategory))
-            .attr("y", innerHeight/2)
+            .attr("x", d =>xScale1(d.subCategory)+margin.left)
+            .attr("y", innerHeight/2-margin.bottom)
             .attr("fill", d=>colorScale1(d.subCategory))
             .transition()
               .duration(800)
               .attr("y", d=>yScale1(d.Percent_Grads))
-              .attr("height", d=>innerHeight/2 - yScale1(d.Percent_Grads))
+              .attr("height", d=>innerHeight/2-margin.bottom - yScale1(d.Percent_Grads))
               .delay((d,i) => i*200)
               .attr("fill", d=>colorScale1(d.subCategory))             
   
@@ -82,19 +82,18 @@ d3.csv('./Dataset/All.csv', d3.autoType)
             .join("text")
               .attr("class","bar-label") 
               .text(d => d.Percent_Grads+"%")            
-              .attr("x", d => xScale1(d.subCategory)+xScale1.bandwidth()/2)
+              .attr("x", d => xScale1(d.subCategory)+xScale1.bandwidth()/2+margin.left)
               .attr("y", innerHeight/2)
               .attr("opacity",0)
               .transition()
                 .duration(800)
                 .delay((d,i) => i*200)
-                .attr("y", d => yScale1(d.Percent_Grads)-10)
+                .attr("y", d => yScale1(d.Percent_Grads)+20)
                 .attr("font-size","12px")
                 .style("fill","#190707")
                 .style("font-weight","bold")
                 .attr("text-anchor", "middle")
                 .attr("opacity",1);
-
     
   /* GRID LINE FOR THE CITY AVERAGE VALUE */
   container1.selectAll("line.grid")
@@ -102,20 +101,20 @@ d3.csv('./Dataset/All.csv', d3.autoType)
             .enter()
             .append("line")
               .attr("class", "grid")
-              .attr("x1", 0)
+              .attr("x1", margin.left)
               .attr("y1", yScale1(83.7))
-              .attr("x2", innerWidth/2 - margin.right)
+              .attr("x2", innerWidth/2 - 25)
               .attr("y2", yScale1(83.7))
               .style("stroke", "red")
               .style("stroke-width", 0.5)
               .style("stroke-dasharray", "4 4");
 
   container1.append("text")
-            .attr("x", innerWidth/2 - margin.right +10) 
+            .attr("x", innerWidth/2 -25) 
             .attr("y", yScale1(83.7)) 
             .style("fill","red")
             .style("font-size","11px")
-            .text("City Average: 83.7%"); 
+            .text("Avg. 83.7%"); 
 
  
 })
@@ -147,28 +146,27 @@ d3.csv('./Dataset/GradBoroEth.csv', d3.autoType)
 
   yScale2 = d3.scaleLinear()
       .domain([60, 100])
-      .range([innerHeight/2, 0])
+      .range([innerHeight/2, margin.top])
             
   colorScale2 = d3.scaleOrdinal()
       .domain(data2.map(d=> d.subCategory))
-      .range(["#358d8f","#8ac082","#2471A3","#f16b69","#32c1d7","#eea057"])//,"#2471A3"
-      //.range(["#358d8f","#8ac082","#2471A3","#f16b69","#32c1d7","#eea057","#5499C7","#2980B9","#2471A3","#1F618D","#1A5276"])
-    
+      .range(["#358d8f","#8ac082","#2471A3","#f16b69","#32c1d7","#eea057"])
+
   /* ELEMENTS */
   const container2 = d3.select("#container_bottom")
   
   svg2 = container2.append("svg")
-                      .attr("width",width/2)// + margin.right + margin.left)
-                      .attr("height",height/2 + margin.top + margin.bottom)
+                      .attr("width",width/2)
+                      .attr("height",height/2)
                     .append("g")
                       .attr("transform",`translate(${0},${0})`);
   
   xAxisGroup2 = svg2.append("g")
             .call(d3.axisBottom(xScale2).tickSizeOuter(0))
-              .attr("transform", `translate(${0},${innerHeight/2})`)            
+              .attr("transform", `translate(${margin.left},${innerHeight/2-margin.bottom})`)            
             .append("text")
               .attr("x",innerWidth/3)
-              .attr("y",margin.bottom)
+              .attr("y",margin.bottom+20)
               .attr("fill","black")
               .attr("text-anchor","end")
               .attr("font-size","14px")              
@@ -215,14 +213,14 @@ function draw() {
           .attr("class","bar")
           .attr("width", xScale2.bandwidth())
           .attr("height", 0)
-          .attr("x", (d,i)=>xScale2(d.subCategory))
-          .attr("y", innerHeight/2)
+          .attr("x", (d,i)=>xScale2(d.subCategory)+margin.left)
+          .attr("y", innerHeight/2-margin.bottom)
           .attr("fill", d=>colorScale2(d.subCategory))
           .call(enter => enter
             .transition()
             .duration(800)
             .attr("y",(d,i)=>yScale2(d.Percent_Grads))
-            .attr("height", (d,i)=>innerHeight/2-yScale2(d.Percent_Grads))
+            .attr("height", (d,i)=>innerHeight/2-margin.bottom-yScale2(d.Percent_Grads))
             .delay((d,i)=>i*200)
             .attr("fill", d=>colorScale2(d.subCategory))
           )
@@ -246,14 +244,14 @@ function draw() {
           .append("text")
           .attr("class","bar-label")
           .text(d=>d.Percent_Grads+"%")
-          .attr("x", (d,i)=>xScale2(d.subCategory)+xScale2.bandwidth()/2)
+          .attr("x", (d,i)=>xScale2(d.subCategory)+xScale2.bandwidth()/2+margin.left)
           .attr("y", innerHeight/2)
           .attr("opacity",0)
           .call(enter => enter
             .transition()
             .duration(800)
             .delay((d,i)=>i*200)
-            .attr("x", (d, i) => xScale2(d.subCategory)+xScale2.bandwidth()/2)
+            .attr("x", (d, i) => xScale2(d.subCategory)+xScale2.bandwidth()/2+margin.left)
             .attr("y", d=>yScale2(d.Percent_Grads)+25)
             .attr("text-anchor", "middle")
             .style("fill","black")
@@ -287,32 +285,34 @@ d3.csv('./Dataset/GradDistEth.csv', d3.autoType)
   /* APPEND SVG */
   svg3 = d3.select("#container_right")
           .append("svg")
-            .attr("width", width/2)//- margin.left - margin.right)
-            .attr("height", height)// - margin.top - margin.bottom)
+            .attr("width", width/2)
+            .attr("height", height)
           .append("g")
-            .attr("transform", `translate(${0},${margin.top})`);
+            .attr("transform", `translate(${0},${0})`);
+
+
 
   /* X AXIS SCALE*/    
   xScale3 = d3.scaleBand()
-            .range([margin.right, innerWidth/2-margin.right])
+            .range([margin.left, width/2])
             .domain(ethnicity)
             .padding(0.05);
     
   svg3.append("g")
-      .attr("transform", `translate(${0},${innerHeight})`)
+      .attr("transform", `translate(${0},${margin.top*2})`)
       .call(d3.axisBottom(xScale3).tickSize(0))
-      .style("font-size", "10px")
+      .style("font-size", "11px")
       .select(".domain").remove()
 
   /* Y AXIS SCALE */
   yScale3 = d3.scaleBand()
-          .range([margin.top,innerHeight])
+          .range([margin.top, innerHeight-margin.bottom])
           .domain(district)
           .padding(0.1);
 
   svg3.append("g")
       .style("font-size", "10px")
-      .attr("transform", `translate(${margin.right},${0})`)
+      .attr("transform", `translate(${margin.left},${margin.top*2})`)
       .call(d3.axisLeft(yScale3).tickSize(0))      
       .select(".domain").remove()
       
@@ -324,10 +324,10 @@ d3.csv('./Dataset/GradDistEth.csv', d3.autoType)
     .domain([20,100])
   */
   /* TOOLTIPS */
-  tooltip = svg3.append("div.tooltip")              
+  tooltip = svg3.append("div")              
               .attr("class", "tooltip")
               .style("visibility", "hidden")
-      /*        .attr("x",0)
+             /*  .attr("x",0)
               .attr("y",0)
               .style("top", 0)
               .style("left", 0)              
@@ -340,9 +340,9 @@ d3.csv('./Dataset/GradDistEth.csv', d3.autoType)
   tooltip.append("text")
           .attr("fill","black")
           .style("pointer-events","none");
-*/
+
   // TOOLTIP FUNCTIONS 
-  const mouseover = function(event, d) {
+ const mouseover = function(event, d) {
     tooltip
       .style("opacity", 1)
       .style("visibility","visible")
@@ -366,47 +366,45 @@ d3.csv('./Dataset/GradDistEth.csv', d3.autoType)
     d3.select(this)
       .style("stroke", "none")
       .style("opacity", 0.8)
-  }
+  }*/
               
   /* SELECT - JOIN - DATA FOR THE SQUARES */
-  svg3.selectAll()
+  svg3.selectAll("rect")
     .data(data, d=>d.id)
-    .join("rect")
-      .attr("x", d => xScale3(d.subCategory))
-      .attr("y", d => yScale3(d.District))
-      .attr("rx", 2)
-      .attr("ry", 2)
-      .attr("width", xScale3.bandwidth())
-      .attr("height", yScale3.bandwidth())
-      .style("fill", d => colorScale3(d.Percent_Grads))
-      .style("stroke-width", 4)
-      .style("stroke", "none")
-      .style("opacity", 1)
-        .on("mouseover", mouseover)
-        .on("mousemove", mousemove)
-        .on("mouseleave", mouseleave)
-        
-     
-       /*  .on("mouseover", function(event, d){
+    .join(
+      enter => enter
+      .append("rect")
+        .attr("x", d => xScale3(d.subCategory))
+        .attr("y", d => yScale3(d.District)+margin.top*2)
+        .attr("rx", 2)
+        .attr("ry", 2)
+        .attr("width", xScale3.bandwidth())
+        .attr("height", yScale3.bandwidth())
+        .style("fill", d => colorScale3(d.Percent_Grads))
+       // .style("stroke-width", 4)
+       // .style("stroke", "none")
+        .style("opacity", 1)
+          .on("mouseover", function(event,d){
             tooltip
-              .html(`${d.Percent_Grads}+"%"`)
+              .html(`<div>${d.Percent_Grads}+"%"</div>`)
               .style("visibility", "visible")
           }) 
-        .on("mousemove", function(event){
+          .on("mousemove", function(event){
             tooltip
-              .style("left", (event.pageX + 30 + "px"))
-              .style("top", (event.pageY + "px"))
+              .style("top", (event.pageX - 350 + "px"))
+              .style("left", (event.pageY + 100 + "px"))
           })         
-        .on("mouseout", function(event,d){
+          .on("mouseout", function(event,d){
             tooltip
             .html(``)
             .style("visibility", "hidden");
           }) 
-      */
+    )
+      
   /* HEATMAP TITLE */
   svg3.append("text")
-        .attr("x", innerWidth/4)
-        .attr("y", 0)
+        .attr("x", innerWidth/4 +10)
+        .attr("y", margin.top -5)
         .attr("text-anchor", "middle")
         .style("font-size", "14px")
         .style("font-weight", "bold")

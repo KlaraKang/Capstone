@@ -206,13 +206,13 @@ d3.csv("./Dataset/GradBoroEng.csv", (d, i, columns) => {
              .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
    
    legend.append("rect")
-          .attr("x", innerWidth/2 + margin.left + 20)
+          .attr("x", innerWidth/2 + margin.left + 10)
           .attr("width", 15)
           .attr("height", 15)
           .attr("fill", colorScale);
    
    legend.append("text")
-          .attr("x", innerWidth/2 + margin.left +15)
+          .attr("x", innerWidth/2 + margin.left + 5)
           .attr("y", 10)
           .attr("dy", "0.32em")
           .text(d=>d);

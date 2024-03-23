@@ -9,26 +9,29 @@
 <body>
   <main>
     <section> 
-      <h4>4-Year Graduation Rates for Cohort Year 2018 (Class of 2022)</h4>
-      <h3>Percent students who entered NYC public high schools in 
-        2018 and graduated in August 2022 by borough, district, and student ethnicity</h3>   
-      
-      <div id="container_top" class="left"></div> 
-      <div id="container_right" class="right tooltip"></div>  
-      <div class="leftbottom">
-        <br><br><br>
-        <select id="dropdown" name="dropdown"></select>
-        <div id="container_bottom"></div>        
-      </div>
-      
-      <script src="grad.js"></script>
+      <h4>NYC Public High School Graduation Rates</h4>
+      <ul class="two_dropdowns">
+        <li>
+          <h2>
+            The 4-year graduation rates have been steadily increasing for the last 7 years.
+          </h2>
+        </li>
+        <li>
+          <h2>
+            There have been gaps in the high school graduation rates between the ethnicities.
+          </h2>
+          <select id="dropdown" name="dropdown"></select>
+        </li>
+      </ul>    
+      <div id="container">
+        <script src="gradAll.js"></script>
       </div>
     </section>
   </main>    
   
   <div >  
-    <button class="prev" onclick="transitionToPage('./gradAll.html')">  </button>
-    <button class="next" onclick="transitionToPage('./grad2.html')">  </button>
+    <button class="prev" onclick="transitionToPage('./index.html')">  </button>
+    <button class="next" onclick="transitionToPage('./grad.html')">  </button>
   </div>
 
   <script>

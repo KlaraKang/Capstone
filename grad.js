@@ -88,7 +88,7 @@ d3.csv('./Dataset/All.csv', d3.autoType)
               .transition()
                 .duration(800)
                 .delay((d,i) => i*200)
-                .attr("y", d => yScale1(d.Percent_Grads)+20)
+                .attr("y", d => yScale1(d.Percent_Grads)-10)
                 .attr("font-size","12px")
                 .style("fill","#190707")
                 .style("font-weight","bold")
@@ -290,8 +290,6 @@ d3.csv('./Dataset/GradDistEth.csv', d3.autoType)
           .append("g")
             .attr("transform", `translate(${0},${0})`);
 
-
-
   /* X AXIS SCALE*/    
   xScale3 = d3.scaleBand()
             .range([margin.left, width/2])
@@ -302,6 +300,7 @@ d3.csv('./Dataset/GradDistEth.csv', d3.autoType)
       .attr("transform", `translate(${0},${margin.top*2})`)
       .call(d3.axisBottom(xScale3).tickSize(0))
       .style("font-size", "11px")
+      .style("font-weight", "bold")
       .select(".domain").remove()
 
   /* Y AXIS SCALE */
@@ -324,7 +323,7 @@ d3.csv('./Dataset/GradDistEth.csv', d3.autoType)
     .domain([20,100])
   */
   /* TOOLTIPS */
-  tooltip = svg3.append("div")              
+  tooltip = svg3.append("div.tooltip")              
               .attr("class", "tooltip")
               .style("visibility", "hidden")
              /*  .attr("x",0)
@@ -404,11 +403,11 @@ d3.csv('./Dataset/GradDistEth.csv', d3.autoType)
   /* HEATMAP TITLE */
   svg3.append("text")
         .attr("x", innerWidth/4 +10)
-        .attr("y", margin.top -5)
+        .attr("y", height - margin.top)
         .attr("text-anchor", "middle")
         .style("font-size", "14px")
         .style("font-weight", "bold")
-        .text("Graduation Rates by Ethnicity and District");  
+        .text("Graduation Rates by Ethnicity in Each School District");  
     
 })
 

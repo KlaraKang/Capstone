@@ -10,9 +10,9 @@ let legendRectSize = 15,
 let angleGen, arcGen, legend, legendColor;
 let svg1, svg2, svg3, svg4, svg5, svg6;
     
-let w = 300, h = 300,
+let w = 210, h = 210,
     outerRadius = w/3,
-    innerRadius = 50;
+    innerRadius = 30;
     
 d3.csv('./Dataset/SchoolsAB.csv')
   .then(rawdata => {
@@ -50,7 +50,7 @@ d3.csv('./Dataset/SchoolsAB.csv')
       
   svg1.append("text")
       .attr("x", -20)
-      .attr("y", margin.top-margin.bottom-height/4)
+      .attr("y", margin.top-height/4)
       .attr("fill","black")
       .attr("font-weight","bold")
       .attr("font-size","14px")
@@ -97,7 +97,7 @@ d3.csv('./Dataset/SchoolsAB.csv')
             .attr("width", width)
             .attr("height", 50)
           .append("g")
-            .attr("transform",`translate(${width/2},${0})`)
+            .attr("transform",`translate(${width/2-margin.left},${0})`)
 
     legend.selectAll(".legend")
           .data(angleGen(AllData))
@@ -139,7 +139,7 @@ d3.csv('./Dataset/SchoolsAB.csv')
         
   svg2.append("text")
       .attr("x", -30)
-      .attr("y", margin.top-margin.bottom-height/4)
+      .attr("y", margin.top-height/4)
       .attr("fill","black")
       .attr("font-weight","bold")
       .attr("font-size","14px")
@@ -194,7 +194,7 @@ d3.csv('./Dataset/SchoolsAB.csv')
       
   svg3.append("text")
       .attr("x",-30)
-      .attr("y",margin.top-margin.bottom-height/4)
+      .attr("y",margin.top-height/4)
       .attr("fill","black")
       .attr("font-weight","bold")
       .attr("font-size","14px")
@@ -248,7 +248,7 @@ d3.csv('./Dataset/SchoolsAB.csv')
       
   svg4.append("text")
       .attr("x",-30)
-      .attr("y",margin.top-margin.bottom-height/4)
+      .attr("y",margin.top-height/4)
       .attr("fill","black")
       .attr("font-weight","bold")
       .attr("font-size","14px")
@@ -302,7 +302,7 @@ d3.csv('./Dataset/SchoolsAB.csv')
     
   svg5.append("text")
       .attr("x",-30)
-      .attr("y",margin.top-margin.bottom-height/4)
+      .attr("y",margin.top-height/4)
       .attr("fill","black")
       .attr("font-weight","bold")
       .attr("font-size","14px")
@@ -355,8 +355,8 @@ d3.csv('./Dataset/SchoolsAB.csv')
           .attr("transform",`translate(${width/6+margin.left},${height/4+margin.top})`);
 
   svg6.append("text")
-      .attr("x",-30)
-      .attr("y",margin.top-margin.bottom-height/4)
+      .attr("x",-50)
+      .attr("y",margin.top-height/4)
       .attr("fill","black")
       .attr("font-weight","bold")
       .attr("font-size","14px")

@@ -25,7 +25,7 @@ d3.csv('./Dataset/SurveyBoro.csv', d3.autotype)
  
    /* X AXIS SCALE*/    
    let xScale = d3.scaleBand()
-           .range([margin.left, innerWidth])
+           .range([margin.left, width])
            .domain(boro)
            .padding(0.05);
    
@@ -106,7 +106,7 @@ d3.csv('./Dataset/SurveyBoro.csv', d3.autotype)
         .attr("y", d => yScale(d.Category))
         .attr("rx", 2)
         .attr("ry", 2)
-        .attr("width", xScale.bandwidth()-10)
+        .attr("width", xScale.bandwidth())
         .attr("height", yScale.bandwidth())
         .style("fill", d=>colorScale(d.Percent))
         .style("stroke-width", 4)

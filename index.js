@@ -1,257 +1,610 @@
- 
-    /* CONSTANTS AND GLOBALS */
-const width = window.innerWidth*.7,
-      height = window.innerHeight*.7,
-      margin = {top:20, bottom:50, left:50, right:10},
-      innerWidth = width - margin.right - margin.left, 
-      innerHeight = height - margin.top - margin.bottom;
-  
-let xScale1, yScale1, xScale2, yScale2;
-let xAxis1, xAxisGroup1, xAxis2, xAxisGroup2;
-let colorScale1, colorScale2;
-let svg2, lineGen, data2;
-  
-  /* APPLICATION STATE */
-let state = {
-    data: [], 
-    hover: null,
-    selection: 2018 //default selection
-};
+const margin = {top: 30, right: 150, bottom: 20, left: 150},
+    width =  window.innerWidth*.8, //- margin.left - margin.right,
+    height =  window.innerHeight*.8 //- margin.top - margin.bottom;
 
-    /* LOAD DATA */
-d3.csv('./Dataset/All.csv', d3.autoType)
-    .then(raw_data => {
-      state.data = raw_data;
-    //  console.log(state.data) 
-    init();
-});
-    
-  /* INITIALIZING FUNCTION */
-function init() {
+let legendRectSize = 15,
+    legendSpacing = 5,
+    legendHeight = legendRectSize + legendSpacing;
 
-// PART1. Vertical Bar Chart: Grad Rates by Cohort Year
-   /* Filter data */
-  const data1 = state.data.filter(d => d.Category === "All") 
+/*********** FIRST STACKED BAR CHART ***********/
 
-    /* SCALES */
-  xScale1 = d3.scaleBand()
-          .domain(data1.map(d=> d.Cohort_Year))
-          .range([0, innerWidth/2])
-          .padding(.15)          
+const svg1 = d3.select("#container")
+  .append("svg")
+    .attr("width", width/2)// + margin.left + margin.right)
+    .attr("height", height/2 + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", `translate(${margin.left},${margin.top})`);
+
+d3.csv('./Dataset/ProfileEthnicity.csv')
+  .then((data) =>{
+
+  let ethnicities = data.columns.slice(1)
+  ethnicities = d3.reverse(ethnicities)
+  console.log(ethnicities)
    
-  yScale1 = d3.scaleLinear()
-          .domain([55, 100])
-          .range([innerHeight, 0])
-                
-  colorScale1 = d3.scaleOrdinal()
-          .domain(data1.map(d=> d.Cohort_Year))
-          .range(["#154360"])
+  year = data.map(d => d.Cohort_Year)
 
-  /*  // LINE GENERATOR FUNCTION
-  lineGen = d3.line()
-              .curve(d3.curveBasis)
-              .x(d => xScale1(data1.Cohort_Year))
-              .y(d => yScale1(data1.Percent_Grads)) 
-  */      
-    /* ELEMENTS */
-  const container1 = d3.select("#container")
-                    .append("svg")
-                      .attr("width",width/2+margin.right+margin.left)
-                      .attr("height",height)
-                    .append("g")
-                      .attr("transform",`translate(${margin.left},${0})`);
-  
-  container1.append("g")
-            .call(d3.axisBottom(xScale1).tickSizeOuter(0))
-              .attr("transform", `translate(${0},${innerHeight})`)
-             // .attr("font-size","12px")
-            .append("text")
-              .attr("x",innerWidth/4)
-              .attr("y",margin.bottom)
-              .attr("fill","black")
-              .attr("text-anchor","end")
-              .attr("font-size","14px")
-              .text("Cohort Year")
+    /* Y AXIS */
+  const yAxis = d3.scaleBand()
+      .domain(year)
+      .range([0, height/2 - margin.top - margin.bottom])
+      .padding(0.3)
+
+  svg1.append("g")
+      .attr("transform", `translate(${0}, ${0})`)
+      .call(d3.axisLeft(yAxis).tickSizeOuter(0))
+      .append("text")
+        .attr("x", width/5)
+        .attr("y", height/2)
+        .attr("fill","black")
+        .attr("text-anchor","end")
+        .attr("font-size","14px")
+        .text("Percent Students by Ethnicity")
+        .style("font-weight", "bold");
+
+    /* X AXIS */
+  const xAxis = d3.scaleLinear()
+    .domain([0, 100])
+    .range([width/2-margin.right-margin.left, 0]);
+
+  const color = d3.scaleOrdinal()
+    .domain(ethnicities) 
+    .range(["#358d8f","#8ac082","#2471A3","#f16b69","#32c1d7","#eea057","#2471A3"])
     
-    /* For the first chart: SELECT - DATA JOIN - DRAW */
+    /* STACK THE DATA */
+  const stackedData = d3.stack()
+    .keys(ethnicities)(data)
+  console.log(stackedData[0])
 
-  container1.selectAll("rect")
-            .data(data1)
-            .join("rect")
-            .attr("width", xScale1.bandwidth())
-            .attr("height", 0)
-            .attr("x", d =>xScale1(d.Cohort_Year))
-            .attr("y", innerHeight)
-            .attr("fill", d=>colorScale1(d.Cohort_Year))
-            .transition()
-              .duration(800)
-              .attr("y", d=>yScale1(d.Percent_Grads))
-              .attr("height", d=>innerHeight - yScale1(d.Percent_Grads))
-              .delay((d,i) => i*200)
-              .attr("fill", d=>colorScale1(d.Cohort_Year))             
+    /* ELEMENT */
+  let groups = svg1.append("g")
+    .selectAll("g")
+    .data(stackedData)
+    .join("g")
+      .attr("fill", d => color(d.key))
   
-  container1.selectAll("text.bar-label")
-            .data(data1, d=>d.id)
-            .join("text")
-              .attr("class","bar-label") 
-              .text(d => d.Percent_Grads+"%")            
-              .attr("x", d => xScale1(d.Cohort_Year)+xScale1.bandwidth()/2)
-              .attr("y", innerHeight)
-              .attr("opacity",0)
-              .transition()
-                .duration(800)
-                .delay((d,i) => i*200)
-                .attr("y", d => yScale1(d.Percent_Grads)+25)
-                .attr("font-size","12px")
-                .style("fill","#FFFFFF")
-                .attr("text-anchor", "middle")
-                .attr("opacity",1);
-  /*
-  container1.selectAll(".path")
-            .data(data1, d=>d.id)
-            .join("path")
-            .attr("class","line_thick")
-            .attr("d", d => lineGen(d.Percent_Grads))
-            .style("stroke", "red")
-            .call(enter => enter
-              .transition()
-                .duration(1500)
-                .attrTween("stroke-dasharray", function(){
-                  const l = this.getTotalLength(),
-                    i = d3.interpolateString("0,"+l, l+","+l);
-                    return function(t){return i(t)};
-                })
-                .on("end", ()=>{d3.select(this).transition();})
-             );
-  */
-// PART 2. Bar Chart: Grad Rates by Ethnicity for all Cohorts
-  /* Filter data */
-  data2 = state.data.filter(d => d.Category === "Ethnicity")
-  //console.log("data2",data2)
+  let bars = groups.selectAll("g")
+      .data(d => d)
+      .join("g")
+      .append("rect")
+        .attr("y", d => yAxis(d.data.Cohort_Year))
+        .attr("x", d => xAxis(d[1]))
+        .attr("width", d => xAxis(d[0]) - xAxis(d[1]))
+        .attr("height", yAxis.bandwidth())
+/*
+  bars.append("text")
+        .attr("y", d => yAxis(d.data.Cohort_Year)+yAxis.bandwidth()/2)
+        .attr("x", d => xAxis(d[1])+5)
+        .text(d => (d[1]-d[0]).toFixed(1))
+        .style("fill", function(d){    
+            if ((d[1]-d[0]).toFixed(1) > 10){            
+              return "black";}
+            else {
+              return "none";}
+        })
+        .style("font-size","12px")
+        .attr("text-anchor", "start")
+  */ 
+  let legend1 = svg1.selectAll(".legend")
+        .data(d3.reverse(ethnicities))
+        .enter()          
+        .append("g")       
+        .attr("class","legend")
+        .attr("transform", (d,i) => `translate(${20},${((i*legendHeight)-40)})`) 
 
-      /* SCALES */
-  xScale2 = d3.scaleBand()
-      .domain(data2.map(d=> d.subCategory))
-      .range([0, innerWidth/2])
-      .padding(.3)          
+  legend1.append("rect") 
+        .attr("width", legendRectSize)
+        .attr("height", legendRectSize)
+        .attr("rx", 5)
+        .attr("ry", 5) 
+        .attr("x", width/2-margin.right-margin.left)
+        .attr("y", 80)     
+        .style("fill", d=>color(d))
+        .style("stroke", color)
 
-  yScale2 = d3.scaleLinear()
-      .domain([55, 100])
-      .range([innerHeight, 0])
+  legend1.append("text")
+        .attr("x", 20 +width/2-margin.right-margin.left)
+        .attr("y", 90)
+        .text(d=>d)
+        .style("fill", "#190707")
+        .style("font-size", "12px") 
+        .style("font-weight", "bold") 
+})
+
+/*********** SECOND STACKED BAR CHART ***********/
+
+const svg2 = d3.select("#container")
+  .append("svg")
+    .attr("width", width/2)
+    .attr("height", height/2 + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", `translate(${margin.left},${margin.top})`);
+
+d3.csv('./Dataset/ProfileLocation.csv')
+  .then((data2) =>{
+
+  
+  let boroughs = data2.columns.slice(1)
+  boroughs = d3.reverse(boroughs)
+  console.log(boroughs)
+ 
+  year = data2.map(d => d.Cohort_Year)
+
+    /* Y AXIS */
+  const yAxis = d3.scaleBand()
+      .domain(year)
+      .range([0, height/2 - margin.top - margin.bottom])
+      .padding(0.3)
+
+  svg2.append("g")
+      .attr("transform", `translate(${0}, ${0})`)
+      .call(d3.axisLeft(yAxis).tickSizeOuter(0))
+      .append("text")
+        .attr("x", width/4)
+        .attr("y", height/2)
+        .attr("fill","black")
+        .attr("text-anchor","end")
+        .attr("font-size","14px")
+        .text("Percent Students by Borough")
+        .style("font-weight", "bold");
+
+    /* X AXIS */
+  const xAxis = d3.scaleLinear()
+    .domain([0, 100])
+    .range([width/2-margin.right-margin.left, 0]);
+
+  const color = d3.scaleOrdinal()
+    .domain(boroughs) 
+    .range(["#8dd3c7","#878f99","#fb8072","#5499C7","#4daf4a"])
+
+    /*STACK THE DATA */
+  const stackedData = d3.stack()
+    .keys(boroughs)(data2)
+
+    /* ELEMENT */
+  let groups = svg2.append("g")
+    .selectAll("g")
+    .data(stackedData)
+    .join("g")
+      .attr("fill", d => color(d.key))
+  
+  let bars = groups.selectAll("g")
+      .data(d => d)
+      .join("g")
+      .append("rect")
+        .attr("y", d => yAxis(d.data.Cohort_Year))
+        .attr("x", d => xAxis(d[1]))
+        .attr("width", d => xAxis(d[0]) - xAxis(d[1]))
+        .attr("height", yAxis.bandwidth())
+/*
+  bars.append("text")
+        .attr("y", d => yAxis(d.data.Cohort_Year)+yAxis.bandwidth()/2)
+        .attr("x", d => xAxis(d[1])+5)
+        .text(d => (d[1]-d[0]).toFixed(1))
+        .style("fill","black")
+        .style("font-size","12px")
+        .attr("text-anchor", "start")
+*/
+  let legend2 = svg2.selectAll(".legend")
+        .data(d3.reverse(boroughs))
+        .enter()          
+        .append("g")       
+        .attr("class","legend")
+        .attr("transform", (d,i) => `translate(${20},${((i*legendHeight)-40)})`) 
+
+  legend2.append("rect") 
+        .attr("width", legendRectSize)
+        .attr("height", legendRectSize)
+        .attr("rx", 5)
+        .attr("ry", 5) 
+        .attr("x", width/2-margin.right-margin.left)
+        .attr("y", 80)     
+        .style("fill", d=>color(d))
+        .style("stroke", color)
+
+  legend2.append("text")
+        .attr("x", 20 +width/2-margin.right-margin.left)
+        .attr("y", 90)
+        .text(d=>d)
+        .style("fill", "#190707")
+        .style("font-size", "12px") 
+        .style("font-weight", "bold") 
+  
+});
+
+/********** THREE PIE CHARTS **********/
+
+    /* APPLICATION STATE */
+let state = {
+    poverty: [],
+    language: [],
+    disability: [],
+    years: [], 
+    selectYear: "2018" //default selection
+  }
+
+let angleGen, arcGen, svg3, svg4, svg5;
+let legend3, legend4, legend5;
+let ECOdata, ELLdata, SWDdata;
+
+let w = 300, h = 300,
+    outerRadius = w/3,
+    innerRadius = 75;
+
+d3.csv('./Dataset/All.csv')
+  .then(rawdata => {
+    state.poverty = rawdata.filter(d => d.Category === "Poverty") 
+    state.language = rawdata.filter(d => d.Category === "English") 
+    state.disability = rawdata.filter(d => d.Category === "Disability") 
+    state.years = rawdata.filter(d=>d.Category === "All")
+   
+    init();
+  })
+
+function init(){
+
+  angleGen = d3.pie()
+          .startAngle(0)
+          .endAngle(2*Math.PI)
+          .value((d,i) => +d.Total_Cohort)
+          .sort(null)
+          .padAngle(.01);
             
-  colorScale2 = d3.scaleOrdinal()
-      .domain(data2.map(d=> d.subCategory))
-      .range(["#358d8f","#8ac082","#2471A3","#f16b69","#32c1d7","#eea057","#5499C7","#2980B9","#2471A3","#1F618D","#1A5276"])
-    
-    /* ELEMENTS */
-  const container2 = d3.select("#container")
+  arcGen = d3.arc()  
+          .outerRadius(outerRadius)
+          .innerRadius(innerRadius);   
+          
+  svg3 = d3.select("#chart")
+          .append("svg")
+            .attr("width", width/3)
+            .attr("height", height/2)
+          .append("g")
+           .attr("transform",`translate(${width/6+10},${height/4+margin.top})`)
   
-  svg2 = container2.append("svg")
-                  .attr("width",width/2+margin.right+margin.left)
-                  .attr("height",height)
-                  .attr("x",width/2+margin.right+margin.left)
-                  .attr("y",innerHeight)
-                  .attr("transform",`translate(${innerWidth/4-margin.left-margin.right},${0})`)
-  
-  xAxisGroup2 = svg2.append("g")
-                .attr("transform",`translate(${0},${innerHeight})`)
-                .call(d3.axisBottom(xScale2).tickSizeOuter(0))  
-  
-    // + UI ELEMENT SETUP
-    /*manual drop-down menu */  
-    const selectElement = d3.select("#dropdown")
+  svg3.append("text")
+            .attr("x",-margin.left)
+            .attr("y",margin.top-margin.bottom-height/4)
+            .attr("fill","black")
+            .attr("font-weight","bold")
+            .attr("font-size","14px")
+            .text("Students by Economic Needs")
 
-    selectElement.selectAll("option") // "option" is a HTML element
+  svg4 = d3.select("#chart")
+           .append("svg")
+             .attr("width", width/3)
+             .attr("height", height/2)
+           .append("g")
+            .attr("transform",`translate(${width/6+10},${height/4+margin.top})`);
+  
+  svg4.append("text")
+            .attr("x",-margin.left)
+            .attr("y",margin.top-margin.bottom-height/4)
+            .attr("fill","black")
+            .attr("font-weight","bold")
+            .attr("font-size","14px")
+            .text("Students by English Learning")
+
+  svg5 = d3.select("#chart")
+            .append("svg")
+              .attr("width", width/3)
+              .attr("height", height/2)
+            .append("g")
+             .attr("transform",`translate(${width/6+10},${height/4+margin.top})`);
+
+  svg5.append("text")
+             .attr("x",-margin.left)
+             .attr("y",margin.top-margin.bottom-height/4)
+             .attr("fill","black")
+             .attr("font-weight","bold")
+             .attr("font-size","14px")
+             .text("Needs of Special Education")  
+
+  // manual drop-down menu for year selection
+  const selectElement = d3.select("#dropdown")      
+  selectElement.selectAll("option") // "option" is a HTML element
                   .data(["Select Student Cohort Year",
-                  ...new Set(state.data.map(d => d.Cohort_Year).sort(d3.descending))]) 
+                  ...new Set(state.years.map(d => d.Cohort_Year).sort(d3.descending))]) 
                   .join("option")
                   .attr("value", d => d) // what's on the data
                   .text(d=> d) // what users can see
-    
-    /* set up event listener to filter data based on dropdown menu selection*/
-    selectElement.on("change", event => {
-      state.selection = +event.target.value
+                  .style("font-weight", "bold")
+
+  // set up event listener to filter data based on dropdown menu selection
+  selectElement.on("change", event => {
+      state.selectYear = event.target.value
       draw(); 
-      });
+  });
 
-    draw();  
-}
-
-/* DRAW FUNCTION */
-function draw() {
-    // + FILTER DATA BASED ON STATE 
-    
-  const filteredData = state.data
-      .filter(d => (d.Category === "Ethnicity") && (d.Cohort_Year === state.selection))
+  draw();
   
-    // + UPDATE DOMAINS, if needed
-  xScale2.domain(filteredData.map(d=>d.subCategory))
-  colorScale2.domain(filteredData.map(d=>d.subCategory))
+} 
 
-  svg2.selectAll("rect.bar")
-        .data(filteredData, d => d.id)
-        .join(
-        // + HANDLE ENTER SELECTION
+// DRAW FUNCTION 
+function draw() {
+  /* PERCENT STUDENTS BY ECONOMIC STATUS */
+  const filteredPoverty = state.poverty
+         .filter(d=> (d.Cohort_Year === state.selectYear))
+  
+  ECOdata = angleGen(filteredPoverty); 
+  
+  /* UPDATE DOMAIN FOR COLOR SCALE */ 
+ let legendColor3 = d3.scaleOrdinal()
+    //  .domain(filteredPoverty.map(d=>d.subCategory))
+      .range(["#E8590B","#909F9D"])//, "#5A6346","#D9B282","#41CCD7","#58FAF4","orange"]);
+
+  svg3.selectAll("path.arc")
+  .data(ECOdata, d=>d.id)
+  .join(
+    enter=>enter
+      .append("path")
+      .attr("d", d=>arcGen(d))
+      .attr("fill", d=>legendColor3(d.data.subCategory))
+      .attr("stroke", "none")
+      .attr("stroke-width", 1)
+      .call(
         enter => enter
-          .append("rect")
-          .attr("class","bar")
-          .attr("width", xScale2.bandwidth())
-          .attr("height", 0)
-          .attr("x", (d,i)=>xScale2(d.subCategory))
-          .attr("y", innerHeight)
-          .attr("fill", d=>colorScale2(d.subCategory))
-          .call(enter => enter
-            .transition()
-            .duration(800)
-            .attr("y",(d,i)=>yScale2(d.Percent_Grads))
-            .attr("height", (d,i)=>innerHeight-yScale2(d.Percent_Grads))
-            .delay((d,i)=>i*200)
-            .attr("fill", d=>colorScale2(d.subCategory))
-          )
-          ,
-          // + HANDLE UPDATE SELECTION
-          update => update
-          ,
-          // + HANDLE EXIT SELECTION
-          exit => exit
-            .transition()
-            .duration(50)
-            .attr("y", yScale2(0))
-            .attr("height", 0)
-            .remove("bar")  
-        )   
+          .transition()              
+          .ease(d3.easeCircle)
+          .duration(1000)
+          .attrTween("d", function(d,i) {
+            let interpolate = d3.interpolate({startAngle: 0, endAngle: 0}, d)                
+            return t => arcGen(interpolate(t));
+            })
+        ),
+        // + HANDLE UPDATE SELECTION
+        update => update
+        ,
+        // + HANDLE EXIT SELECTION
+        exit => exit
+        .transition()
+        .attrTween("d", d=>d.null) 
+        .remove("path")  
+    ) 
+  let rest3 = function() {
 
-    svg2.selectAll("text.bar-label")
-      .data(filteredData, d => d.id)
+    svg3.selectAll("text.newText")
+      .data(ECOdata, d=>d.id)
       .join(
         enter=>enter
-          .append("text")
-          .attr("class","bar-label")
-          .text(d=>d.Percent_Grads+"%")
-          .attr("x", (d,i)=>xScale2(d.subCategory)+xScale2.bandwidth()/2)
-          .attr("y", innerHeight)
-          .attr("opacity",0)
-          .call(enter => enter
+        .append("text")
+        .attr("class","newText")
+        .call (
+          enter=>enter
             .transition()
-            .duration(800)
-            .delay((d,i)=>i*200)
-            .attr("x", (d, i) => xScale2(d.subCategory)+xScale2.bandwidth()/2)
-            .attr("y", d=>yScale2(d.Percent_Grads)+25)
-            .attr("text-anchor", "middle")
-            .style("fill","black")
-            .attr("opacity",1)
-            )
-          
-        ,
-        update=>update
+            .duration(200)
+            .text(d=>((d.endAngle-d.startAngle)/(2*Math.PI)*100).toFixed(1)+"%")  
+            .attr("transform", (d,i)=>`translate(${arcGen.centroid(d)})`)
+            .attr("dy", ".4em")
+            .attr("x", -40)
+            .attr("text-anchor", "middle")                 
+        ),
+        update => update
+          .style("opacity",1)
+          .text(d=>((d.endAngle-d.startAngle)/(2*Math.PI)*100).toFixed(1)+"%")
+          .attr("x",40)
         ,
         exit => exit
         .transition()
         .duration(50)
-        .attr("y", 0)
-        .remove("data-labels")   
-        )  
+        .remove("newText")   
+      )
 
+    legend3 = svg3.selectAll(".legend")
+      .data(ECOdata)
+      .enter()          
+      .append("g")
+      .attr("class","legend")
+      .attr("transform", (d,i) => `translate(-60,${((i*legendHeight)-40)})`) 
 
+    legend3.append("rect") 
+      .attr("width", legendRectSize)
+      .attr("height", legendRectSize)
+      .attr("rx", 5)
+      .attr("ry", 5) 
+      .attr("x", 0)
+      .attr("y", 18)     
+      .style("fill", d=>legendColor3(d.data.subCategory))
+      .style("stroke", legendColor3)
 
+    legend3.append("text")
+      .attr("x", 20)
+      .attr("y", 30)
+      .text(d=> d.data.subCategory)
+        .style("fill", "#190707")
+        .style("font-size", "14px") 
+        .style("font-weight", "bold")
+
+  } 
+  setTimeout(rest3,1000);
+   
+/* PERCENT STUDENTS BY ENGLISH LANGUAGE LEARNIG STATUS */
+  const filteredLanguage = state.language
+      .filter(d => d.Cohort_Year === state.selectYear)
+
+  ELLdata = angleGen(filteredLanguage);
+
+  let legendColor4 = d3.scaleOrdinal()
+   .range(["#FDD538","#D9B282","#909F9D"])//"#5A6346","#58FAF4","orange""#41CCD7"]);
+
+  svg4.selectAll("path.arc")
+    .data(ELLdata, d=>d.id)
+    .join(
+      enter=>enter
+        .append("path")
+        .attr("d", d=>arcGen(d))
+        .attr("fill", d=>legendColor4(d.data.subCategory))
+        .attr("stroke", "none")
+        .attr("stroke-width", 1)
+        .call(
+        enter => enter
+          .transition()              
+          .ease(d3.easeCircle)
+          .duration(1000)
+          .attrTween("d", function(d,i) {
+            let interpolate = d3.interpolate({startAngle: 0, endAngle: 0}, d)                
+            return t => arcGen(interpolate(t));
+            })
+        ),
+        // + HANDLE UPDATE SELECTION
+        update => update
+        ,
+        // + HANDLE EXIT SELECTION
+        exit => exit
+        .transition()
+        .attrTween("d", d=>d.null) 
+        .remove("path")  
+    ) 
+  let rest4 = function() {
+
+    svg4.selectAll("text.newText")
+      .data(ELLdata, d=>d.id)
+      .join(
+        enter=>enter
+        .append("text")
+        .attr("class","newText")
+        .call (
+          enter=>enter
+            .transition()
+            .duration(200)
+            .text(d=>((d.endAngle-d.startAngle)/(2*Math.PI)*100).toFixed(1)+"%")  
+            .attr("transform", (d,i)=>`translate(${arcGen.centroid(d)})`)
+            .attr("dy", ".4em")
+            .attr("x", 0)
+            .attr("text-anchor", "middle")                 
+        ),
+        update => update
+          .style("opacity",1)
+          .text(d=>((d.endAngle-d.startAngle)/(2*Math.PI)*100).toFixed(1)+"%")
+          .attr("x",40)
+          .attr("y",-10)
+        ,
+        exit => exit
+        .transition()
+        .duration(50)
+        .remove("newText")   
+      )
+
+    legend4 = svg4.selectAll(".legend")
+      .data(ELLdata)
+      .enter()          
+      .append("g")
+      .attr("class","legend")
+      .attr("transform", (d,i) => `translate(-60,${((i*legendHeight)-40)})`) 
+
+    legend4.append("rect") 
+      .attr("width", legendRectSize)
+      .attr("height", legendRectSize)
+      .attr("rx", 5)
+      .attr("ry", 5) 
+      .attr("x", 10)
+      .attr("y", 10)     
+      .style("fill", d=>legendColor4(d.data.subCategory))
+      .style("stroke", legendColor4)
+
+    legend4.append("text")
+      .attr("x", 30)
+      .attr("y", 25)
+      .text(d=> d.data.subCategory)
+      .style("fill", "#190707")
+      .style("font-size", "14px") 
+      .style("font-weight", "bold")  
+  }
+  setTimeout(rest4,1000); 
+
+ /* PERCENT STUDENTS BY DISABILITY OR NO-DISABILITY */  
+
+  const filteredDisability = state.disability
+        .filter(d => d.Cohort_Year === state.selectYear)
+  
+  SWDdata = angleGen(filteredDisability); 
+console.log(SWDdata)
+  let legendColor5 = d3.scaleOrdinal()
+                  .range(["#58FAF4","#909F9D"]);//"#5A6346",,"#41CCD7"
+
+  svg5.selectAll("path.arc")
+      .data(SWDdata, d=>d.id)
+      .join(
+        enter=>enter
+        .append("path")
+        .attr("d", d=>arcGen(d))
+        .attr("fill", d=>legendColor5(d.data.subCategory))
+        .attr("stroke", "none")
+        .attr("stroke-width", 1)
+        .call(
+        enter => enter
+          .transition()              
+          .ease(d3.easeCircle)
+          .duration(1000)
+          .attrTween("d", function(d,i) {
+           let interpolate = d3.interpolate({startAngle: 0, endAngle: 0}, d)                
+           return t => arcGen(interpolate(t));
+           })
+        ),
+        // + HANDLE UPDATE SELECTION
+        update => update
+        ,
+        // + HANDLE EXIT SELECTION
+        exit => exit
+        .transition()
+        .attrTween("d", d=>d.null) 
+        .remove("path")  
+      ) 
+  let rest5 = function() {
+
+    svg5.selectAll("text.newText")
+        .data(SWDdata, d=>d.id)
+        .join(
+         enter=>enter
+          .append("text")
+          .attr("class","newText")
+          .call (
+         enter=>enter
+          .transition()
+          .duration(200)
+          .text(d=>((d.endAngle-d.startAngle)/(2*Math.PI)*100).toFixed(1)+"%")  
+          .attr("transform", (d,i)=>`translate(${arcGen.centroid(d)})`)
+          .attr("dy", ".4em")
+          .attr("x", 0)
+          .attr("text-anchor", "middle")                 
+       ),
+       update => update
+         .style("opacity",1)
+         .text(d=>((d.endAngle-d.startAngle)/(2*Math.PI)*100).toFixed(1)+"%")
+         .attr("x",40)
+         .attr("y",-10)
+       ,
+       exit => exit
+       .transition()
+       .duration(50)
+       .remove("newText")   
+     )
+
+   legend5 = svg5.selectAll(".legend")
+     .data(SWDdata)
+     .enter()          
+     .append("g")
+     .attr("class","legend")
+     .attr("transform", (d,i) => `translate(-60,${((i*legendHeight)-40)})`) 
+
+   legend5.append("rect") 
+     .attr("width", legendRectSize)
+     .attr("height", legendRectSize)
+     .attr("rx", 5)
+     .attr("ry", 5) 
+     .attr("x", 10)
+     .attr("y", 20)     
+     .style("fill", d=>legendColor5(d.data.subCategory))
+     .style("stroke", legendColor5)
+
+   legend5.append("text")
+     .attr("x", 30)
+     .attr("y", 35)
+     .text(d=> d.data.subCategory)
+     .style("fill", "#190707")
+     .style("font-size", "14px") 
+     .style("font-weight", "bold")  
+ 
+ } 
+ setTimeout(rest5,1000); 
 }
+

@@ -13,18 +13,30 @@
       <h3>Percent students who entered NYC public high schools in 2018 and 
         graduated in August 2022 by economic status, English language learning status, and disability</h3>   
       
-      <div id="container1"></div>
-      <div id="container2"></div>
+      <div id="container_top"></div>
+      <div id="container_bottom"></div>
       <script src="grad2.js"></script>
       </div>
     </section>
   </main>
-    
-  <div style="text-align:right">
-    <!---
-    <button onclick="transitionToPage('./profile.html')"> Next &raquo; </button>
-    !--->
+  
+  <div >  
+    <button class="prev" onclick="transitionToPage('./grad.html')">  </button>
+    <button class="next" onclick="transitionToPage('./boro.html')">  </button>
   </div>
+
+  <script>
+    window.transitionToPage = function(href) {
+      document.querySelector('body').style.opacity = 0
+      setTimeout(function() { 
+        window.location.href = href
+      }, 500)
+    }
+  
+    document.addEventListener('DOMContentLoaded', function(event) {
+      document.querySelector('body').style.opacity = 1
+    })
+  </script>
 </body>
 
 </html>

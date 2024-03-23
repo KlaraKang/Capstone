@@ -1,6 +1,6 @@
-const margin = {top: 30, right: 200, bottom: 80, left: 50},
-      width =  window.innerWidth*.8, 
-      height =  window.innerHeight*.8,
+const margin = {top: 50, right: 200, bottom: 80, left: 50},
+      width =  window.innerWidth*.95, 
+      height =  window.innerHeight*.95,
       innerWidth = width - margin.left - margin.right,
       innerHeight = height - margin.top - margin.bottom;
 
@@ -13,7 +13,7 @@ d3.csv("./Dataset/GradBoroPov.csv", (d, i, columns) => {
 
     let category = data.columns.slice(1);
 
-    const svg = d3.select("#container1")
+    const svg = d3.select("#container_top")
               .append("svg")
                 .attr("width", width/2)
                 .attr("height", height/2 + margin.top + margin.bottom)
@@ -120,12 +120,12 @@ d3.csv("./Dataset/GradBoroEng.csv", (d, i, columns) => {
     
         let category = data.columns.slice(1);
    
-   const svg = d3.select("#container1")
+   const svg = d3.select("#container_top")
                .append("svg")
-                 .attr("width", width/2 +margin.right)
+                 .attr("width", width/2)
                  .attr("height", height/2 + margin.top + margin.bottom)
                 .append("g")
-                 .attr("transform", `translate(${margin.right},${margin.top})`);
+                 .attr("transform", `translate(${margin.left},${margin.top})`);
     
    let x0 = d3.scaleBand()
               .rangeRound([0, innerWidth/2])
@@ -187,14 +187,14 @@ d3.csv("./Dataset/GradBoroEng.csv", (d, i, columns) => {
         .style("stroke", "red")
         .style("stroke-width", 0.5)
         .style("stroke-dasharray", "3 3");
-
+/*
    svg.append("text")
       .attr("x", -100) 
       .attr("y", yAxis(83.7)) 
       .style("fill","red")
       .style("font-size","10px")
       .text("City Average: 83.7%"); 
-
+*/
    /* REGEND */
    let legend = svg.append("g")
            .attr("font-family", "sans-serif")
@@ -227,7 +227,7 @@ d3.csv("./Dataset/GradBoroDisab.csv", (d, i, columns) => {
     
    let category = data.columns.slice(1).reverse();
     
-   const svg = d3.select("#container2")
+   const svg = d3.select("#container_bottom")
                  .append("svg")
                    .attr("width", width/2)
                    .attr("height", height/2 + margin.top + margin.bottom)
@@ -343,21 +343,21 @@ d3.csv('./Dataset/GradDistByCategory.csv', d3.autoType)
   const category = poverty.concat(language).concat(disability);
 
    /* APPEND SVG */
-   let svg = d3.select("#container2")
+   let svg = d3.select("#container_bottom")
         .append("svg")
-          .attr("width", width/2 + margin.right)
+          .attr("width", width/2)
           .attr("height", height/2 + margin.bottom*2 + margin.top)
         .append("g")
-          .attr("transform", `translate(${margin.right},${0})`);
+          .attr("transform", `translate(${0},${0})`);
 
    /* X AXIS SCALE*/    
    let xScale = d3.scaleBand()
-          .range([margin.left, innerWidth/2])
+          .range([margin.left, width/2])
           .domain(category)
           .padding(0.05);
   
    svg.append("g")
-      .attr("transform", `translate(${0},${height/2 + margin.top + margin.bottom})`)
+      .attr("transform", `translate(${0},${height/2 + + margin.bottom + margin.top})`)
       .call(d3.axisBottom(xScale).tickSize(0))
       .style("font-size", "10px")
       .select(".domain").remove()
@@ -459,7 +459,7 @@ tooltip.append("text")
     */
    /* HEATMAP TITLE */
    svg.append("text")
-      .attr("x", innerWidth/4+10)
+      .attr("x", width/4)
       .attr("y", margin.top-10)
       .attr("text-anchor", "middle")
       .style("font-size", "14px")

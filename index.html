@@ -1,39 +1,40 @@
-<!DOCTYPE html>
 <head>
-    <meta charset="utf-8">
-    <title>Capstone Project_Kyoung Kang</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Sans">
-    <link rel="stylesheet" href="./style.css">
-    <script src="https://d3js.org/d3.v7.min.js"></script>
+  <meta charset="utf-8">
+  <title>Capstone Project_Kyoung Kang</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Sans">
+  <link rel="stylesheet" href="./style.css">
+  <script src="https://d3js.org/d3.v7.min.js"></script>
 </head>
 <body>
   <main>
     <section> 
-      <h4>NYC Public High School Graduation Rates</h4>
-      <ul class="two_dropdowns">
-        <li>
-          <h2>
-            The 4-year graduation rates have been steadily increasing for the last 7 years.
-          </h2>
-        </li>
-        <li>
-          <h2>
-            There have been gaps in the high school graduation rates between the ethnicities.
-          </h2>
-          <select id="dropdown" name="dropdown"></select>
-        </li>
-      </ul>    
-      <div id="container">
-        <script src="index.js"></script>
+      <h4><br>NYC Public High School Student Demographics</h4>
+      <div id="container"></div>
+      <div><br><br><br>      
+        <select id="dropdown" name="dropdown"></select>
       </div>
-    </section>
+      <div id="chart" class="chart-container"> 
+    </section> 
+    <script src="./index.js"></script>
   </main>
+
+  <div >  
     
-  <div style="text-align:right">
-    <!---
-    <button onclick="transitionToPage('./profile.html')"> Next &raquo; </button>
-    !--->
+    <button class="next" onclick="transitionToPage('./gradAll.html')">  </button>
   </div>
+
+  <script>
+    window.transitionToPage = function(href) {
+      document.querySelector('body').style.opacity = 0
+      setTimeout(function() { 
+        window.location.href = href
+      }, 500)
+    }
+  
+    document.addEventListener('DOMContentLoaded', function(event) {
+      document.querySelector('body').style.opacity = 1
+    })
+  </script>
 </body>
 
 </html>

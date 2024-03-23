@@ -21,11 +21,23 @@
     </section>
   </main>
     
-  <div style="text-align:right">
-    <!---
-    <button onclick="transitionToPage('./profile.html')"> Next &raquo; </button>
-    !--->
+  <div >  
+    <button class="prev" onclick="transitionToPage('./grad2.html')">  </button>
+    <button class="next" onclick="transitionToPage('./schools.html')">  </button>
   </div>
+
+  <script>
+    window.transitionToPage = function(href) {
+      document.querySelector('body').style.opacity = 0
+      setTimeout(function() { 
+        window.location.href = href
+      }, 500)
+    }
+  
+    document.addEventListener('DOMContentLoaded', function(event) {
+      document.querySelector('body').style.opacity = 1
+    })
+  </script>
 </body>
 
 </html>

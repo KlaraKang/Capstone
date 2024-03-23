@@ -115,7 +115,7 @@ d3.csv('./Dataset/SurveyBoro.csv', d3.autotype)
           .on("mouseover", mouseover)
           .on("mousemove", mousemove)
           .on("mouseleave", mouseleave)
-          
+   /*       
    container.selectAll()
           .data(data, d=>d.id) 
           .join("text")
@@ -124,7 +124,7 @@ d3.csv('./Dataset/SurveyBoro.csv', d3.autotype)
             .style("fill", "#1F2221")
             .style("font-size", "12px")
             .style("text-anchor","middle")
-            .text(d=>d.Percent+" %")    
+            .text(d=>d.Percent+" %")  */  
      /*
        .on("mouseover", function(event, d){
            tooltip
@@ -144,9 +144,9 @@ d3.csv('./Dataset/SurveyBoro.csv', d3.autotype)
      */
     /* HEATMAP TITLE */
    container.append("text")
-       .attr("x", innerWidth/3 + 10)
+       .attr("x", innerWidth/2 + margin.left)
        .attr("y", margin.top-10)
-       .attr("text-anchor", "start")
+       .attr("text-anchor", "middle")
        .style("font-size", "14px")
        .style("font-weight", "bold")
        .text("Percent Positive for Each Framework");  

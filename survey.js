@@ -163,7 +163,7 @@ d3.csv('./Dataset/SurveyBoro.csv', d3.autotype)
   /* SCALES */
   let xScale2 = d3.scaleBand()
               .domain(parent.map(d=> d.Borough))
-              .range([margin.left/2, width-margin.right])
+              .range([margin.left/2, width-margin.left])
               .padding(.15)          
 
   let yScale2 = d3.scaleLinear()
@@ -234,7 +234,7 @@ d3.csv('./Dataset/SurveyBoro.csv', d3.autotype)
     /* SCALES */
     let xScale3 = d3.scaleBand()
                 .domain(student.map(d=> d.Borough))
-                .range([margin.left/2, width-margin.right])
+                .range([margin.left/2, width-margin.left])
                 .padding(.15)          
   
     let yScale3 = d3.scaleLinear()

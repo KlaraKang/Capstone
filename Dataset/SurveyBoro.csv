@@ -29,3 +29,13 @@ id,Category,Borough,Percent
 28,Trust,Brooklyn,87
 29,Trust,Queens,87
 30,Trust,Staten Island,88
+31,Parent_Response,Bronx,27
+32,Parent_Response,Brooklyn,28
+33,Parent_Response,Manhattan,31
+34,Parent_Response,Queens,25
+35,Parent_Response,Staten Island,33
+36,Student_Response,Bronx,64
+37,Student_Response,Brooklyn,64
+38,Student_Response,Manhattan,66
+39,Student_Response,Queens,62
+40,Student_Response,Staten Island,78

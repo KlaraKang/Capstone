@@ -7,16 +7,17 @@ const width = window.innerWidth*.45,
 
 /* LOAD DATA */
 d3.csv('./Dataset/SurveyBoro.csv', d3.autotype)
-  .then(data => {
+  .then(rawdata => {
     
    /* FILTER DATA */
+  const data = rawdata.filter(d=> d.id < 31)
   const category = [... new Set(data.map(d=>d.Category))];
   const boro = [... new Set(data.map(d=>d.Borough))]; 
 
- console.log("boro",boro)
+  console.log("boro",boro)
 
    /* APPEND SVG */
-   const container = d3.select("#container_right")
+  const container = d3.select("#container_right")
          .append("svg")
            .attr("width", width)
            .attr("height", height)
@@ -24,37 +25,37 @@ d3.csv('./Dataset/SurveyBoro.csv', d3.autotype)
            .attr("transform", `translate(${0},${0})`);
  
    /* X AXIS SCALE*/    
-   let xScale = d3.scaleBand()
+  let xScale = d3.scaleBand()
            .range([margin.left, width])
            .domain(boro)
            .padding(0.05);
    
-   container.append("g")
+  container.append("g")
        .attr("transform", `translate(${0},${innerHeight})`)
        .call(d3.axisBottom(xScale).tickSize(0))
        .style("font-size", "10px")
        .select(".domain").remove()
  
    /* Y AXIS SCALE */
-   let yScale = d3.scaleBand()
+  let yScale = d3.scaleBand()
          .range([margin.top, innerHeight])
          .domain(category)
          .padding(0.1);
  
-   container.append("g")
+  container.append("g")
        .style("font-size", "10px")
        .attr("transform", `translate(${margin.left},${0})`)
        .call(d3.axisLeft(yScale).tickSize(0))      
        .select(".domain").remove()
      
    /* COLOR SCALE */
-   let colorScale = d3.scaleSequential([70, 90], d3.interpolatePuBuGn);
+  let colorScale = d3.scaleSequential([70, 90], d3.interpolatePuBuGn);
    
    /* TOOLTIPS */
-   tooltip = container.append("div.tooltip")              
+  tooltip = container.append("div")              
              .attr("class", "tooltip")
              .style("visibility", "hidden")
-             .attr("x",0)
+     /*        .attr("x",0)
              .attr("y",0)
              .style("top", 0)
              .style("left", 0)              
@@ -66,9 +67,9 @@ d3.csv('./Dataset/SurveyBoro.csv', d3.autotype)
  
    tooltip.append("text")
          .attr("fill","black")
-         .style("pointer-events","none");
+         .style("pointer-events","none");*/
  
-   /* TOOLTIP FUNCTIONS */
+   /* TOOLTIP FUNCTIONS 
    const mouseover = function(event, d) {
       tooltip
         .style("opacity", 1)
@@ -96,12 +97,14 @@ d3.csv('./Dataset/SurveyBoro.csv', d3.autotype)
       d3.select(this)
         .style("stroke", "none")
         .style("opacity", 0.8)
-   }
+   }*/
              
    /* SELECT - JOIN - DATA FOR THE SQUARES */
-   container.selectAll()
+  container.selectAll()
        .data(data, d=>d.id)
-       .join("rect")
+       .join(
+        enter=>enter
+        .append("rect")
         .attr("x", d => xScale(d.Borough))
         .attr("y", d => yScale(d.Category))
         .attr("rx", 2)
@@ -112,9 +115,22 @@ d3.csv('./Dataset/SurveyBoro.csv', d3.autotype)
         .style("stroke-width", 4)
         .style("stroke", "none")
         .style("opacity", 1)
-          .on("mouseover", mouseover)
-          .on("mousemove", mousemove)
-          .on("mouseleave", mouseleave)
+          .on("mouseover", function(event, d){
+            tooltip
+              .html(`<div>${d.Percent}+"%"</div>`)
+              .style("visibility", "visible")
+          }) 
+          .on("mousemove", function(event){
+            tooltip
+              .style("left", (event.pageX - 450 + "px"))
+              .style("top", (event.pageY - 100+ "px"))
+          })         
+          .on("mouseout", function(event,d){
+            tooltip
+            .html(``)
+            .style("visibility", "hidden");
+          }) 
+        )
    /*       
    container.selectAll()
           .data(data, d=>d.id) 
@@ -126,24 +142,12 @@ d3.csv('./Dataset/SurveyBoro.csv', d3.autotype)
             .style("text-anchor","middle")
             .text(d=>d.Percent+" %")  */  
      /*
-       .on("mouseover", function(event, d){
-           tooltip
-             .html(`${d.Percent_Grads}+"%"`)
-             .style("visibility", "visible")
-         }) 
-       .on("mousemove", function(event){
-           tooltip
-             .style("left", (event.pageX + 30 + "px"))
-             .style("top", (event.pageY + "px"))
-         })         
-       .on("mouseout", function(event,d){
-           tooltip
-           .html(``)
-           .style("visibility", "hidden");
-         }) 
+       .on("mouseover", mouseover)
+          .on("mousemove", mousemove)
+          .on("mouseleave", mouseleave)
      */
     /* HEATMAP TITLE */
-   container.append("text")
+  container.append("text")
        .attr("x", innerWidth/2 + margin.left)
        .attr("y", margin.top-10)
        .attr("text-anchor", "middle")
@@ -151,6 +155,148 @@ d3.csv('./Dataset/SurveyBoro.csv', d3.autotype)
        .style("font-weight", "bold")
        .text("Percent Positive for Each Framework");  
     
- 
- })
+/******** SURVEY RESPONSE RATES ********/ 
+
+  /* FILTER DATA */
+  const parent = rawdata.filter(d => d.Category == "Parent_Response");
+
+  /* SCALES */
+  let xScale2 = d3.scaleBand()
+              .domain(parent.map(d=> d.Borough))
+              .range([margin.left/2, width-margin.right])
+              .padding(.15)          
+
+  let yScale2 = d3.scaleLinear()
+              .domain([0, 100])
+              .range([innerHeight/2, 0])
+        
+  let colorScale2 = d3.scaleOrdinal()
+              .domain(parent.map(d=> d.Borough))
+              .range(["#4daf4a","#5499C7","#fb8072","#878f99","#8dd3c7"])
+
+  /* SVG ELEMENTS */
+  const container2 = d3.select("#container")
+            .append("svg")
+              .attr("width", width)
+              .attr("height", height/2)
+            .append("g")
+              .attr("transform",`translate(${0},${0})`);
+
+  container2.append("g")
+            .call(d3.axisBottom(xScale2).tickSizeOuter(0))
+              .attr("transform", `translate(${0},${innerHeight/2})`)            
+            .append("text")
+              .attr("x",width/2)
+              .attr("y", margin.top-innerHeight/2)
+              .attr("fill","black")
+              .attr("text-anchor","middle")
+              .attr("font-size","14px")
+              .style("font-weight", "bold")
+              .text("Parent Response Rate")
+
+  /* For the first chart: SELECT - DATA JOIN - DRAW */
+  container2.selectAll("rect")
+            .data(parent)
+            .join("rect")
+            .attr("width", xScale2.bandwidth())
+            .attr("height", 0)
+            .attr("x", d =>xScale2(d.Borough))
+            .attr("y", innerHeight/2)
+            .attr("fill", d=>colorScale2(d.Borough))
+            .transition()
+              .duration(800)
+              .attr("y", d=>yScale2(d.Percent))
+              .attr("height", d=>innerHeight/2 - yScale2(d.Percent))
+              .delay((d,i) => i*200)
+              .attr("fill", d=>colorScale2(d.Borough))             
+
+  container2.selectAll("text.bar-label")
+    .data(parent, d=>d.id)
+    .join("text")
+      .attr("class","bar-label") 
+      .text(d => d.Percent + "%")            
+      .attr("x", d => xScale2(d.Borough)+xScale2.bandwidth()/2)
+      .attr("y", innerHeight/2)
+      .attr("opacity",0)
+      .transition()
+        .duration(800)
+        .delay((d,i) => i*200)
+        .attr("y", d => yScale2(d.Percent)-5)
+        .attr("font-size","12px")
+        .style("fill","#190707")
+        .style("font-weight","bold")
+        .attr("text-anchor", "middle")
+        .attr("opacity",1);
+
+    /* FILTER DATA */
+    const student = rawdata.filter(d => d.Category == "Student_Response");
+  
+    /* SCALES */
+    let xScale3 = d3.scaleBand()
+                .domain(student.map(d=> d.Borough))
+                .range([margin.left/2, width-margin.right])
+                .padding(.15)          
+  
+    let yScale3 = d3.scaleLinear()
+                .domain([0, 100])
+                .range([height/2+margin.top, margin.top])
+          
+    let colorScale3 = d3.scaleOrdinal()
+                .domain(student.map(d=> d.Borough))
+                .range(["#4daf4a","#5499C7","#fb8072","#878f99","#8dd3c7"])
+  
+    /* SVG ELEMENTS */
+    const container3 = d3.select("#container")
+              .append("svg")
+                .attr("width", width)
+                .attr("height", height/2+margin.top)
+              .append("g")
+                .attr("transform",`translate(${0},${0})`);
+  
+    container3.append("g")
+              .call(d3.axisBottom(xScale3).tickSizeOuter(0))
+                .attr("transform", `translate(${0},${innerHeight/2+margin.top})`)            
+              .append("text")
+                .attr("x",width/2)
+                .attr("y", margin.bottom-innerHeight/2)
+                .attr("fill","black")
+                .attr("text-anchor","middle")
+                .attr("font-size","14px")
+                .style("font-weight", "bold")
+                .text("Student Response Rate")
+  
+    /* For the first chart: SELECT - DATA JOIN - DRAW */
+    container3.selectAll("rect")
+              .data(student)
+              .join("rect")
+              .attr("width", xScale3.bandwidth())
+              .attr("height", 0)
+              .attr("x", d =>xScale3(d.Borough))
+              .attr("y", innerHeight/2+margin.top)
+              .attr("fill", d=>colorScale3(d.Borough))
+              .transition()
+                .duration(800)
+                .attr("y", d=>yScale3(d.Percent))
+                .attr("height", d=>innerHeight/2+margin.top - yScale3(d.Percent))
+                .delay((d,i) => i*200)
+                .attr("fill", d=>colorScale3(d.Borough))             
+  
+    container3.selectAll("text.bar-label")
+              .data(student, d=>d.id)
+              .join("text")
+                .attr("class","bar-label") 
+                .text(d => d.Percent + "%")            
+                .attr("x", d => xScale3(d.Borough)+xScale3.bandwidth()/2)
+                .attr("y", innerHeight/2)
+                .attr("opacity",0)
+                .transition()
+                  .duration(800)
+                  .delay((d,i) => i*200)
+                  .attr("y", d => yScale3(d.Percent)-5)
+                  .attr("font-size","12px")
+                  .style("fill","#190707")
+                  .style("font-weight","bold")
+                  .attr("text-anchor", "middle")
+                  .attr("opacity",1);       
+})
  

@@ -1,7 +1,7 @@
   /* CONSTANTS AND GLOBALS */
 const width = window.innerWidth*.45,
       height = window.innerHeight*.8,
-      margin = {top:50, bottom:30, left:150, right:10},
+      margin = {top:50, bottom:50, left:150, right:10},
       innerWidth = width - margin.right - margin.left, 
       innerHeight = height - margin.top - margin.bottom;
 
@@ -18,10 +18,11 @@ d3.csv('./Dataset/SurveyBoro.csv', d3.autotype)
 
    /* APPEND SVG */
   const container = d3.select("#container_right")
-         .append("svg")
+
+  let svg = container.append("svg")
            .attr("width", width)
            .attr("height", height)
-         .append("g")
+          .append("g")
            .attr("transform", `translate(${0},${0})`);
  
    /* X AXIS SCALE*/    
@@ -30,19 +31,19 @@ d3.csv('./Dataset/SurveyBoro.csv', d3.autotype)
            .domain(boro)
            .padding(0.05);
    
-  container.append("g")
-       .attr("transform", `translate(${0},${innerHeight})`)
+  svg.append("g")
+       .attr("transform", `translate(${0},${innerHeight*2/3})`)
        .call(d3.axisBottom(xScale).tickSize(0))
        .style("font-size", "10px")
        .select(".domain").remove()
  
    /* Y AXIS SCALE */
   let yScale = d3.scaleBand()
-         .range([margin.top, innerHeight])
+         .range([margin.top, innerHeight*2/3])
          .domain(category)
          .padding(0.1);
  
-  container.append("g")
+  svg.append("g")
        .style("font-size", "10px")
        .attr("transform", `translate(${margin.left},${0})`)
        .call(d3.axisLeft(yScale).tickSize(0))      
@@ -55,21 +56,8 @@ d3.csv('./Dataset/SurveyBoro.csv', d3.autotype)
   tooltip = container.append("div")              
              .attr("class", "tooltip")
              .style("visibility", "hidden")
-     /*        .attr("x",0)
-             .attr("y",0)
-             .style("top", 0)
-             .style("left", 0)              
-             .style("background-color", "white")
-             .style("border", "solid")
-             .style("border-width", "1px")
-             .style("border-radius", "2px")
-             .style("padding", "0.5px")
  
-   tooltip.append("text")
-         .attr("fill","black")
-         .style("pointer-events","none");*/
- 
-   /* TOOLTIP FUNCTIONS 
+   /* TOOLTIP FUNCTIONS */
    const mouseover = function(event, d) {
       tooltip
         .style("opacity", 1)
@@ -83,24 +71,24 @@ d3.csv('./Dataset/SurveyBoro.csv', d3.autotype)
    const mousemove = function(event, d, i) {
    const [mx, my] = d3.pointer(event);
       tooltip
-        .html(`<div>"% Positive: " ${d.Percent}</div>`)
+        .html(`<div>Positive: ${d.Percent}%</div>`)
         .style("visibility","visible")
         .style("opacity", 1)
         .style("fill","black")
         .style("left", `${mx}px`)
-        .style("top", `${my}px`)
+        .style("top", `${my+15}px`)
    }
-   const mouseleave = function(event,d) {
+   const mouseout = function(event,d) {
       tooltip
         .style("opacity", 0)
  
       d3.select(this)
         .style("stroke", "none")
-        .style("opacity", 0.8)
-   }*/
+        .style("opacity", 1)
+   }
              
    /* SELECT - JOIN - DATA FOR THE SQUARES */
-  container.selectAll()
+  svg.selectAll()
        .data(data, d=>d.id)
        .join(
         enter=>enter
@@ -114,40 +102,13 @@ d3.csv('./Dataset/SurveyBoro.csv', d3.autotype)
         .style("fill", d=>colorScale(d.Percent))
         .style("stroke-width", 4)
         .style("stroke", "none")
-        .style("opacity", 1)
-          .on("mouseover", function(event, d){
-            tooltip
-              .html(`<div>${d.Percent}+"%"</div>`)
-              .style("visibility", "visible")
-          }) 
-          .on("mousemove", function(event){
-            tooltip
-              .style("left", (event.pageX - 450 + "px"))
-              .style("top", (event.pageY - 100+ "px"))
-          })         
-          .on("mouseout", function(event,d){
-            tooltip
-            .html(``)
-            .style("visibility", "hidden");
-          }) 
+          .on("mouseover", mouseover) 
+          .on("mousemove", mousemove)         
+          .on("mouseout", mouseout) 
         )
-   /*       
-   container.selectAll()
-          .data(data, d=>d.id) 
-          .join("text")
-            .attr("x", d => xScale(d.Borough)+xScale.bandwidth()/2)
-            .attr("y", d => yScale(d.Category)+yScale.bandwidth()/2)
-            .style("fill", "#1F2221")
-            .style("font-size", "12px")
-            .style("text-anchor","middle")
-            .text(d=>d.Percent+" %")  */  
-     /*
-       .on("mouseover", mouseover)
-          .on("mousemove", mousemove)
-          .on("mouseleave", mouseleave)
-     */
+
     /* HEATMAP TITLE */
-  container.append("text")
+  svg.append("text")
        .attr("x", innerWidth/2 + margin.left)
        .attr("y", margin.top-10)
        .attr("text-anchor", "middle")
@@ -163,7 +124,7 @@ d3.csv('./Dataset/SurveyBoro.csv', d3.autotype)
   /* SCALES */
   let xScale2 = d3.scaleBand()
               .domain(parent.map(d=> d.Borough))
-              .range([margin.left/2, width-margin.left])
+              .range([margin.left, width-margin.left])
               .padding(.15)          
 
   let yScale2 = d3.scaleLinear()
@@ -175,7 +136,7 @@ d3.csv('./Dataset/SurveyBoro.csv', d3.autotype)
               .range(["#4daf4a","#5499C7","#fb8072","#878f99","#8dd3c7"])
 
   /* SVG ELEMENTS */
-  const container2 = d3.select("#container")
+  const container2 = d3.select("#container_bottom")
             .append("svg")
               .attr("width", width)
               .attr("height", height/2)
@@ -187,7 +148,7 @@ d3.csv('./Dataset/SurveyBoro.csv', d3.autotype)
               .attr("transform", `translate(${0},${innerHeight/2})`)            
             .append("text")
               .attr("x",width/2)
-              .attr("y", margin.top-innerHeight/2)
+              .attr("y", margin.bottom)
               .attr("fill","black")
               .attr("text-anchor","middle")
               .attr("font-size","14px")
@@ -234,7 +195,7 @@ d3.csv('./Dataset/SurveyBoro.csv', d3.autotype)
     /* SCALES */
     let xScale3 = d3.scaleBand()
                 .domain(student.map(d=> d.Borough))
-                .range([margin.left/2, width-margin.left])
+                .range([margin.left, width-margin.left])
                 .padding(.15)          
   
     let yScale3 = d3.scaleLinear()
@@ -246,7 +207,7 @@ d3.csv('./Dataset/SurveyBoro.csv', d3.autotype)
                 .range(["#4daf4a","#5499C7","#fb8072","#878f99","#8dd3c7"])
   
     /* SVG ELEMENTS */
-    const container3 = d3.select("#container")
+    const container3 = d3.select("#container_bottom")
               .append("svg")
                 .attr("width", width)
                 .attr("height", height/2+margin.top)
@@ -258,7 +219,7 @@ d3.csv('./Dataset/SurveyBoro.csv', d3.autotype)
                 .attr("transform", `translate(${0},${innerHeight/2+margin.top})`)            
               .append("text")
                 .attr("x",width/2)
-                .attr("y", margin.bottom-innerHeight/2)
+                .attr("y", margin.bottom)
                 .attr("fill","black")
                 .attr("text-anchor","middle")
                 .attr("font-size","14px")

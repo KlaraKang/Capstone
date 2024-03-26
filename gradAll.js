@@ -15,7 +15,7 @@ let svg2, lineGen, data2;
 let state = {
     data: [], 
     hover: null,
-    selection: 2018 //default selection
+    selection: 2019 //default selection
 };
 
     /* LOAD DATA */
@@ -162,7 +162,7 @@ function init() {
     const selectElement = d3.select("#dropdown")
 
     selectElement.selectAll("option") // "option" is a HTML element
-                  .data(["Select Student Cohort Year",
+                  .data([
                   ...new Set(state.data.map(d => d.Cohort_Year).sort(d3.descending))]) 
                   .join("option")
                   .attr("value", d => d) // what's on the data

@@ -2,7 +2,7 @@ const margin = {top: 30, right: 150, bottom: 20, left: 150},
     width =  window.innerWidth*.8, //- margin.left - margin.right,
     height =  window.innerHeight*.8 //- margin.top - margin.bottom;
 
-let legendRectSize = 15,
+let legendRectSize = 10,
     legendSpacing = 5,
     legendHeight = legendRectSize + legendSpacing;
 
@@ -220,7 +220,7 @@ let state = {
     language: [],
     disability: [],
     years: [], 
-    selectYear: "2018" //default selection
+    selectYear: "2019" //default selection
   }
 
 let angleGen, arcGen, svg3, svg4, svg5;
@@ -229,7 +229,7 @@ let ECOdata, ELLdata, SWDdata;
 
 let w = 300, h = 300,
     outerRadius = w/3,
-    innerRadius = 75;
+    innerRadius = 70;
 
 d3.csv('./Dataset/All.csv')
   .then(rawdata => {
@@ -262,7 +262,7 @@ function init(){
            .attr("transform",`translate(${width/6+10},${height/4+margin.top})`)
   
   svg3.append("text")
-            .attr("x",-margin.left)
+            .attr("x",-margin.left/2)
             .attr("y",margin.top-margin.bottom-height/4)
             .attr("fill","black")
             .attr("font-weight","bold")
@@ -277,7 +277,7 @@ function init(){
             .attr("transform",`translate(${width/6+10},${height/4+margin.top})`);
   
   svg4.append("text")
-            .attr("x",-margin.left)
+            .attr("x",-margin.left/2)
             .attr("y",margin.top-margin.bottom-height/4)
             .attr("fill","black")
             .attr("font-weight","bold")
@@ -292,7 +292,7 @@ function init(){
              .attr("transform",`translate(${width/6+10},${height/4+margin.top})`);
 
   svg5.append("text")
-             .attr("x",-margin.left)
+             .attr("x",-margin.left/2)
              .attr("y",margin.top-margin.bottom-height/4)
              .attr("fill","black")
              .attr("font-weight","bold")
@@ -302,7 +302,7 @@ function init(){
   // manual drop-down menu for year selection
   const selectElement = d3.select("#dropdown")      
   selectElement.selectAll("option") // "option" is a HTML element
-                  .data(["Select Student Cohort Year",
+                  .data([
                   ...new Set(state.years.map(d => d.Cohort_Year).sort(d3.descending))]) 
                   .join("option")
                   .attr("value", d => d) // what's on the data
@@ -401,17 +401,17 @@ function draw() {
       .attr("height", legendRectSize)
       .attr("rx", 5)
       .attr("ry", 5) 
-      .attr("x", 0)
+      .attr("x", 10)
       .attr("y", 18)     
       .style("fill", d=>legendColor3(d.data.subCategory))
       .style("stroke", legendColor3)
 
     legend3.append("text")
-      .attr("x", 20)
-      .attr("y", 30)
+      .attr("x", 22)
+      .attr("y", 28)
       .text(d=> d.data.subCategory)
         .style("fill", "#190707")
-        .style("font-size", "14px") 
+        .style("font-size", "12px") 
         .style("font-weight", "bold")
 
   } 
@@ -497,16 +497,16 @@ function draw() {
       .attr("rx", 5)
       .attr("ry", 5) 
       .attr("x", 10)
-      .attr("y", 10)     
+      .attr("y", 18)     
       .style("fill", d=>legendColor4(d.data.subCategory))
       .style("stroke", legendColor4)
 
     legend4.append("text")
-      .attr("x", 30)
-      .attr("y", 25)
+      .attr("x", 22)
+      .attr("y", 28)
       .text(d=> d.data.subCategory)
       .style("fill", "#190707")
-      .style("font-size", "14px") 
+      .style("font-size", "12px") 
       .style("font-weight", "bold")  
   }
   setTimeout(rest4,1000); 
@@ -592,16 +592,16 @@ console.log(SWDdata)
      .attr("rx", 5)
      .attr("ry", 5) 
      .attr("x", 10)
-     .attr("y", 20)     
+     .attr("y", 18)     
      .style("fill", d=>legendColor5(d.data.subCategory))
      .style("stroke", legendColor5)
 
    legend5.append("text")
-     .attr("x", 30)
-     .attr("y", 35)
+     .attr("x", 22)
+     .attr("y", 28)
      .text(d=> d.data.subCategory)
      .style("fill", "#190707")
-     .style("font-size", "14px") 
+     .style("font-size", "12px") 
      .style("font-weight", "bold")  
  
  } 

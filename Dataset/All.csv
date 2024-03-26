@@ -1,134 +1,175 @@
-id,Category,subCategory,Cohort_Year,Cohort,Total_Cohort,Percent_Cohort,Number_Grads,Percent_Grads
-1,All,All Students,2012,4 year August,74172,,54161,73
-2,All,All Students,2013,4 year August,73154,,54324,74.3
-3,All,All Students,2014,4 year August,74948,,56923,75.9
-4,All,All Students,2015,4 year August,73772,,57035,77.3
-5,All,All Students,2016,4 year August,73565,,58704,79.8
-6,All,All Students,2017,4 year August,72663,,60055,82.6
-7,All,All Students,2018,4 year August,70912,,59374,83.7
-8,Disability,SWD,2012,4 year August,12938,17.4,5867,45.3
-9,Disability,Not SWD,2012,4 year August,61234,82.6,48294,78.9
-10,Disability,SWD,2013,4 year August,13036,17.8,6090,46.7
-11,Disability,Not SWD,2013,4 year August,60118,82.2,48234,80.2
-12,Disability,SWD,2014,4 year August,13665,18.2,6890,50.4
-13,Disability,Not SWD,2014,4 year August,61283,81.8,50033,81.6
-14,Disability,SWD,2015,4 year August,13727,18.6,7215,52.6
-15,Disability,Not SWD,2015,4 year August,60045,81.4,49820,83
-16,Disability,SWD,2016,4 year August,13635,18.5,7700,56.5
-17,Disability,Not SWD,2016,4 year August,59930,81.5,51004,85.1
-18,Disability,SWD,2017,4 year August,14323,19.7,8841,61.7
-19,Disability,Not SWD,2017,4 year August,58340,80.3,51214,87.8
-20,Disability,SWD,2018,4 year August,13956,19.7,8952,64.1
-21,Disability,Not SWD,2018,4 year August,56956,80.3,50422,88.5
-22,English,Current ELL,2012,4 year August,6159,8.3,1921,31.2
-23,English,Former ELL,2012,4 year August,3677,5,3121,84.9
-24,English,Not ELL,2012,4 year August,64336,86.7,49119,76.3
-25,English,Current ELL,2013,4 year August,6372,8.7,2072,32.5
-26,English,Former ELL,2013,4 year August,3748,5.1,3296,87.9
-27,English,Not ELL,2013,4 year August,63034,86.2,48956,77.7
-28,English,Current ELL,2014,4 year August,6771,9,2352,34.7
-29,English,Former ELL,2014,4 year August,4873,6.5,4335,89
-30,English,Not ELL,2014,4 year August,63304,84.5,50236,79.4
-31,English,Current ELL,2015,4 year August,7425,10.0,3036,40.9
-32,English,Former ELL,2015,4 year August,5225,7.1,4775,91.4
-33,English,Not ELL,2015,4 year August,61122,82.9,49224,80.5
-34,English,Current ELL,2016,4 year August,7429,10.1,3393,45.7
-35,English,Former ELL,2016,4 year August,5116,7,4757,93
-36,English,Not ELL,2016,4 year August,61020,82.9,50554,82.8
-37,English,Current ELL,2017,4 year August,8376,11.5,5052,60.3
-38,English,Former ELL,2017,4 year August,4196,5.8,3880,92.5
-39,English,Not ELL,2017,4 year August,60091,82.7,51123,85.1
-40,English,Current ELL,2018,4 year August,9760,13.8,6542,67
-41,English,Former ELL,2018,4 year August,2562,3.6,2347,91.6
-42,English,Not ELL,2018,4 year August,58590,82.6,50485,86.2
-43,Ethnicity,Asian,2012,4 year August,12480,16.8,10707,85.8
-44,Ethnicity,Black,2012,4 year August,21712,29.3,14916,68.7
-45,Ethnicity,Hispanic,2012,4 year August,28690,38.7,19312,67.3
-46,Ethnicity,Multi-Racial,2012,4 year August,763,1.0,682,89.4
-47,Ethnicity,Native American,2012,4 year August,489,0.7,284,58.1
-48,Ethnicity,White,2012,4 year August,10038,13.5,8260,82.3
-49,Ethnicity,Asian,2013,4 year August,12480,17.1,10926,87.5
-50,Ethnicity,Black,2013,4 year August,20539,28.1,14375,70
-51,Ethnicity,Hispanic,2013,4 year August,28729,39.3,19630,68.3
-52,Ethnicity,Multi-Racial,2013,4 year August,776,1.1,689,88.8
-53,Ethnicity,Native American,2013,4 year August,574,0.8,335,58.4
-54,Ethnicity,White,2013,4 year August,10056,13.7,8369,83.2
-55,Ethnicity,Asian,2014,4 year August,13123,17.5,11567,88.1
-56,Ethnicity,Black,2014,4 year August,20292,27.1,14627,72.1
-57,Ethnicity,Hispanic,2014,4 year August,29337,39.1,20532,70
-58,Ethnicity,Multi-Racial,2014,4 year August,1016,1.4,895,88.1
-59,Ethnicity,Native American,2014,4 year August,669,0.9,447,66.8
-60,Ethnicity,White,2014,4 year August,10511,14.0,8855,84.2
-61,Ethnicity,Asian,2015,4 year August,12905,17.5,11383,88.2
-62,Ethnicity,Black,2015,4 year August,19569,26.5,14423,73.7
-63,Ethnicity,Hispanic,2015,4 year August,29120,39.5,20978,72
-64,Ethnicity,Multi-Racial,2015,4 year August,945,1.3,795,84.1
-65,Ethnicity,Native American,2015,4 year August,704,1.0,502,71.3
-66,Ethnicity,White,2015,4 year August,10529,14.3,8954,85
-67,Ethnicity,Asian,2016,4 year August,12922,17.6,11579,89.6
-68,Ethnicity,Black,2016,4 year August,19149,26.0,14606,76.3
-69,Ethnicity,Hispanic,2016,4 year August,29323,39.9,21869,74.6
-70,Ethnicity,Multi-Racial,2016,4 year August,984,1.3,867,88.1
-71,Ethnicity,Native American,2016,4 year August,691,0.9,520,75.3
-72,Ethnicity,White,2016,4 year August,10496,14.3,9263,88.3
-73,Ethnicity,Asian,2017,4 year August,13000,17.9,11842,91.1
-74,Ethnicity,Black,2017,4 year August,17832,24.5,14100,79.1
-75,Ethnicity,Hispanic,2017,4 year August,28889,39.8,22670,78.5
-76,Ethnicity,Multi-Racial,2017,4 year August,1167,1.6,1066,91.3
-77,Ethnicity,Native American,2017,4 year August,824,1.1,676,82
-78,Ethnicity,White,2017,4 year August,10951,15.1,9701,88.6
-79,Ethnicity,Asian,2018,4 year August,12955,18.3,11950,92.2
-80,Ethnicity,Black,2018,4 year August,17040,24.0,13750,80.7
-81,Ethnicity,Hispanic,2018,4 year August,28518,40.2,22681,79.5
-82,Ethnicity,Multi-Racial,2018,4 year August,1271,1.8,1136,89.4
-83,Ethnicity,Native American,2018,4 year August,876,1.2,718,82
-84,Ethnicity,White,2018,4 year August,10252,14.5,9139,89.1
-85,Location,Bronx,2012,4 year August,13838,18.66,8985,64.9
-86,Location,Brooklyn,2012,4 year August,20823,28.07,15160,72.8
-87,Location,Manhattan,2012,4 year August,15569,20.99,11637,74.7
-88,Location,Queens,2012,4 year August,19398,26.15,14766,76.1
-89,Location,Staten Island,2012,4 year August,4544,6.13,3613,79.5
-90,Location,Bronx,2013,4 year August,13730,18.77,9102,66.3
-91,Location,Brooklyn,2013,4 year August,20096,27.47,14954,74.4
-92,Location,Manhattan,2013,4 year August,15280,20.89,11438,74.9
-93,Location,Queens,2013,4 year August,19417,26.54,15112,77.8
-94,Location,Staten Island,2013,4 year August,4631,6.33,3718,80.3
-95,Location,Bronx,2014,4 year August,13951,18.61,9398,67.4
-96,Location,Brooklyn,2014,4 year August,20566,27.44,15753,76.6
-97,Location,Manhattan,2014,4 year August,15521,20.71,11902,76.7
-98,Location,Queens,2014,4 year August,20245,27.01,16102,79.5
-99,Location,Staten Island,2014,4 year August,4665,6.22,3768,80.8
-100,Location,Bronx,2015,4 year August,13891,18.83,9752,70.2
-101,Location,Brooklyn,2015,4 year August,20385,27.63,15690,77
-102,Location,Manhattan,2015,4 year August,15274,20.70,11959,78.3
-103,Location,Queens,2015,4 year August,19788,26.82,15965,80.7
-104,Location,Staten Island,2015,4 year August,4434,6.01,3669,82.7
-105,Location,Bronx,2016,4 year August,13421,18.24,9938,74
-106,Location,Brooklyn,2016,4 year August,20307,27.60,16112,79.3
-107,Location,Manhattan,2016,4 year August,15593,21.20,12492,80.1
-108,Location,Queens,2016,4 year August,19550,26.58,16188,82.8
-109,Location,Staten Island,2016,4 year August,4694,6.38,3974,84.7
-110,Location,Bronx,2017,4 year August,13152,18.10,10220,77.7
-111,Location,Brooklyn,2017,4 year August,20136,27.71,16449,81.7
-112,Location,Manhattan,2017,4 year August,15192,20.91,12639,83.2
-113,Location,Queens,2017,4 year August,19501,26.84,16714,85.7
-114,Location,Staten Island,2017,4 year August,4682,6.44,4033,86.1
-115,Location,Bronx,2018,4 year August,12487,17.61,9921,79.5
-116,Location,Brooklyn,2018,4 year August,19874,28.03,16524,83.1
-117,Location,Manhattan,2018,4 year August,14935,21.06,12451,83.4
-118,Location,Queens,2018,4 year August,19048,26.86,16534,86.8
-119,Location,Staten Island,2018,4 year August,4568,6.44,3944,86.3
-120,Poverty,Econ Disadv,2012,4 year August,50518,68.1,37098,73.4
-121,Poverty,Not Econ Disadv,2012,4 year August,23654,31.9,17063,72.1
-122,Poverty,Econ Disadv,2013,4 year August,51027,69.8,38382,75.2
-123,Poverty,Not Econ Disadv,2013,4 year August,22127,30.2,15942,72
-124,Poverty,Econ Disadv,2014,4 year August,55392,73.9,41722,75.3
-125,Poverty,Not Econ Disadv,2014,4 year August,19556,26.1,15201,77.7
-126,Poverty,Econ Disadv,2015,4 year August,54291,73.6,41432,76.3
-127,Poverty,Not Econ Disadv,2015,4 year August,19481,26.4,15603,80.1
-128,Poverty,Econ Disadv,2016,4 year August,54495,74.1,42762,78.5
-129,Poverty,Not Econ Disadv,2016,4 year August,19070,25.9,15942,83.6
-130,Poverty,Econ Disadv,2017,4 year August,53123,73.1,43288,81.5
-131,Poverty,Not Econ Disadv,2017,4 year August,19540,26.9,16767,85.8
-132,Poverty,Econ Disadv,2018,4 year August,51467,72.6,42690,82.9
-133,Poverty,Not Econ Disadv,2018,4 year August,19445,27.4,16684,85.8
+id,Category,subCategory,Cohort_Year,Cohort,Total_Cohort,Percent_Cohort,Number_Grads,Percent_Grads,Percent_Drop
+1,All,All Students,2012,4 year August,74172,,54161,73,
+2,All,All Students,2013,4 year August,73154,,54324,74.3,
+3,All,All Students,2014,4 year August,74948,,56923,75.9,
+4,All,All Students,2015,4 year August,73772,,57035,77.3,
+5,All,All Students,2016,4 year August,73565,,58704,79.8,
+6,All,All Students,2017,4 year August,72663,,60055,82.6,
+7,All,All Students,2018,4 year August,70912,,59374,83.7,
+8,All,All Students,2019,4 year August,69893,,58503,83.7,
+9,Disability,SWD,2012,4 year August,12938,17.4,5867,45.3,
+10,Disability,Not SWD,2012,4 year August,61234,82.6,48294,78.9,
+11,Disability,SWD,2013,4 year August,13036,17.8,6090,46.7,
+12,Disability,Not SWD,2013,4 year August,60118,82.2,48234,80.2,
+13,Disability,SWD,2014,4 year August,13665,18.2,6890,50.4,
+14,Disability,Not SWD,2014,4 year August,61283,81.8,50033,81.6,
+15,Disability,SWD,2015,4 year August,13727,18.6,7215,52.6,
+16,Disability,Not SWD,2015,4 year August,60045,81.4,49820,83,
+17,Disability,SWD,2016,4 year August,13635,18.5,7700,56.5,
+18,Disability,Not SWD,2016,4 year August,59930,81.5,51004,85.1,
+19,Disability,SWD,2017,4 year August,14323,19.7,8841,61.7,
+20,Disability,Not SWD,2017,4 year August,58340,80.3,51214,87.8,
+21,Disability,SWD,2018,4 year August,13956,19.7,8952,64.1,
+22,Disability,Not SWD,2018,4 year August,56956,80.3,50422,88.5,
+23,Disability,SWD,2019,4 year August,13935,19.9,9143,65.6,
+24,Disability,Not SWD,2019,4 year August,55958,80.1,49360,88.2,
+25,English,Current ELL,2012,4 year August,6159,8.3,1921,31.2,
+26,English,Former ELL,2012,4 year August,3677,5,3121,84.9,
+27,English,Not ELL,2012,4 year August,64336,86.7,49119,76.3,
+28,English,Current ELL,2013,4 year August,6372,8.7,2072,32.5,
+29,English,Former ELL,2013,4 year August,3748,5.1,3296,87.9,
+30,English,Not ELL,2013,4 year August,63034,86.2,48956,77.7,
+31,English,Current ELL,2014,4 year August,6771,9,2352,34.7,
+32,English,Former ELL,2014,4 year August,4873,6.5,4335,89,
+33,English,Not ELL,2014,4 year August,63304,84.5,50236,79.4,
+34,English,Current ELL,2015,4 year August,7425,10,3036,40.9,
+35,English,Former ELL,2015,4 year August,5225,7.1,4775,91.4,
+36,English,Not ELL,2015,4 year August,61122,82.9,49224,80.5,
+37,English,Current ELL,2016,4 year August,7429,10.1,3393,45.7,
+38,English,Former ELL,2016,4 year August,5116,7,4757,93,
+39,English,Not ELL,2016,4 year August,61020,82.9,50554,82.8,
+40,English,Current ELL,2017,4 year August,8376,11.5,5052,60.3,
+41,English,Former ELL,2017,4 year August,4196,5.8,3880,92.5,
+42,English,Not ELL,2017,4 year August,60091,82.7,51123,85.1,
+43,English,Current ELL,2018,4 year August,9760,13.8,6542,67,
+44,English,Former ELL,2018,4 year August,2562,3.6,2347,91.6,
+45,English,Not ELL,2018,4 year August,58590,82.6,50485,86.2,
+46,English,Current ELL,2019,4 year August,7968,11.4,4938,62,
+47,English,Former ELL,2019,4 year August,3483,5,3205,92,
+48,English,Not ELL,2019,4 year August,58442,83.6,50360,86.2,
+49,Ethnicity,Asian,2012,4 year August,12480,16.8,10707,85.8,
+50,Ethnicity,Black,2012,4 year August,21712,29.3,14916,68.7,
+51,Ethnicity,Hispanic,2012,4 year August,28690,38.7,19312,67.3,
+52,Ethnicity,Multi-Racial,2012,4 year August,763,1,682,89.4,
+53,Ethnicity,Native American,2012,4 year August,489,0.7,284,58.1,
+54,Ethnicity,White,2012,4 year August,10038,13.5,8260,82.3,
+55,Ethnicity,Asian,2013,4 year August,12480,17.1,10926,87.5,
+56,Ethnicity,Black,2013,4 year August,20539,28.1,14375,70,
+57,Ethnicity,Hispanic,2013,4 year August,28729,39.3,19630,68.3,
+58,Ethnicity,Multi-Racial,2013,4 year August,776,1.1,689,88.8,
+59,Ethnicity,Native American,2013,4 year August,574,0.8,335,58.4,
+60,Ethnicity,White,2013,4 year August,10056,13.7,8369,83.2,
+61,Ethnicity,Asian,2014,4 year August,13123,17.5,11567,88.1,
+62,Ethnicity,Black,2014,4 year August,20292,27.1,14627,72.1,
+63,Ethnicity,Hispanic,2014,4 year August,29337,39.1,20532,70,
+64,Ethnicity,Multi-Racial,2014,4 year August,1016,1.4,895,88.1,
+65,Ethnicity,Native American,2014,4 year August,669,0.9,447,66.8,
+66,Ethnicity,White,2014,4 year August,10511,14,8855,84.2,
+67,Ethnicity,Asian,2015,4 year August,12905,17.5,11383,88.2,
+68,Ethnicity,Black,2015,4 year August,19569,26.5,14423,73.7,
+69,Ethnicity,Hispanic,2015,4 year August,29120,39.5,20978,72,
+70,Ethnicity,Multi-Racial,2015,4 year August,945,1.3,795,84.1,
+71,Ethnicity,Native American,2015,4 year August,704,1,502,71.3,
+72,Ethnicity,White,2015,4 year August,10529,14.3,8954,85,
+73,Ethnicity,Asian,2016,4 year August,12922,17.6,11579,89.6,
+74,Ethnicity,Black,2016,4 year August,19149,26,14606,76.3,
+75,Ethnicity,Hispanic,2016,4 year August,29323,39.9,21869,74.6,
+76,Ethnicity,Multi-Racial,2016,4 year August,984,1.3,867,88.1,
+77,Ethnicity,Native American,2016,4 year August,691,0.9,520,75.3,
+78,Ethnicity,White,2016,4 year August,10496,14.3,9263,88.3,
+79,Ethnicity,Asian,2017,4 year August,13000,17.9,11842,91.1,
+80,Ethnicity,Black,2017,4 year August,17832,24.5,14100,79.1,
+81,Ethnicity,Hispanic,2017,4 year August,28889,39.8,22670,78.5,
+82,Ethnicity,Multi-Racial,2017,4 year August,1167,1.6,1066,91.3,
+83,Ethnicity,Native American,2017,4 year August,824,1.1,676,82,
+84,Ethnicity,White,2017,4 year August,10951,15.1,9701,88.6,
+85,Ethnicity,Asian,2018,4 year August,12955,18.3,11950,92.2,
+86,Ethnicity,Black,2018,4 year August,17040,24,13750,80.7,
+87,Ethnicity,Hispanic,2018,4 year August,28518,40.2,22681,79.5,
+88,Ethnicity,Multi-Racial,2018,4 year August,1271,1.8,1136,89.4,
+89,Ethnicity,Native American,2018,4 year August,876,1.2,718,82,
+90,Ethnicity,White,2018,4 year August,10252,14.5,9139,89.1,
+91,Ethnicity,Asian,2019,4 year August,12614,18,11597,91.9,
+92,Ethnicity,Black,2019,4 year August,16564,23.7,13287,80.2,
+93,Ethnicity,Hispanic,2019,4 year August,28980,41.5,23182,80,
+94,Ethnicity,Multi-Racial,2019,4 year August,935,1.3,811,86.7,
+95,Ethnicity,Native American,2019,4 year August,799,1.1,650,81.4,
+96,Ethnicity,White,2019,4 year August,10001,14.3,8976,89.8,
+97,Location,Bronx,2012,4 year August,13838,18.66,8985,64.9,
+98,Location,Brooklyn,2012,4 year August,20823,28.07,15160,72.8,
+99,Location,Manhattan,2012,4 year August,15569,20.99,11637,74.7,
+100,Location,Queens,2012,4 year August,19398,26.15,14766,76.1,
+101,Location,Staten Island,2012,4 year August,4544,6.13,3613,79.5,
+102,Location,Bronx,2013,4 year August,13730,18.77,9102,66.3,
+103,Location,Brooklyn,2013,4 year August,20096,27.47,14954,74.4,
+104,Location,Manhattan,2013,4 year August,15280,20.89,11438,74.9,
+105,Location,Queens,2013,4 year August,19417,26.54,15112,77.8,
+106,Location,Staten Island,2013,4 year August,4631,6.33,3718,80.3,
+107,Location,Bronx,2014,4 year August,13951,18.61,9398,67.4,
+108,Location,Brooklyn,2014,4 year August,20566,27.44,15753,76.6,
+109,Location,Manhattan,2014,4 year August,15521,20.71,11902,76.7,
+110,Location,Queens,2014,4 year August,20245,27.01,16102,79.5,
+111,Location,Staten Island,2014,4 year August,4665,6.22,3768,80.8,
+112,Location,Bronx,2015,4 year August,13891,18.83,9752,70.2,
+113,Location,Brooklyn,2015,4 year August,20385,27.63,15690,77,
+114,Location,Manhattan,2015,4 year August,15274,20.7,11959,78.3,
+115,Location,Queens,2015,4 year August,19788,26.82,15965,80.7,
+116,Location,Staten Island,2015,4 year August,4434,6.01,3669,82.7,
+117,Location,Bronx,2016,4 year August,13421,18.24,9938,74,
+118,Location,Brooklyn,2016,4 year August,20307,27.6,16112,79.3,
+119,Location,Manhattan,2016,4 year August,15593,21.2,12492,80.1,
+120,Location,Queens,2016,4 year August,19550,26.58,16188,82.8,
+121,Location,Staten Island,2016,4 year August,4694,6.38,3974,84.7,
+122,Location,Bronx,2017,4 year August,13152,18.1,10220,77.7,
+123,Location,Brooklyn,2017,4 year August,20136,27.71,16449,81.7,
+124,Location,Manhattan,2017,4 year August,15192,20.91,12639,83.2,
+125,Location,Queens,2017,4 year August,19501,26.84,16714,85.7,
+126,Location,Staten Island,2017,4 year August,4682,6.44,4033,86.1,
+127,Location,Bronx,2018,4 year August,12487,17.61,9921,79.5,
+128,Location,Brooklyn,2018,4 year August,19874,28.03,16524,83.1,
+129,Location,Manhattan,2018,4 year August,14935,21.06,12451,83.4,
+130,Location,Queens,2018,4 year August,19048,26.86,16534,86.8,
+131,Location,Staten Island,2018,4 year August,4568,6.44,3944,86.3,
+132,Location,Bronx,2019,4 year August,12256,17.5,9733,79.4,
+133,Location,Brooklyn,2019,4 year August,19682,28.2,16325,82.9,
+134,Location,Manhattan,2019,4 year August,14660,21,12236,83.5,
+135,Location,Queens,2019,4 year August,18712,26.8,16240,86.8,
+136,Location,Staten Island,2019,4 year August,4583,6.6,3969,86.6,
+137,Poverty,Econ Disadv,2012,4 year August,50518,42,37098,73.4,
+138,Poverty,Not Econ Disadv,2012,4 year August,23654,31.9,17063,72.1,
+139,Poverty,Econ Disadv,2013,4 year August,51027,69.8,38382,75.2,
+140,Poverty,Not Econ Disadv,2013,4 year August,22127,30.2,15942,72,
+141,Poverty,Econ Disadv,2014,4 year August,55392,73.9,41722,75.3,
+142,Poverty,Not Econ Disadv,2014,4 year August,19556,26.1,15201,77.7,
+143,Poverty,Econ Disadv,2015,4 year August,54291,73.6,41432,76.3,
+144,Poverty,Not Econ Disadv,2015,4 year August,19481,26.4,15603,80.1,
+145,Poverty,Econ Disadv,2016,4 year August,54495,74.1,42762,78.5,
+146,Poverty,Not Econ Disadv,2016,4 year August,19070,25.9,15942,83.6,
+147,Poverty,Econ Disadv,2017,4 year August,53123,73.1,43288,81.5,
+148,Poverty,Not Econ Disadv,2017,4 year August,19540,26.9,16767,85.8,
+149,Poverty,Econ Disadv,2018,4 year August,51467,72.6,42690,82.9,
+150,Poverty,Not Econ Disadv,2018,4 year August,19445,27.4,16684,85.8,
+151,Poverty,Econ Disadv,2019,4 year August,51767,74.1,42763,82.6,
+152,Poverty,Not Econ Disadv,2019,4 year August,18126,25.9,15740,86.8,
+153,DropoutBoro,Bronx,2018,,,,,,7.8
+154,DropoutBoro,Brooklyn,2018,,,,,,5.1
+155,DropoutBoro,Manhattan,2018,,,,,,5.9
+156,DropoutBoro,Queens,2018,,,,,,4.1
+157,DropoutBoro,Staten Island,2018,,,,,,4.2
+158,DropoutBoro,Bronx,2019,,,,,,7.8
+159,DropoutBoro,Brooklyn,2019,,,,,,5.1
+160,DropoutBoro,Manhattan,2019,,,,,,6
+161,DropoutBoro,Queens,2019,,,,,,3.8
+162,DropoutBoro,Staten Island,2019,,,,,,4.1
+163,DropoutEth,Asian,2018,,,,,,2.7
+164,DropoutEth,Black,2018,,,,,,5.3
+165,DropoutEth,Hispanic,2018,,,,,,7.9
+166,DropoutEth,Multi-Racial,2018,,,,,,2.3
+167,DropoutEth,Native American,2018,,,,,,5
+168,DropoutEth,White,2018,,,,,,2.5
+169,DropoutEth,Asian,2019,,,,,,2.5
+170,DropoutEth,Black,2019,,,,,,5.4
+171,DropoutEth,Hispanic,2019,,,,,,7.5
+172,DropoutEth,Multi-Racial,2019,,,,,,4
+173,DropoutEth,Native American,2019,,,,,,5.4
+174,DropoutEth,White,2019,,,,,,2.8

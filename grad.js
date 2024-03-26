@@ -18,13 +18,13 @@ d3.csv('./Dataset/All.csv', d3.autoType)
     
 // CHART 1. Vertical Bar Chart: Grad Rates by Borough for Cohort Year 2018
    /* Filter data */
-  const data1 = data.filter(d => d.Category === "Location" && d.Cohort_Year === 2018); 
+  const data1 = data.filter(d => d.Category === "Location" && d.Cohort_Year === 2019); 
   borough = data1.map(d=> d.subCategory);
 
     /* SCALES */
   xScale1 = d3.scaleBand()
           .domain(data1.map(d=> d.subCategory))
-          .range([0, innerWidth/2-margin.right])
+          .range([margin.left, innerWidth/2-margin.right])
           .padding(.15)          
    
   yScale1 = d3.scaleLinear()
@@ -101,7 +101,7 @@ d3.csv('./Dataset/All.csv', d3.autoType)
             .enter()
             .append("line")
               .attr("class", "grid")
-              .attr("x1", margin.left)
+              .attr("x1", margin.left+10)
               .attr("y1", yScale1(83.7))
               .attr("x2", innerWidth/2 - 25)
               .attr("y2", yScale1(83.7))
@@ -178,7 +178,7 @@ d3.csv('./Dataset/GradBoroEth.csv', d3.autoType)
   const selectElement = d3.select("#dropdown")
   console.log(borough)
   selectElement.selectAll("option") // "option" is a HTML element
-                  .data(["Select Borough", ...new Set(state.data.map(d => d.Borough))]) 
+                  .data([...new Set(state.data.map(d => d.Borough))]) 
                   .join("option")
                   .attr("value", d => d) // what's on the data
                   .text(d=> d) // what users can see
@@ -272,7 +272,7 @@ function draw() {
 /********* HEATMAP: GRADUATION BY ETHNICITY FOR ALL SCHOOL DISTRICTS  */
 
   /* LOAD DATA */
-d3.csv('./Dataset/GradDistEth.csv', d3.autoType)
+d3.csv('./Dataset/GradDistict.csv', d3.autoType)
     .then(data => {
 
    /* Filter data */
@@ -283,12 +283,13 @@ d3.csv('./Dataset/GradDistEth.csv', d3.autoType)
   console.log("district",district)
 
   /* APPEND SVG */
-  svg3 = d3.select("#container_right")
-          .append("svg")
-            .attr("width", width/2)
-            .attr("height", height)
-          .append("g")
-            .attr("transform", `translate(${0},${0})`);
+  const container3 = d3.select("#container_right")
+                  
+  svg3 = container3.append("svg")
+                    .attr("width", width/2)
+                    .attr("height", height)
+                   .append("g")
+                    .attr("transform", `translate(${0},${0})`);
 
   /* X AXIS SCALE*/    
   xScale3 = d3.scaleBand()
@@ -317,24 +318,11 @@ d3.csv('./Dataset/GradDistEth.csv', d3.autoType)
       
   /* COLOR SCALE */
   colorScale3 = d3.scaleSequential([40, 100], d3.interpolateGreens);
-  /*
-  colorScale3 = d3.scaleSequential()
-    .interpolator(d3.interpolateInferno)
-    .domain([20,100])
-  */
+  
   /* TOOLTIPS */
-  tooltip = svg3.append("div.tooltip")              
+  tooltip = container3.append("div")              
               .attr("class", "tooltip")
               .style("visibility", "hidden")
-             /*  .attr("x",0)
-              .attr("y",0)
-              .style("top", 0)
-              .style("left", 0)              
-              .style("background-color", "white")
-              .style("border", "solid")
-              .style("border-width", "2px")
-              .style("border-radius", "2px")
-              .style("padding", "0.5px")
   
   tooltip.append("text")
           .attr("fill","black")
@@ -347,25 +335,26 @@ d3.csv('./Dataset/GradDistEth.csv', d3.autoType)
       .style("visibility","visible")
 
     d3.select(this)
-      .style("stroke", "grey")
+      .style("stroke", "orange")
+      .style("stroke-width", 3)
       .style("opacity", 1)
   }
   const mousemove = function(event, d, i) {
     const [mx, my] = d3.pointer(event);
     tooltip
-      .html(`"Grad Rate: " ${d.Percent_Grads}`)
+      .html(`Grad Rate: ${d.Percent_Grads}%`)
       .style("visibility","visible")
       .style("left", `${mx}px`)
-      .style("top", `${my}px`)
+      .style("top", `${my+10}px`)
   }
-  const mouseleave = function(event,d) {
+  const mouseout = function(event,d) {
     tooltip
       .style("opacity", 0)
 
     d3.select(this)
       .style("stroke", "none")
-      .style("opacity", 0.8)
-  }*/
+      .style("opacity", 1)
+  }
               
   /* SELECT - JOIN - DATA FOR THE SQUARES */
   svg3.selectAll("rect")
@@ -375,31 +364,16 @@ d3.csv('./Dataset/GradDistEth.csv', d3.autoType)
       .append("rect")
         .attr("x", d => xScale3(d.subCategory))
         .attr("y", d => yScale3(d.District)+margin.top*2)
-        .attr("rx", 2)
-        .attr("ry", 2)
-        .attr("width", xScale3.bandwidth())
+        .attr("rx", 3)
+        .attr("ry", 3)
+        .attr("width", xScale3.bandwidth()-2)
         .attr("height", yScale3.bandwidth())
         .style("fill", d => colorScale3(d.Percent_Grads))
-       // .style("stroke-width", 4)
-       // .style("stroke", "none")
-        .style("opacity", 1)
-          .on("mouseover", function(event,d){
-            tooltip
-              .html(`<div>${d.Percent_Grads}+"%"</div>`)
-              .style("visibility", "visible")
-          }) 
-          .on("mousemove", function(event){
-            tooltip
-              .style("top", (event.pageX - 350 + "px"))
-              .style("left", (event.pageY + 100 + "px"))
-          })         
-          .on("mouseout", function(event,d){
-            tooltip
-            .html(``)
-            .style("visibility", "hidden");
-          }) 
-    )
-      
+        .on("mouseover", mouseover)
+        .on("mousemove", mousemove)
+        .on("mouseout", mouseout)
+      )
+    
   /* HEATMAP TITLE */
   svg3.append("text")
         .attr("x", innerWidth/4 +10)

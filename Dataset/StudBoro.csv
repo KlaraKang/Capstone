@@ -1,41 +1,41 @@
-id,Category,Borough,Percent_Stud
-1,Dropout,Bronx,7.8
-2,Dropout,Brooklyn,5.1
-3,Dropout,Manhattan,5.9
-4,Dropout,Queens,4.1
-5,Dropout,Staten Island,4.2
-6,Current_ELL,Bronx,19.8
-7,Current_ELL,Brooklyn,13.2
-8,Current_ELL,Manhattan,12.5
-9,Current_ELL,Queens,13.1
-10,Current_ELL,Staten Island,6.5
-11,Economic Disadv,Bronx,81.2
-12,Economic Disadv,Brooklyn,75.2
-13,Economic Disadv,Manhattan,66.9
-14,Economic Disadv,Queens,72
-15,Economic Disadv,Staten Island,58.5
-16,SWD,Bronx,24.6
-17,SWD,Brooklyn,19.1
-18,SWD,Manhattan,18.3
-19,SWD,Queens,17.3
-20,SWD,Staten Island,23.3
-21,Asian,Bronx,7.5
-22,Asian,Brooklyn,19.2
-23,Asian,Manhattan,14.6
-24,Asian,Queens,28.3
-25,Asian,Staten Island,13.6
-26,Black,Bronx,26.1
-27,Black,Brooklyn,33.5
-28,Black,Manhattan,19.7
-29,Black,Queens,18.6
-30,Black,Staten Island,14.1
-31,Hispanic,Bronx,59.3
-32,Hispanic,Brooklyn,28.6
-33,Hispanic,Manhattan,46.7
-34,Hispanic,Queens,38.0
-35,Hispanic,Staten Island,26.4
-36,White,Bronx,5.0
-37,White,Brooklyn,16.3
-38,White,Manhattan,15.0
-39,White,Queens,11.3
-40,White,Staten Island,43.9
+id,Category,Borough,Percent_Stud,Cohort_Year,subCategory
+1,Dropout,Bronx,7.8,2019,
+2,Dropout,Brooklyn,5.1,2019,
+3,Dropout,Manhattan,6,2019,
+4,Dropout,Queens,3.8,2019,
+5,Dropout,Staten Island,4.1,2019,
+6,Current_ELL,Bronx,15.8,2019,
+7,Current_ELL,Brooklyn,10.4,2019,
+8,Current_ELL,Manhattan,10.2,2019,
+9,Current_ELL,Queens,11.9,2019,
+10,Current_ELL,Staten Island,5.7,2019,
+11,Economic Disadv,Bronx,82.5,2019,
+12,Economic Disadv,Brooklyn,76.6,2019,
+13,Economic Disadv,Manhattan,67.9,2019,
+14,Economic Disadv,Queens,73.7,2019,
+15,Economic Disadv,Staten Island,61.6,2019,
+16,SWD,Bronx,24.8,2019,
+17,SWD,Brooklyn,19.4,2019,
+18,SWD,Manhattan,19.2,2019,
+19,SWD,Queens,16.9,2019,
+20,SWD,Staten Island,24.2,2019,
+21,Asian,Bronx,7.4,2019,Ethnicity
+22,Black,Bronx,25.7,2019,Ethnicity
+23,Hispanic,Bronx,60.1,2019,Ethnicity
+24,White,Bronx,5.0,2019,Ethnicity
+25,Asian,Brooklyn,19.2,2019,Ethnicity
+26,Black,Brooklyn,33.4,2019,Ethnicity
+27,Hispanic,Brooklyn,29.4,2019,Ethnicity
+28,White,Brooklyn,16.0,2019,Ethnicity
+29,Asian,Manhattan,15.2,2019,Ethnicity
+30,Black,Manhattan,20.3,2019,Ethnicity
+31,Hispanic,Manhattan,46.3,2019,Ethnicity
+32,White,Manhattan,15.4,2019,Ethnicity
+33,Asian,Queens,27.2,2019,Ethnicity
+34,Black,Queens,17.5,2019,Ethnicity
+35,Hispanic,Queens,41.0,2019,Ethnicity
+36,White,Queens,11.0,2019,Ethnicity
+37,Asian,Staten Island,13.2,2019,Ethnicity
+38,Black,Staten Island,12.9,2019,Ethnicity
+39,Hispanic,Staten Island,29.8,2019,Ethnicity
+40,White,Staten Island,42.1,2019,Ethnicity

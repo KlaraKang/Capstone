@@ -1,37 +1,37 @@
 id,Borough,subCategory,Cohort_Year,Cohort,Total_Cohort,Percent_Cohort,Number_Grads,Percent_Grads
-1,All,Asian,2018,4 year August,12955,18.3,11950,92.2
-2,All,Black,2018,4 year August,17040,24,13750,80.7
-3,All,Hispanic,2018,4 year August,28518,40.2,22681,79.5
-4,All,Multi-Racial,2018,4 year August,1271,1.8,1136,89.4
-5,All,Native American,2018,4 year August,876,1.2,718,82
-6,All,White,2018,4 year August,10252,14.5,9139,89.1
-7,Bronx,Asian,2018,4 year August,932,7.5,879,94.3
-8,Bronx,Black,2018,4 year August,3263,26.1,2528,77.5
-9,Bronx,Hispanic,2018,4 year August,7409,59.3,5767,77.8
-10,Bronx,Multi-Racial,2018,4 year August,98,0.8,77,78.6
-11,Bronx,Native American,2018,4 year August,163,1.3,125,76.7
-12,Bronx,White,2018,4 year August,622,5,545,87.6
-13,Brooklyn,Asian,2018,4 year August,3823,19.2,3494,91.4
-14,Brooklyn,Black,2018,4 year August,6655,33.5,5428,81.6
-15,Brooklyn,Hispanic,2018,4 year August,5680,28.6,4394,77.4
-16,Brooklyn,Multi-Racial,2018,4 year August,329,1.7,279,84.8
-17,Brooklyn,Native American,2018,4 year August,157,0.8,125,79.6
-18,Brooklyn,White,2018,4 year August,3230,16.3,2804,86.8
-19,Manhattan,Asian,2018,4 year August,2181,14.6,2043,93.7
-20,Manhattan,Black,2018,4 year August,2940,19.7,2300,78.2
-21,Manhattan,Hispanic,2018,4 year August,6981,46.7,5544,79.4
-22,Manhattan,Multi-Racial,2018,4 year August,441,3,409,92.7
-23,Manhattan,Native American,2018,4 year August,151,1,113,74.8
-24,Manhattan,White,2018,4 year August,2241,15,2042,91.1
-25,Queens,Asian,2018,4 year August,5398,28.3,4946,91.6
-26,Queens,Black,2018,4 year August,3539,18.6,3015,85.2
-27,Queens,Hispanic,2018,4 year August,7243,38,6034,83.3
-28,Queens,Multi-Racial,2018,4 year August,335,1.8,311,92.8
-29,Queens,Native American,2018,4 year August,379,2,333,87.9
-30,Queens,White,2018,4 year August,2154,11.3,1895,88
-31,Staten Island,Asian,2018,4 year August,621,13.6,588,94.7
-32,Staten Island,Black,2018,4 year August,643,14.1,479,74.5
-33,Staten Island,Hispanic,2018,4 year August,1205,26.4,942,78.2
-34,Staten Island,Multi-Racial,2018,4 year August,68,1.5,60,88.2
-35,Staten Island,Native American,2018,4 year August,26,0.6,22,84.6
-36,Staten Island,White,2018,4 year August,2005,43.9,1853,92.4
+1,All,Asian,2019,4 year August,12614,18,11597,91.9
+2,All,Black,2019,4 year August,16564,23.7,13287,80.2
+3,All,Hispanic,2019,4 year August,28980,41.5,23182,80
+4,All,Multi-Racial,2019,4 year August,935,1.3,811,86.7
+5,All,Native American,2019,4 year August,799,1.1,650,81.4
+6,All,White,2019,4 year August,10001,14.3,8976,89.8
+7,Bronx,Asian,2019,4 year August,903,7.4,859,95.1
+8,Bronx,Black,2019,4 year August,3151,25.7,2391,75.9
+9,Bronx,Hispanic,2019,4 year August,7369,60.1,5806,78.8
+10,Bronx,Multi-Racial,2019,4 year August,79,0.6,60,75.9
+11,Bronx,Native American,2019,4 year August,140,1.1,107,76.4
+12,Bronx,White,2019,4 year August,614,5.0,510,83.1
+13,Brooklyn,Asian,2019,4 year August,3780,19.2,3403,90.0
+14,Brooklyn,Black,2019,4 year August,6579,33.4,5336,81.1
+15,Brooklyn,Hispanic,2019,4 year August,5786,29.4,4521,78.1
+16,Brooklyn,Multi-Racial,2019,4 year August,213,1.1,175,82.2
+17,Brooklyn,Native American,2019,4 year August,175,0.9,135,77.1
+18,Brooklyn,White,2019,4 year August,3149,16.0,2755,87.5
+19,Manhattan,Asian,2019,4 year August,2232,15.2,2079,93.1
+20,Manhattan,Black,2019,4 year August,2970,20.3,2317,78.0
+21,Manhattan,Hispanic,2019,4 year August,6781,46.3,5359,79.0
+22,Manhattan,Multi-Racial,2019,4 year August,298,2.0,271,90.9
+23,Manhattan,Native American,2019,4 year August,124,0.8,102,82.3
+24,Manhattan,White,2019,4 year August,2255,15.4,2108,93.5
+25,Queens,Asian,2019,4 year August,5094,27.2,4688,92.0
+26,Queens,Black,2019,4 year August,3273,17.5,2787,85.2
+27,Queens,Hispanic,2019,4 year August,7680,41.0,6419,83.6
+28,Queens,Multi-Racial,2019,4 year August,274,1.5,243,88.7
+29,Queens,Native American,2019,4 year August,337,1.8,288,85.5
+30,Queens,White,2019,4 year August,2054,11.0,1815,88.4
+31,Staten Island,Asian,2019,4 year August,605,13.2,568,93.9
+32,Staten Island,Black,2019,4 year August,591,12.9,456,77.2
+33,Staten Island,Hispanic,2019,4 year August,1364,29.8,1077,79.0
+34,Staten Island,Multi-Racial,2019,4 year August,71,1.5,62,87.3
+35,Staten Island,Native American,2019,4 year August,23,0.5,18,78.3
+36,Staten Island,White,2019,4 year August,1929,42.1,1788,92.7

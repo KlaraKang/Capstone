@@ -9,26 +9,33 @@
 <body>
   <main>
     <section> 
-      <h4>4-Year Graduation Rates for Cohort Year 2018 (Class of 2022)</h4>
+      <h4>4-Year Graduation Rates for Cohort Year 2019 (Class of 2023)</h4>
       <h3>Percent students who entered NYC public high schools in 
-        2018 and graduated in August 2022 by borough, district, and student ethnicity</h3>   
+        2019 and graduated in August 2023 by borough, district, and student ethnicity</h3>   
       
       <div id="container_top" class="left"></div> 
-      <div id="container_right" class="right tooltip"></div>  
-      <div class="leftbottom">
-        <br><br><br>
-        <select id="dropdown" name="dropdown"></select>
+      <div id="container_right" class="right"></div>  
+      
+        <p>Select Borough &nbsp;
+          <select id="dropdown" name="dropdown"> </select>
+        </p>
         <div id="container_bottom"></div>        
       </div>
       
       <script src="grad.js"></script>
       </div>
     </section>
-  </main>    
-  
+  </main> 
+  <br><br>   
+  <div id="footer"> Data Source: NYC Schools InfoHub - Graduation Results for Chohort 2019 (Class of 2023) 
+    <a href="https://infohub.nyced.org/reports/academics/graduation-results" target="_blank" rel="noopener noreferrer">
+      ("https://infohub.nyced.org/reports/academics/graduation-results")
+    </a>
+  </div>
+  <br><br>
   <div >  
     <button class="prev" onclick="transitionToPage('./gradAll.html')">  </button>
-    <button class="next" onclick="transitionToPage('./grad2.html')">  </button>
+    <button class="next" onclick="transitionToPage('./ethn.html')">  </button>
   </div>
 
   <script>

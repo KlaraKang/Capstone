@@ -5,13 +5,12 @@ body {
     margin-left: 0%;
     margin-right: 0%;
     background-color: #E2E3E4;
-    /*opacity: 1;*/
     transition: .5s;
     transition-delay: 100;
     transition-duration: 1000;
     background-repeat: no-repeat;
     background-size: cover;
-    opacity: 0.8;
+    opacity: 1;
 }
 h1 {
   font-size:2em;
@@ -80,20 +79,21 @@ td {
 
 a{
   color: rgb(252, 125, 40);
-  font-size: 1em;
+  font-size: 11px;
 }
 a:link{
-  color: rgb(231, 179, 249);  
+  color: rgb(52, 106, 187);  
 }
 a:visited{
-  color: rgb(211, 153, 96);
+  color: rgb(105, 25, 180);
 }
 a:hover{
-  color: rgb(217, 174, 238);
+  color: rgb(221, 163, 37);
 }
-footer{
-  font-size: 0.8em;
-  color:rgb(19, 50, 38);
+#footer{
+  padding:50px 0px 50px 50px;
+  font-size: 11px;
+  color:rgb(32, 64, 133);
 }
 
 button {
@@ -257,12 +257,19 @@ div.right {
   left: 50%;
   width: 50%;
 }
+div.bottomright {
+  position: absolute;
+  top: 70%;
+  bottom:0;
+  left: 50%;
+  width: 50%;
+}
 div.right_s {
   position: absolute;
   top: 20%;
   bottom:0;
   left: 40%;
-  width: 70%;
+  width: 60%;
 }
 /*
 .fade-in-text p{
@@ -362,7 +369,8 @@ span{
 /*double donut charts styles*/ 
 .dropdowns {
   display: inline-block;
-  width: 100%;
+  width: 50%;
+  left: auto;
 }
 .two_dropdowns li {
   background-size:90%;
@@ -462,11 +470,13 @@ iframe {
   }
   
   .tooltip{
+    background-color: antiquewhite;
+    color:rgb(36, 32, 32);
     padding: 5px;
-    opacity: 0.8;
+    opacity: 1;
     font-size: 10px;
-    position: relative;   
-    z-index: 1;
+    position: absolute;   
+    z-index: 100;
   }
   
   nav ul {

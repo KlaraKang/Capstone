@@ -8,13 +8,6 @@ let legendRectSize = 10,
 
 /*********** FIRST STACKED BAR CHART ***********/
 
-const svg1 = d3.select("#container")
-  .append("svg")
-    .attr("width", width/2)// + margin.left + margin.right)
-    .attr("height", height/2 + margin.top + margin.bottom)
-  .append("g")
-    .attr("transform", `translate(${margin.left},${margin.top})`);
-
 d3.csv('./Dataset/ProfileEthnicity.csv')
   .then((data) =>{
 
@@ -24,22 +17,31 @@ d3.csv('./Dataset/ProfileEthnicity.csv')
    
   year = data.map(d => d.Cohort_Year)
 
-    /* Y AXIS */
+  /* Y AXIS */
   const yAxis = d3.scaleBand()
       .domain(year)
       .range([0, height/2 - margin.top - margin.bottom])
       .padding(0.3)
 
+  /* SVG */
+  const container1 = d3.select("#container");
+
+  let svg1 = container1.append("svg")
+        .attr("width", width/2)
+        .attr("height", height/2 + margin.top + margin.bottom)
+      .append("g")
+        .attr("transform", `translate(${margin.left},${margin.top})`);
+    
   svg1.append("g")
       .attr("transform", `translate(${0}, ${0})`)
       .call(d3.axisLeft(yAxis).tickSizeOuter(0))
       .append("text")
-        .attr("x", width/5)
+        .attr("x", width/8)
         .attr("y", height/2)
         .attr("fill","black")
-        .attr("text-anchor","end")
+        .attr("text-anchor","middle")
         .attr("font-size","14px")
-        .text("Percent Students by Ethnicity")
+        .text("Chart 1. Percent Students by Ethnicity")
         .style("font-weight", "bold");
 
     /* X AXIS */
@@ -50,7 +52,44 @@ d3.csv('./Dataset/ProfileEthnicity.csv')
   const color = d3.scaleOrdinal()
     .domain(ethnicities) 
     .range(["#358d8f","#8ac082","#2471A3","#f16b69","#32c1d7","#eea057","#2471A3"])
-    
+  
+  /* TOOLTIPS */
+  let tooltip1 = container1.append("div")              
+              .attr("class", "tooltip")
+              .style("visibility", "hidden")
+  
+  tooltip1.append("text")
+          .attr("fill","black")
+          .style("pointer-events","none");
+
+  // TOOLTIP FUNCTIONS 
+  const mouseover1 = function(event, d) {
+    tooltip1
+      .style("opacity", 1)
+      .style("visibility","visible")
+
+    d3.select(this)
+      .style("stroke", "orange")
+      .style("stroke-width", 3)
+      .style("opacity", 1)
+  }
+  const mousemove1 = function(event, d, i) {
+    const [mx, my] = d3.pointer(event);
+    tooltip1
+      .html(`${(d[1]-d[0]).toFixed(1)}%`)
+      .style("visibility","visible")
+      .style("left", `${mx+170}px`)
+      .style("top", `${my+200}px`)
+  }
+  const mouseout1 = function(event,d) {
+    tooltip1
+      .style("opacity", 0)
+
+    d3.select(this)
+      .style("stroke", "none")
+      .style("opacity", 1)
+  }
+
     /* STACK THE DATA */
   const stackedData = d3.stack()
     .keys(ethnicities)(data)
@@ -63,14 +102,18 @@ d3.csv('./Dataset/ProfileEthnicity.csv')
     .join("g")
       .attr("fill", d => color(d.key))
   
-  let bars = groups.selectAll("g")
+  groups.selectAll("g")
       .data(d => d)
-      .join("g")
-      .append("rect")
-        .attr("y", d => yAxis(d.data.Cohort_Year))
-        .attr("x", d => xAxis(d[1]))
-        .attr("width", d => xAxis(d[0]) - xAxis(d[1]))
-        .attr("height", yAxis.bandwidth())
+      .enter()
+        .append("rect")
+          .attr("y", d => yAxis(d.data.Cohort_Year))
+          .attr("x", d => xAxis(d[1]))
+          .attr("width", d => xAxis(d[0]) - xAxis(d[1]))
+          .attr("height", yAxis.bandwidth())
+          .on("mouseover", mouseover1)
+          .on("mousemove", mousemove1)
+          .on("mouseout", mouseout1)
+    
 /*
   bars.append("text")
         .attr("y", d => yAxis(d.data.Cohort_Year)+yAxis.bandwidth()/2)
@@ -113,16 +156,8 @@ d3.csv('./Dataset/ProfileEthnicity.csv')
 
 /*********** SECOND STACKED BAR CHART ***********/
 
-const svg2 = d3.select("#container")
-  .append("svg")
-    .attr("width", width/2)
-    .attr("height", height/2 + margin.top + margin.bottom)
-  .append("g")
-    .attr("transform", `translate(${margin.left},${margin.top})`);
-
 d3.csv('./Dataset/ProfileLocation.csv')
   .then((data2) =>{
-
   
   let boroughs = data2.columns.slice(1)
   boroughs = d3.reverse(boroughs)
@@ -136,16 +171,24 @@ d3.csv('./Dataset/ProfileLocation.csv')
       .range([0, height/2 - margin.top - margin.bottom])
       .padding(0.3)
 
+  const container2 = d3.select("#container");
+
+  let svg2 = container2.append("svg")
+              .attr("width", width/2)
+              .attr("height", height/2 + margin.top + margin.bottom)
+            .append("g")
+              .attr("transform", `translate(${margin.left},${margin.top})`);
+
   svg2.append("g")
       .attr("transform", `translate(${0}, ${0})`)
       .call(d3.axisLeft(yAxis).tickSizeOuter(0))
       .append("text")
-        .attr("x", width/4)
+        .attr("x", width/8)
         .attr("y", height/2)
         .attr("fill","black")
-        .attr("text-anchor","end")
+        .attr("text-anchor","middle")
         .attr("font-size","14px")
-        .text("Percent Students by Borough")
+        .text("Chart 2. Percent Students by Borough")
         .style("font-weight", "bold");
 
     /* X AXIS */
@@ -156,6 +199,43 @@ d3.csv('./Dataset/ProfileLocation.csv')
   const color = d3.scaleOrdinal()
     .domain(boroughs) 
     .range(["#8dd3c7","#878f99","#fb8072","#5499C7","#4daf4a"])
+
+  /* TOOLTIPS */
+  let tooltip = container2.append("div")              
+              .attr("class", "tooltip")
+              .style("visibility", "hidden")
+  
+  tooltip.append("text")
+          .attr("fill","black")
+          .style("pointer-events","none");
+
+  // TOOLTIP FUNCTIONS 
+  const mouseover = function(event, d) {
+    tooltip
+      .style("opacity", 1)
+      .style("visibility","visible")
+
+    d3.select(this)
+      .style("stroke", "orange")
+      .style("stroke-width", 3)
+      .style("opacity", 1)
+  }
+  const mousemove = function(event, d, i) {
+    const [mx, my] = d3.pointer(event);
+    tooltip
+      .html(`${(d[1]-d[0]).toFixed(1)}%`)
+      .style("visibility","visible")
+      .style("left", `${mx+width/2+margin.right}px`)
+      .style("top", `${my+200}px`)
+  }
+  const mouseout = function(event,d) {
+    tooltip
+      .style("opacity", 0)
+
+    d3.select(this)
+      .style("stroke", "none")
+      .style("opacity", 1)
+  }
 
     /*STACK THE DATA */
   const stackedData = d3.stack()
@@ -168,14 +248,18 @@ d3.csv('./Dataset/ProfileLocation.csv')
     .join("g")
       .attr("fill", d => color(d.key))
   
-  let bars = groups.selectAll("g")
+  groups.selectAll("g")
       .data(d => d)
-      .join("g")
+      .enter()
       .append("rect")
         .attr("y", d => yAxis(d.data.Cohort_Year))
         .attr("x", d => xAxis(d[1]))
         .attr("width", d => xAxis(d[0]) - xAxis(d[1]))
         .attr("height", yAxis.bandwidth())
+          .on("mouseover", mouseover)
+          .on("mousemove", mousemove)
+          .on("mouseout", mouseout)
+    
 /*
   bars.append("text")
         .attr("y", d => yAxis(d.data.Cohort_Year)+yAxis.bandwidth()/2)
@@ -262,12 +346,13 @@ function init(){
            .attr("transform",`translate(${width/6+10},${height/4+margin.top})`)
   
   svg3.append("text")
-            .attr("x",-margin.left/2)
+            .attr("x",width/8-margin.left)
             .attr("y",margin.top-margin.bottom-height/4)
             .attr("fill","black")
+            .attr("text-anchor","middle")
             .attr("font-weight","bold")
             .attr("font-size","14px")
-            .text("Students by Economic Needs")
+            .text("Chart 3. Students by Economic Needs")
 
   svg4 = d3.select("#chart")
            .append("svg")
@@ -277,12 +362,13 @@ function init(){
             .attr("transform",`translate(${width/6+10},${height/4+margin.top})`);
   
   svg4.append("text")
-            .attr("x",-margin.left/2)
+            .attr("x",width/8-margin.left)
             .attr("y",margin.top-margin.bottom-height/4)
             .attr("fill","black")
+            .attr("text-anchor","middle")
             .attr("font-weight","bold")
             .attr("font-size","14px")
-            .text("Students by English Learning")
+            .text("Chart 4. Students by English Learning")
 
   svg5 = d3.select("#chart")
             .append("svg")
@@ -292,12 +378,13 @@ function init(){
              .attr("transform",`translate(${width/6+10},${height/4+margin.top})`);
 
   svg5.append("text")
-             .attr("x",-margin.left/2)
+             .attr("x",width/8-margin.left)
              .attr("y",margin.top-margin.bottom-height/4)
              .attr("fill","black")
+             .attr("text-anchor","middle")
              .attr("font-weight","bold")
              .attr("font-size","14px")
-             .text("Needs of Special Education")  
+             .text("Chart 5. Needs of Special Education")  
 
   // manual drop-down menu for year selection
   const selectElement = d3.select("#dropdown")      

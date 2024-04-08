@@ -9,12 +9,14 @@
 <body>
   <main>
     <section> 
-      <h4>Cohort Year 2019 (Class of 2023)</h4>
-      <h5 style="text-align: center;">Gaps Between the Ethnicities</h5>   
+      <h4>Graduation Rates of Cohort 2019 by Ethnicity and Borough</h4>
+      <h2 style="text-align: center;">Black and Hispanic students show lower graduation rates than the average of 83.7% in each and all five boroughs.  </h2>   
+      <p>Select Borough &nbsp;
+        <select id="dropdown" name="dropdown"> </select>
+      </p> 
+      <div id="container_top"></div>
       
-      <div id="container_top"></div> 
-      <div id="container_middle"></div> 
-      <div id="container_bottom"></div>        
+      <div id="container_middle"></div>       
       
       <script src="ethn.js"></script>
       </div>
@@ -28,8 +30,8 @@
   </div>
     
   <div >  
-    <button class="prev" onclick="transitionToPage('./grad.html')">  </button>
-    <button class="next" onclick="transitionToPage('./boro.html')">  </button>
+    <button class="prev" onclick="transitionToPage('./boro.html')">  </button>
+    <button class="next" onclick="transitionToPage('./grad2.html')">  </button>
   </div>
 
   <script>

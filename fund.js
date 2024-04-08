@@ -1,4 +1,4 @@
-const margin = {top: 100, right: 100, bottom: 50, left: 70},
+const margin = {top: 50, right: 100, bottom: 70, left: 70},
       width = window.innerWidth * .9,
       height = window.innerHeight * .8,
       innerWidth = width - margin.left - margin.right;
@@ -121,7 +121,7 @@ d3.csv('./Dataset/FundingPerSchool.csv', (d, i, columns) => {
           .ticks(20).tickSizeOuter(0))
           .append("text")
             .attr("x", 5)
-            .attr("y", margin.top/3)            
+            .attr("y", margin.top)            
             .attr("text-anchor", "end")
             .attr("stroke","black")
             .style("font-size", "12px")
@@ -179,7 +179,7 @@ d3.csv('./Dataset/FundingPerSchool.csv', (d, i, columns) => {
           .attr("text-anchor", "middle")
           .style("font-size", "14px")
           .style("font-weight", "bold")
-          .text("Average School Funding for 'Total School Funding per Pupil'")
+          .text("Chart 29. Average School Funding for 'Total School Funding per Pupil'")
 
 /* DRAW CHART 2. SCHOOL FUNDING FOR INSTRUCTIONAL MEDIA */        
 
@@ -211,7 +211,7 @@ d3.csv('./Dataset/FundingPerSchool.csv', (d, i, columns) => {
           .ticks(20).tickSizeOuter(0))
           .append("text")
             .attr("x", 5)
-            .attr("y", margin.top/3)            
+            .attr("y", margin.top)            
             .attr("text-anchor", "end")
             .attr("stroke","black")
             .style("font-size", "12px")
@@ -270,7 +270,7 @@ d3.csv('./Dataset/FundingPerSchool.csv', (d, i, columns) => {
           .attr("text-anchor", "middle")
           .style("font-size", "14px")
           .style("font-weight", "bold")
-          .text("Average School Funding per Student for 'Instructional Media'")
+          .text("Chart 30. Average School Funding per Student for 'Instructional Media'")
 
 
 /* DRAW CHART 3. SCHOOL FUNDING FOR PUPIL SUPPORT SERVICES */        
@@ -306,7 +306,7 @@ d3.csv('./Dataset/FundingPerSchool.csv', (d, i, columns) => {
           .ticks(20).tickSizeOuter(0))
           .append("text")
             .attr("x", 5)
-            .attr("y", margin.top/3)            
+            .attr("y", margin.top)            
             .attr("text-anchor", "end")
             .attr("stroke","black")
             .style("font-size", "12px")
@@ -364,7 +364,7 @@ d3.csv('./Dataset/FundingPerSchool.csv', (d, i, columns) => {
           .attr("text-anchor", "middle")
           .style("font-size", "14px")
           .style("font-weight", "bold")
-          .text("Average School Funding per Student for 'Student Support Services'");  
+          .text("Chart 31. Average School Funding per Student for 'Student Support Services'");  
 
 
 /* DRAW CHART 4. AVERAGE NUMBER OS STUDENTS PER SCHOOL       

@@ -9,33 +9,54 @@
 <body>
   <main>
     <section> 
-      <h4>4-Year Graduation Rates for Cohort Year 2019 (Class of 2023)</h4>
-      <h3>Percent students who entered NYC public high schools in 
-        2019 and graduated in August 2023 by borough, district, and student ethnicity</h3>   
-      
-      <div id="container_top" class="left"></div> 
-      <div id="container_right" class="right"></div>  
-      
-        <p>Select Borough &nbsp;
-          <select id="dropdown" name="dropdown"> </select>
-        </p>
-        <div id="container_bottom"></div>        
+      <h4>District-level Demographics and Graduation Rates of Cohort 2019</h4>
+        
+      <div id="container_map">
+      <ul class="two_dropdowns">
+        <li style="margin-left:50px; width: 400px; height: 300px; font-size: 12px;">
+          <p><br><br>Manhattan: Districts 1, 2, 3, 4, 5, and 6 <br><br>
+             The Bronx: Districts 7, 8, 9, 10, 11, and 12 <br><br>
+             Brooklyn: Districts 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, and 32 <br><br>
+             Queens: Districts 24, 25, 26, 27, 28, 29, and 30<br><br>
+             Staten Island: District 31<br>
+          </p>
+        </li>
+        <li style="margin-left: 250px">
+          <a href="https://teachnyc.zendesk.com/hc/en-us/articles/360043956952-How-is-NYC-divided-into-school-districts" target="_blank" rel="noopener noreferrer">
+          <img src="./Dataset/school_dist.gif" style="width: 300px; height: 300px;">
+          </a>
+          <p style="font-size: 12px;">Fig. 1. NYC School District Map (source: Teach NYC, NYC DOE)</p>          
+        </li>
+      </ul> 
       </div>
-      
+      <div id="container_top">
+        <h2 style="text-align: center; font-size: 14px;">
+          The cohort has very low race/ethnic diversities between districts, and 
+          the graduation gaps between districts are greater in Brooklyn than those in other boroughs.
+        </h2>
+      </div> 
+      <br><br><br>       
+      <div id="container_bottom">
+        <h2 style="text-align: center; font-size: 14px;">
+          Many districts have over 80% of students whose families are economically disadvantaged.<br>
+          Districts 1, 2, 5, 20, and 23 have ELL graduation rates below 50% and need more support for English learners. <br><br> 
+        </h2> 
+      </div>        
+        
       <script src="grad.js"></script>
-      </div>
+      
     </section>
   </main> 
-  <br><br>   
+  
   <div id="footer"> Data Source: NYC Schools InfoHub - Graduation Results for Chohort 2019 (Class of 2023) 
     <a href="https://infohub.nyced.org/reports/academics/graduation-results" target="_blank" rel="noopener noreferrer">
       ("https://infohub.nyced.org/reports/academics/graduation-results")
     </a>
   </div>
-  <br><br>
-  <div >  
-    <button class="prev" onclick="transitionToPage('./gradAll.html')">  </button>
-    <button class="next" onclick="transitionToPage('./ethn.html')">  </button>
+  <br>
+  <div>
+    <button class="prev" onclick="transitionToPage('./grad2.html')">  </button>
+    <button class="next" onclick="transitionToPage('./schools.html')">  </button>
   </div>
 
   <script>

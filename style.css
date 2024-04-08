@@ -232,8 +232,9 @@ iframe{
   transition: all 1s;
 }
 div.left {
-  position: relative;
+  position: absolute;
   left: 0;
+  top:20%;
   width: 50%;
 }
 div.left_s {
@@ -255,6 +256,13 @@ div.right {
   top: 20%;
   bottom:0;
   left: 50%;
+  width: 50%;
+}
+div.bottomleft {
+  position: absolute;
+  top: 70%;
+  bottom:0;
+  left: 0;
   width: 50%;
 }
 div.bottomright {

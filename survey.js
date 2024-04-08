@@ -1,7 +1,7 @@
   /* CONSTANTS AND GLOBALS */
 const width = window.innerWidth*.45,
       height = window.innerHeight*.8,
-      margin = {top:50, bottom:50, left:150, right:10},
+      margin = {top:50, bottom:50, left:160, right:10},
       innerWidth = width - margin.right - margin.left, 
       innerHeight = height - margin.top - margin.bottom;
 
@@ -12,7 +12,7 @@ d3.csv('./Dataset/SurveyBoro.csv', d3.autotype)
    /* FILTER DATA */
   const data = rawdata.filter(d=> d.id < 31)
   const category = [... new Set(data.map(d=>d.Category))];
-  const boro = [... new Set(data.map(d=>d.Borough))]; 
+  const boro = [... new Set(data.map(d=>d.Borough).sort())]; 
 
   console.log("boro",boro)
 
@@ -34,7 +34,7 @@ d3.csv('./Dataset/SurveyBoro.csv', d3.autotype)
   svg.append("g")
        .attr("transform", `translate(${0},${innerHeight*2/3})`)
        .call(d3.axisBottom(xScale).tickSize(0))
-       .style("font-size", "10px")
+       .style("font-size", "12px")
        .select(".domain").remove()
  
    /* Y AXIS SCALE */
@@ -44,8 +44,8 @@ d3.csv('./Dataset/SurveyBoro.csv', d3.autotype)
          .padding(0.1);
  
   svg.append("g")
-       .style("font-size", "10px")
-       .attr("transform", `translate(${margin.left},${0})`)
+       .style("font-size", "12px")
+       .attr("transform", `translate(${margin.left+5},${0})`)
        .call(d3.axisLeft(yScale).tickSize(0))      
        .select(".domain").remove()
      
@@ -110,11 +110,11 @@ d3.csv('./Dataset/SurveyBoro.csv', d3.autotype)
     /* HEATMAP TITLE */
   svg.append("text")
        .attr("x", innerWidth/2 + margin.left)
-       .attr("y", margin.top-10)
+       .attr("y", innerHeight*2/3+margin.top)
        .attr("text-anchor", "middle")
        .style("font-size", "14px")
        .style("font-weight", "bold")
-       .text("Percent Positive for Each Framework");  
+       .text("Chart 32. Percent Positive for Each Framework Element");  
     
 /******** SURVEY RESPONSE RATES ********/ 
 
@@ -148,12 +148,12 @@ d3.csv('./Dataset/SurveyBoro.csv', d3.autotype)
               .attr("transform", `translate(${0},${innerHeight/2})`)            
             .append("text")
               .attr("x",width/2)
-              .attr("y", margin.bottom)
+              .attr("y", margin.bottom-5)
               .attr("fill","black")
               .attr("text-anchor","middle")
               .attr("font-size","14px")
               .style("font-weight", "bold")
-              .text("Parent Response Rate")
+              .text("Chart 33. Parent Response Rates")
 
   /* For the first chart: SELECT - DATA JOIN - DRAW */
   container2.selectAll("rect")
@@ -219,12 +219,12 @@ d3.csv('./Dataset/SurveyBoro.csv', d3.autotype)
                 .attr("transform", `translate(${0},${innerHeight/2+margin.top})`)            
               .append("text")
                 .attr("x",width/2)
-                .attr("y", margin.bottom)
+                .attr("y", margin.bottom-5)
                 .attr("fill","black")
                 .attr("text-anchor","middle")
                 .attr("font-size","14px")
                 .style("font-weight", "bold")
-                .text("Student Response Rate")
+                .text("Chart 34. Student Response Rates")
   
     /* For the first chart: SELECT - DATA JOIN - DRAW */
     container3.selectAll("rect")

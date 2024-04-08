@@ -69,9 +69,10 @@ function init() {
               .attr("x",innerWidth/4)
               .attr("y",margin.bottom)
               .attr("fill","black")
-              .attr("text-anchor","end")
+              .attr("text-anchor","middle")
               .attr("font-size","14px")
-              .text("Cohort Year")
+              .attr("font-weight","bold")
+              .text("Chart 6. Graduation Rates from Cohort Year 2012 to 2019")
     
     /* For the first chart: SELECT - DATA JOIN - DRAW */
 
@@ -156,6 +157,14 @@ function init() {
   xAxisGroup2 = svg2.append("g")
                 .attr("transform",`translate(${0},${innerHeight})`)
                 .call(d3.axisBottom(xScale2).tickSizeOuter(0))  
+                .append("text")
+                  .attr("x",innerWidth/4)
+                  .attr("y",margin.bottom)
+                  .attr("fill","black")
+                  .attr("text-anchor","middle")
+                  .attr("font-size","14px")
+                  .attr("font-weight","bold")
+                  .text("Chart 7. Graduation Rate by Ethnicity per Cohort Year")
   
     // + UI ELEMENT SETUP
     /*manual drop-down menu */  

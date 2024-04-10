@@ -114,7 +114,7 @@ d3.csv('./Dataset/SurveyBoro.csv', d3.autotype)
        .attr("text-anchor", "middle")
        .style("font-size", "14px")
        .style("font-weight", "bold")
-       .text("Chart 32. Percent Positive for Each Framework Element");  
+       .text("Chart 33. Percent Positive for Each Framework Element");  
     
 /******** SURVEY RESPONSE RATES ********/ 
 
@@ -153,7 +153,7 @@ d3.csv('./Dataset/SurveyBoro.csv', d3.autotype)
               .attr("text-anchor","middle")
               .attr("font-size","14px")
               .style("font-weight", "bold")
-              .text("Chart 33. Parent Response Rates")
+              .text("Chart 34. Parent Response Rates")
 
   /* For the first chart: SELECT - DATA JOIN - DRAW */
   container2.selectAll("rect")
@@ -224,7 +224,7 @@ d3.csv('./Dataset/SurveyBoro.csv', d3.autotype)
                 .attr("text-anchor","middle")
                 .attr("font-size","14px")
                 .style("font-weight", "bold")
-                .text("Chart 34. Student Response Rates")
+                .text("Chart 35. Student Response Rates")
   
     /* For the first chart: SELECT - DATA JOIN - DRAW */
     container3.selectAll("rect")

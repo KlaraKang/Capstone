@@ -119,7 +119,7 @@ d3.csv('./Dataset/GradDistict.csv', d3.autoType)
          .attr("text-anchor", "middle")
          .style("font-size", "12px")
          .style("font-weight", "bold")
-         .text("Chart 19. % Ethnicity in Each School District");  
+         .text("Chart 20. % Ethnicity in Each School District");  
      
 
 /* HEATMAP2: GRADUATION BY ETHNICITY FOR ALL SCHOOL DISTRICTS  */
@@ -225,7 +225,7 @@ d3.csv('./Dataset/GradDistict.csv', d3.autoType)
         .attr("text-anchor", "middle")
         .style("font-size", "12px")
         .style("font-weight", "bold")
-        .text("Chart 20. Graduation Rates by Ethnicity in Each District");  
+        .text("Chart 21. Graduation Rates by Ethnicity in Each District");  
     
 })
 
@@ -368,7 +368,7 @@ d3.csv('./Dataset/GradDistict.csv', d3.autoType)
        .attr("text-anchor", "middle")
        .style("font-size", "12px")
        .style("font-weight", "bold")
-       .text("Chart 21. % Students by Demographic Category in Each District");  
+       .text("Chart 22. % Students by Demographic Category in Each District");  
    
 /*** HEATMAP 4: GRADUATION BY DEMOGRAPHICS FOR ALL SCHOOL DISTRICTS ***/
 
@@ -491,7 +491,7 @@ d3.csv('./Dataset/GradDistict.csv', d3.autoType)
       .attr("text-anchor", "middle")
       .style("font-size", "12px")
       .style("font-weight", "bold")
-      .text("Chart 22. Graduation Rates by Demographic Category in Each District");  
+      .text("Chart 23. Graduation Rates by Demographic Category in Each District");  
       
 })
 

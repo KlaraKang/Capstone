@@ -179,7 +179,7 @@ d3.csv('./Dataset/FundingPerSchool.csv', (d, i, columns) => {
           .attr("text-anchor", "middle")
           .style("font-size", "14px")
           .style("font-weight", "bold")
-          .text("Chart 29. Average School Funding for 'Total School Funding per Pupil'")
+          .text("Chart 30. Average School Funding for 'Total School Funding per Pupil'")
 
 /* DRAW CHART 2. SCHOOL FUNDING FOR INSTRUCTIONAL MEDIA */        
 
@@ -270,7 +270,7 @@ d3.csv('./Dataset/FundingPerSchool.csv', (d, i, columns) => {
           .attr("text-anchor", "middle")
           .style("font-size", "14px")
           .style("font-weight", "bold")
-          .text("Chart 30. Average School Funding per Student for 'Instructional Media'")
+          .text("Chart 31. Average School Funding per Student for 'Instructional Media'")
 
 
 /* DRAW CHART 3. SCHOOL FUNDING FOR PUPIL SUPPORT SERVICES */        
@@ -364,7 +364,7 @@ d3.csv('./Dataset/FundingPerSchool.csv', (d, i, columns) => {
           .attr("text-anchor", "middle")
           .style("font-size", "14px")
           .style("font-weight", "bold")
-          .text("Chart 31. Average School Funding per Student for 'Student Support Services'");  
+          .text("Chart 32. Average School Funding per Student for 'Student Support Services'");  
 
 
 /* DRAW CHART 4. AVERAGE NUMBER OS STUDENTS PER SCHOOL       

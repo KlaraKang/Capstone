@@ -1,0 +1,66 @@
+id,Borough,Category,subCategory,Total_Cohort,Percent_Drop
+1,Bronx,Ethnicity,Asian,932,2.1
+2,Bronx,Ethnicity,Black,3263,7.2
+3,Bronx,Ethnicity,Hispanic,7409,9.2
+4,Bronx,Ethnicity,Multi-Racial,98,5.1
+5,Bronx,Ethnicity,Native American,163,7.4
+6,Bronx,Ethnicity,White,622,3.4
+7,Brooklyn,Ethnicity,Asian,3823,2.6
+8,Brooklyn,Ethnicity,Black,6655,4.5
+9,Brooklyn,Ethnicity,Hispanic,5680,8.6
+10,Brooklyn,Ethnicity,Multi-Racial,329,4.3
+11,Brooklyn,Ethnicity,Native American,157,5.1
+12,Brooklyn,Ethnicity,White,3230,3.1
+13,Manhattan,Ethnicity,Asian,2181,2
+14,Manhattan,Ethnicity,Black,2940,6.2
+15,Manhattan,Ethnicity,Hispanic,6981,8.7
+16,Manhattan,Ethnicity,Multi-Racial,441,0.9
+17,Manhattan,Ethnicity,Native American,151,2
+18,Manhattan,Ethnicity,White,2241,1.7
+19,Queens,Ethnicity,Asian,5398,3.3
+20,Queens,Ethnicity,Black,3539,3.8
+21,Queens,Ethnicity,Hispanic,7243,5.3
+22,Queens,Ethnicity,Multi-Racial,335,1.2
+23,Queens,Ethnicity,Native American,379,5
+24,Queens,Ethnicity,White,2154,2.8
+25,Staten Island,Ethnicity,Asian,621,1.9
+26,Staten Island,Ethnicity,Black,643,7.6
+27,Staten Island,Ethnicity,Hispanic,1205,7.5
+28,Staten Island,Ethnicity,Multi-Racial,68,2.9
+29,Staten Island,Ethnicity,Native American,26,7.7
+30,Staten Island,Ethnicity,White,2005,1.8
+31,Bronx,Dropout,ELL,1941,12.9
+32,Bronx,Dropout,Former ELL,728,2.6
+33,Bronx,Dropout,Not ELL,9587,7.2
+34,Brooklyn,Dropout,ELL,2042,16.4
+35,Brooklyn,Dropout,Former ELL,1031,2.7
+36,Brooklyn,Dropout,Not ELL,16609,3.9
+37,Manhattan,Dropout,ELL,1492,27.5
+38,Manhattan,Dropout,Former ELL,578,2.6
+39,Manhattan,Dropout,Not ELL,12590,3.6
+40,Queens,Dropout,ELL,2233,13.9
+41,Queens,Dropout,Former ELL,1025,1.1
+42,Queens,Dropout,Not ELL,15454,2.6
+43,Staten Island,Dropout,ELL,260,17.7
+44,Staten Island,Dropout,Former ELL,121,4.1
+45,Staten Island,Dropout,Not ELL,4202,3.2
+46,Bronx,Dropout,Econ Disadv,10114,8.5
+47,Bronx,Dropout,Not Econ Disadv,2142,4.3
+48,Brooklyn,Dropout,Econ Disadv,15075,5.4
+49,Brooklyn,Dropout,Not Econ Disadv,4607,4.3
+50,Manhattan,Dropout,Econ Disadv,9958,6.8
+51,Manhattan,Dropout,Not Econ Disadv,4702,4.2
+52,Queens,Dropout,Econ Disadv,13798,3.5
+53,Queens,Dropout,Not Econ Disadv,4914,4.9
+54,Staten Island,Dropout,Econ Disadv,2822,5
+55,Staten Island,Dropout,Not Econ Disadv,1761,2.7
+56,Bronx,Dropout,Not SWD,9215,6.7
+57,Bronx,Dropout,SWD,3041,11.3
+58,Brooklyn,Dropout,Not SWD,15869,4.4
+59,Brooklyn,Dropout,SWD,3813,8.1
+60,Manhattan,Dropout,Not SWD,11847,5.7
+61,Manhattan,Dropout,SWD,2813,7.2
+62,Queens,Dropout,Not SWD,15552,3.6
+63,Queens,Dropout,SWD,3160,4.9
+64,Staten Island,Dropout,Not SWD,3475,3.3
+65,Staten Island,Dropout,SWD,1108,6.7

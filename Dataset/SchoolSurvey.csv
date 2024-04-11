@@ -1,0 +1,418 @@
+DBN,Borough,District,school_name,Grad_Rate,Rigorous_Instr,Collaborative,Supportive,Leadership,FamilyComm,Trust,Student_Resp,Parent_Resp
+01M292,Manhattan,1,Orchard Collegiate Academy,90.9,73,88,80,87,81,90,84,27
+01M448,Manhattan,1,University Neighborhood High School,98.3,83,93,86,94,85,95,82,38
+01M450,Manhattan,1,East Side Community School,97.8,82,89,81,89,92,92,83,54
+01M539,Manhattan,1,"New Explorations into Science, Technology and Math High School",99.5,80,85,78,82,93,90,75,41
+01M696,Manhattan,1,Bard High School Early College,98.6,79,78,77,80,87,90,77,39
+02M047,Manhattan,2,47 The American Sign Language and English Secondary School,98.4,78,79,77,74,92,84,90,14
+02M135,Manhattan,2,The Urban Assembly School for Emergency Management,96,71,75,75,63,85,80,89,31
+02M139,Manhattan,2,Stephen T. Mather Building Arts & Craftsmanship High School,84.4,78,92,82,91,86,91,76,33
+02M260,Manhattan,2,The Clinton School,99.2,75,69,73,72,81,82,52,39
+02M280,Manhattan,2,Manhattan Early College School for Advertising,94.8,68,68,72,63,82,80,6,13
+02M282,Manhattan,2,Urban Assembly Maker Academy,95.1,77,82,81,79,84,87,77,31
+02M288,Manhattan,2,Food and Finance High School,89.8,69,65,69,71,83,79,65,28
+02M294,Manhattan,2,Essex Street Academy,96,82,87,81,85,89,92,84,45
+02M296,Manhattan,2,High School of Hospitality Management,75.4,72,77,79,75,78,86,46,15
+02M298,Manhattan,2,Pace High School,88.1,74,80,75,81,87,87,43,7
+02M300,Manhattan,2,"Urban Assembly School of Design and Construction, The",75.4,71,83,83,87,88,91,69,9
+02M303,Manhattan,2,"Facing History School, The",91.6,80,94,79,94,87,92,68,24
+02M305,Manhattan,2,"Urban Assembly Academy of Government and Law, The",90.1,83,94,79,92,92,91,92,41
+02M308,Manhattan,2,Lower Manhattan Arts Academy,85.1,69,63,70,75,80,83,62,16
+02M316,Manhattan,2,"Urban Assembly School of Business for Young Women, the",96.3,90,98,92,99,95,98,64,26
+02M374,Manhattan,2,Gramercy Arts High School,98,75,73,70,67,84,80,66,13
+02M376,Manhattan,2,NYC iSchool,97.3,82,90,86,94,87,95,90,56
+02M392,Manhattan,2,Manhattan Business Academy,92.9,86,97,84,95,85,93,73,14
+02M393,Manhattan,2,Business Of Sports School,91.9,75,86,75,86,84,88,80,25
+02M399,Manhattan,2,The High School For Language And Diplomacy,84.6,70,79,74,77,86,87,63,11
+02M400,Manhattan,2,High School for Environmental Studies,88.7,73,80,72,85,84,86,68,16
+02M407,Manhattan,2,Institute for Collaborative Education,95.5,85,93,76,88,91,91,70,37
+02M408,Manhattan,2,Professional Performing Arts High School,100,74,75,68,75,85,82,40,21
+02M411,Manhattan,2,Baruch College Campus High School,99.2,79,85,80,78,82,86,74,24
+02M412,Manhattan,2,N.Y.C. Lab School for Collaborative Studies,99.3,79,88,79,84,90,92,71,31
+02M413,Manhattan,2,School of the Future High School,98,77,77,69,79,86,79,66,25
+02M414,Manhattan,2,N.Y.C. Museum School,100,74,79,78,83,82,88,80,28
+02M416,Manhattan,2,Eleanor Roosevelt High School,99.3,80,81,80,82,86,90,84,58
+02M418,Manhattan,2,Millennium High School,97.1,82,83,75,78,80,88,83,35
+02M419,Manhattan,2,Landmark High School,79.1,72,75,72,77,92,85,54,11
+02M420,Manhattan,2,High School for Health Professions and Human Services,94.8,74,80,70,76,77,84,94,21
+02M422,Manhattan,2,Quest to Learn,84.7,70,75,68,78,84,81,62,37
+02M425,Manhattan,2,Leadership and Public Service High School,84.2,79,73,82,76,86,83,66,11
+02M427,Manhattan,2,Manhattan Academy For Arts & Language,80.8,80,95,78,93,85,89,66,51
+02M432,Manhattan,2,Murray Hill Academy,83,86,95,81,85,82,87,69,11
+02M437,Manhattan,2,Hudson High School of Learning Technologies,92.2,62,79,70,85,79,83,81,6
+02M438,Manhattan,2,International High School at Union Square,81.5,78,88,85,90,84,92,86,52
+02M439,Manhattan,2,Manhattan Village Academy,99.2,75,71,80,68,83,82,46,30
+02M449,Manhattan,2,Vanguard High School,82.9,79,88,79,85,90,88,61,16
+02M459,Manhattan,2,Manhattan International High School,67.5,87,92,85,92,88,92,83,53
+02M475,Manhattan,2,Stuyvesant High School,99.2,82,78,79,76,82,87,87,53
+02M489,Manhattan,2,High School of Economics and Finance,91,69,75,74,76,76,83,74,11
+02M500,Manhattan,2,Unity Center for Urban Technologies,95.3,85,89,95,82,92,94,87,91
+02M507,Manhattan,2,Urban Assembly Gateway School for Technology,91.8,78,73,80,70,92,85,94,47
+02M519,Manhattan,2,Talent Unlimited High School,95.4,77,79,79,81,87,90,46,29
+02M529,Manhattan,2,Jacqueline Kennedy Onassis High School,80.9,69,85,78,83,90,89,75,15
+02M531,Manhattan,2,Repertory Company High School for Theatre Arts,100,70,84,73,81,90,88,50,25
+02M533,Manhattan,2,Union Square Academy for Health Sciences,94.6,79,87,76,77,72,83,62,77
+02M534,Manhattan,2,Harvest Collegiate High School,85.7,82,90,80,87,88,89,38,16
+02M542,Manhattan,2,Manhattan Bridges High School,95.4,85,87,82,87,88,91,68,31
+02M543,Manhattan,2,New Design High School,95.2,72,85,80,85,81,88,62,23
+02M545,Manhattan,2,High School for Dual Language and Asian Studies,98.8,69,68,75,74,87,87,99,11
+02M546,Manhattan,2,Academy for Software Engineering,92.9,67,84,73,83,78,87,70,25
+02M551,Manhattan,2,Urban Assembly New York Harbor School,94.4,74,74,75,81,87,87,75,31
+02M580,Manhattan,2,Richard R. Green High School of Teaching,87.5,82,89,80,88,88,92,72,28
+02M600,Manhattan,2,The High School of Fashion Industries,89.5,77,86,76,81,84,89,81,18
+02M605,Manhattan,2,Humanities Preparatory Academy,96.5,83,98,85,96,87,93,50,13
+02M615,Manhattan,2,Chelsea Career and Technical Education High School,97.1,79,80,80,80,85,86,67,19
+02M630,Manhattan,2,Art and Design High School,97.1,76,75,74,77,88,84,64,39
+02M655,Manhattan,2,The High School for Climate Justice,89.6,77,94,76,93,85,90,82,21
+03M291,Manhattan,3,West End Secondary School,100,79,75,73,68,90,80,63,45
+03M299,Manhattan,3,The Maxine Greene HS for Imaginative Inquiry,85,71,82,73,84,92,83,48,7
+03M307,Manhattan,3,"Urban Assembly School for Media Studies, The",90.7,73,82,76,81,92,88,79,21
+03M402,Manhattan,3,The Urban Assembly School for Green Careers,91.4,59,54,70,48,74,73,89,87
+03M403,Manhattan,3,The Global Learning Collaborative,85.3,70,84,75,87,79,90,60,50
+03M415,Manhattan,3,Wadleigh Secondary School for the Performing & Visual Arts,100,74,84,69,84,84,81,74,18
+03M417,Manhattan,3,Frank McCourt High School,95.7,79,88,76,84,85,87,92,50
+03M479,Manhattan,3,Beacon High School,98,78,63,72,62,78,78,57,23
+03M485,Manhattan,3,Fiorello H. LaGuardia High School of Music & Art and Performing Arts,98.7,68,59,67,45,78,68,2,11
+03M492,Manhattan,3,"High School for Law, Advocacy and Community Justice",86.5,71,66,59,60,85,71,42,8
+03M494,Manhattan,3,High School of Arts and Technology,84.4,69,53,72,57,91,74,44,66
+03M541,Manhattan,3,Manhattan / Hunter Science High School,98.2,77,74,81,81,82,86,80,42
+03M610,Manhattan,3,Young Women's Leadership School,97.5,75,89,67,87,84,85,80,52
+03M859,Manhattan,3,Special Music School,100,84,87,82,84,93,90,84,60
+03M860,Manhattan,3,Frederick Douglass Academy II Secondary School,88.1,66,75,68,75,84,75,65,20
+04M372,Manhattan,4,Esperanza Preparatory Academy,94,70,80,70,81,83,80,92,40
+04M435,Manhattan,4,Manhattan Center for Science and Mathematics,99.5,91,98,88,97,83,95,75,79
+04M495,Manhattan,4,Park East High School,100,81,84,81,85,88,89,85,47
+04M555,Manhattan,4,Central Park East High School,100,82,87,81,85,87,90,96,48
+04M680,Manhattan,4,"Heritage School, The",83.1,58,76,69,74,87,84,89,70
+05M148,Manhattan,5,Eagle Academy for Young Men of Harlem,88.5,62,73,69,77,79,78,69,34
+05M157,Manhattan,5,The Urban Assembly School for Global Commerce,69.8,71,76,77,80,87,87,84,92
+05M304,Manhattan,5,Mott Hall High School,89.1,69,83,74,84,83,88,62,31
+05M362,Manhattan,5,Columbia Secondary School,100,80,68,70,67,84,76,10,19
+05M369,Manhattan,5,Urban Assembly School for the Performing Arts,82.9,74,65,66,61,81,77,72,3
+05M499,Manhattan,5,Frederick Douglass Academy,76.5,71,83,69,78,78,81,74,30
+05M670,Manhattan,5,Thurgood Marshall Academy for Learning and Social Change,86.7,76,78,70,84,83,81,63,28
+05M692,Manhattan,5,"High School for Mathematics, Science and Engineering at City College",100,83,89,84,90,84,92,75,31
+06M211,Manhattan,6,Inwood Early College for Health and Information Technologies,85.6,72,73,78,76,93,86,46,19
+06M293,Manhattan,6,City College Academy of the Arts,95.2,72,74,76,64,91,85,87,30
+06M346,Manhattan,6,Community Health Academy of the Heights,88.6,84,90,82,92,98,92,74,79
+06M348,Manhattan,6,Washington Heights Expeditionary Learning School,91.8,74,78,79,77,92,87,67,23
+06M462,Manhattan,6,The College Academy,91.4,85,95,77,95,89,89,79,72
+06M463,Manhattan,6,High School for Media and Communications,90.5,84,96,76,93,92,90,61,89
+06M467,Manhattan,6,High School for Law and Public Service,82.2,78,76,78,75,97,84,48,89
+06M468,Manhattan,6,High School for Health Careers and Sciences,79.5,79,82,73,83,95,87,98,93
+06M540,Manhattan,6,A. Philip Randolph Campus High School,77.5,75,80,70,78,78,82,33,18
+06M552,Manhattan,6,Gregorio Luperon High School for Science and Mathematics,98.6,85,86,84,89,91,91,81,83
+07X221,Bronx,7,South Bronx Preparatory: A College Board School,96.6,76,82,73,82,82,83,92,56
+07X223,Bronx,7,The Laboratory School of Finance and Technology: X223,90.9,78,85,78,83,91,90,94,29
+07X259,Bronx,7,"H.E.R.O. High (Health, Education, and Research Occupations High School)",81.4,72,86,71,86,90,85,44,16
+07X334,Bronx,7,International Community High School,81.5,80,85,79,86,90,88,78,21
+07X427,Bronx,7,Community School for Social Justice,77.6,79,97,85,95,83,93,76,34
+07X473,Bronx,7,Mott Haven Village Preparatory High School,68.4,77,75,79,70,89,86,74,39
+07X495,Bronx,7,University Heights Secondary School,100,88,98,85,96,98,95,68,52
+07X500,Bronx,7,Hostos-Lincoln Academy of Science,94.9,78,86,77,86,89,88,72,21
+07X522,Bronx,7,Bronx Design and Construction Academy,70.5,75,85,72,80,86,85,89,24
+07X527,Bronx,7,Bronx Leadership Academy II High School,80.6,73,76,76,81,82,87,90,92
+07X548,Bronx,7,Careers in Sports High School,69.5,76,81,76,87,83,87,64,6
+07X551,Bronx,7,The Urban Assembly Bronx Academy of Letters,73.4,69,66,66,68,85,76,45,6
+07X600,Bronx,7,Alfred E. Smith Career and Technical Education High School,90.7,77,83,71,81,85,81,66,21
+07X670,Bronx,7,Health Opportunities High School,74.2,63,66,77,68,92,81,71,69
+08X269,Bronx,8,Bronx Studio School for Writers and Artists,87.9,68,74,67,73,86,80,84,11
+08X282,Bronx,8,Women's Academy of Excellence,84.2,65,93,72,86,79,85,80,32
+08X293,Bronx,8,Renaissance High School for Musical Theater and the Arts,89.7,76,94,78,90,84,91,94,33
+08X312,Bronx,8,Millennium Art Academy,84.7,76,85,72,85,85,85,89,34
+08X320,Bronx,8,Pelham Lab High School,83.3,66,82,68,78,87,85,94,23
+08X348,Bronx,8,Schuylerville Preparatory High School,80,64,72,65,70,81,79,67,11
+08X349,Bronx,8,Bronx River High School,100,77,82,74,87,84,82,58,26
+08X367,Bronx,8,"Archimedes Academy for Math, Science and Technology Applications",70.7,69,67,69,73,80,79,7,23
+08X376,Bronx,8,Antonia Pantoja Preparatory Academy: A College Board School,81,69,91,67,90,89,87,96,85
+08X405,Bronx,8,Herbert H. Lehman High School,80.5,73,83,69,75,83,83,75,22
+08X432,Bronx,8,Bronx Bridges High School,81.7,81,90,78,82,95,87,96,52
+08X452,Bronx,8,Gotham Collaborative High School,77.9,76,93,74,92,92,90,79,63
+08X530,Bronx,8,Longwood Preparatory Academy,89.3,77,86,77,89,95,90,78,45
+08X558,Bronx,8,Westchester Square Academy,91.2,68,76,68,77,82,83,72,16
+08X561,Bronx,8,Bronx Compass High School,76.7,71,76,71,77,86,85,87,81
+09X227,Bronx,9,Bronx Collegiate Academy,87,87,95,83,95,82,92,77,59
+09X231,Bronx,9,Eagle Academy for Young Men,92.6,76,84,69,86,87,82,64,10
+09X241,Bronx,9,"Urban Assembly School for Applied Math and Science, The",85.4,70,74,71,76,90,84,71,40
+09X250,Bronx,9,Eximius College Preparatory Academy: A College Board School,93.7,78,93,79,90,81,90,54,39
+09X252,Bronx,9,Mott Hall Bronx High School,90.3,78,76,76,78,85,84,48,19
+09X260,Bronx,9,Bronx Center for Science and Mathematics,95.7,75,76,76,74,82,87,69,44
+09X263,Bronx,9,Validus Preparatory Academy,74.3,66,60,75,59,87,78,45,41
+09X297,Bronx,9,Morris Academy for Collaborative Studies,87.5,80,89,78,88,86,89,83,19
+09X324,Bronx,9,Bronx Early College Academy for Teaching & Learning,95.2,75,82,71,76,90,85,94,37
+09X327,Bronx,9,Comprehensive Model School Project M.S. 327,87.5,81,90,78,89,90,90,27,16
+09X329,Bronx,9,DreamYard Preparatory School,91.4,81,92,77,92,93,89,65,52
+09X365,Bronx,9,Academy for Language and Technology,97.5,94,92,96,92,97,96,93,94
+09X403,Bronx,9,Bronx International High School,91.5,78,80,81,69,86,81,22,7
+09X404,Bronx,9,School for Excellence,50,57,54,68,50,78,71,55,93
+09X412,Bronx,9,Bronx High School of Business,78.1,71,79,72,83,83,83,85,15
+09X413,Bronx,9,Bronx High School for Medical Science,89.6,71,85,67,85,88,83,96,19
+09X505,Bronx,9,"Bronx School for Law, Government and Justice",85,70,74,68,73,86,82,63,14
+09X517,Bronx,9,Frederick Douglass Academy III Secondary School,88.9,77,81,79,83,89,90,87,33
+09X525,Bronx,9,Bronx Leadership Academy High School,92.6,70,81,65,83,82,78,71,23
+09X543,Bronx,9,High School for Violin and Dance,73.8,62,73,72,76,79,82,80,54
+09X564,Bronx,9,Claremont International HS,91.8,82,94,81,90,89,91,58,53
+09X568,Bronx,9,Young Women's Leadership School of the Bronx,96,75,86,69,83,88,86,75,75
+10X141,Bronx,10,Riverdale / Kingsbridge Academy (Middle School / High School 141),93,74,87,66,82,85,82,73,26
+10X213,Bronx,10,Bronx Engineering and Technology Academy,90.7,85,94,82,96,85,92,51,41
+10X225,Bronx,10,Theatre Arts Production Company School,78.8,71,78,67,76,86,82,91,30
+10X237,Bronx,10,"The Marie Curie School for Medicine, Nursing, and Health Professions",81.8,69,76,73,76,83,85,76,29
+10X243,Bronx,10,West Bronx Academy for the Future,98.5,68,74,68,73,88,84,71,49
+10X264,Bronx,10,Bronx Academy for Software Engineering (BASE),91.7,79,81,77,82,88,90,60,13
+10X268,Bronx,10,Kingsbridge International High School,65.9,75,85,75,89,87,88,95,71
+10X284,Bronx,10,Bronx School of Law and Finance,87.9,78,90,75,90,93,90,72,41
+10X342,Bronx,10,International School for Liberal Arts,76.1,79,80,74,86,91,87,95,73
+10X351,Bronx,10,Bronx Collaborative High School,77.4,63,69,70,74,76,80,26,2
+10X353,Bronx,10,World View High School,95.5,79,78,79,79,90,85,68,24
+10X368,Bronx,10,In-Tech Academy (M.S. / High School 368),90.8,72,71,68,68,84,79,89,32
+10X374,Bronx,10,Knowledge and Power Preparatory Academy International High School (Kappa),92.4,76,84,79,85,88,89,97,90
+10X433,Bronx,10,High School for Teaching and the Professions,95.8,81,95,78,94,88,91,62,42
+10X434,Bronx,10,Belmont Preparatory High School,97.7,77,91,74,90,81,87,75,47
+10X437,Bronx,10,Fordham High School for the Arts,100,84,88,83,90,84,90,100,87
+10X438,Bronx,10,Fordham Leadership Academy,100,71,76,73,76,91,83,73,63
+10X439,Bronx,10,Bronx High School for Law and Community Service,94.9,80,92,80,92,85,92,90,14
+10X440,Bronx,10,DeWitt Clinton High School,96.6,69,69,70,71,81,78,54,8
+10X442,Bronx,10,"Celia Cruz Bronx High School of Music, The",100,84,87,75,85,88,85,75,43
+10X445,Bronx,10,The Bronx High School of Science,99.2,85,88,79,88,83,92,88,31
+10X477,Bronx,10,Marble Hill High School for International Studies,99,75,79,78,80,88,90,83,32
+10X524,Bronx,10,Crotona International High School,94.7,70,77,74,81,93,83,86,90
+10X546,Bronx,10,Bronx Theatre High School,98.6,82,94,74,93,88,88,64,33
+10X549,Bronx,10,Discovery High School,96.3,74,89,74,90,82,88,95,53
+10X565,Bronx,10,High School for Energy and Technology,90.9,71,80,67,83,96,79,71,65
+10X696,Bronx,10,High School of American Studies at Lehman College,98.9,85,82,79,83,83,90,89,48
+11X249,Bronx,11,Bronx Health Sciences High School,100,71,84,63,81,69,72,58,28
+11X253,Bronx,11,Bronx High School for Writing and Communication Arts,76,69,89,72,88,98,90,64,74
+11X265,Bronx,11,Bronx Lab School,88.4,92,98,90,97,94,95,63,27
+11X270,Bronx,11,Academy for Scholarship and Entrepreneurship: A College Board School,81.2,75,88,75,86,95,87,66,65
+11X275,Bronx,11,High School of Computers and Technology,85.5,78,91,73,92,85,89,78,40
+11X288,Bronx,11,Collegiate Institute for Math and Science,90.8,73,77,70,79,85,79,96,44
+11X290,Bronx,11,Bronx Academy of Health Careers,82.7,77,92,74,89,90,86,84,59
+11X299,Bronx,11,Astor Collegiate Academy,88.1,72,82,74,81,84,86,58,14
+11X418,Bronx,11,Bronx High School for the Visual Arts,84.8,74,80,78,76,87,87,77,14
+11X455,Bronx,11,Harry S Truman High School,82,72,75,69,75,84,82,59,15
+11X508,Bronx,11,Bronxdale High School,90.5,84,95,84,91,87,93,79,64
+11X509,Bronx,11,High School of Language and Innovation,87.6,73,77,73,80,81,80,97,72
+11X513,Bronx,11,New World High School,91.5,82,76,80,71,90,82,94,66
+11X514,Bronx,11,The Bronxwood Preparatory Academy,89.9,71,78,75,77,91,83,97,41
+11X542,Bronx,11,Pelham Preparatory Academy,93.6,79,87,76,75,85,84,96,26
+11X544,Bronx,11,High School for Contemporary Arts,89.4,74,82,70,82,79,78,72,22
+11X545,Bronx,11,Bronx Aerospace High School,88.9,73,74,76,70,86,78,96,84
+12X242,Bronx,12,Mott Hall V,95.1,73,78,78,77,83,85,86,60
+12X248,Bronx,12,"Metropolitan High School, The",76.9,60,62,65,63,80,75,79,18
+12X251,Bronx,12,Explorations Academy H.S.,75.3,70,79,78,81,91,87,85,82
+12X267,Bronx,12,Bronx Latin,96.8,75,83,74,80,91,84,76,47
+12X271,Bronx,12,East Bronx Academy for the Future,90.5,77,89,74,91,87,87,39,30
+12X388,Bronx,12,Pan American International High School at Monroe,93.2,85,97,87,92,93,95,95,94
+12X478,Bronx,12,The Cinema School,87.6,64,66,68,67,77,74,74,17
+12X479,Bronx,12,Bronx Career and College Preparatory High School,76.6,66,74,66,76,80,80,60,43
+12X511,Bronx,12,Bronx Envision Academy,73.4,76,81,74,85,82,84,76,31
+12X521,Bronx,12,The Metropolitan Soundview High School,77.7,72,82,68,82,83,82,83,26
+12X550,Bronx,12,High School of World Cultures,87.9,85,94,82,87,88,85,43,41
+12X682,Bronx,12,Fannie Lou Hamer Freedom High School,82.7,85,90,83,93,88,93,74,85
+12X684,Bronx,12,Wings Academy,84.8,70,65,62,64,83,75,64,25
+13K265,Brooklyn,13,Dr. Susan S. McKinney Secondary School of the Arts,76.9,52,65,62,60,74,66,51,4
+13K350,Brooklyn,13,Urban Assembly School of Music and Art,91.7,62,89,70,93,92,87,80,14
+13K412,Brooklyn,13,Brooklyn Community Arts & Media High School (BCAM),85.7,73,74,70,82,89,84,70,20
+13K419,Brooklyn,13,"Science Skills Center High School for Science, Technology and the Creative Arts",96.2,67,71,62,75,86,75,72,20
+13K430,Brooklyn,13,Brooklyn Technical High School,97.3,81,78,79,73,72,85,92,89
+13K439,Brooklyn,13,Brooklyn International High School,80.3,86,98,86,97,84,93,70,50
+13K483,Brooklyn,13,The Urban Assembly School for Law and Justice,92.9,78,92,75,95,89,88,76,33
+13K527,Brooklyn,13,Urban Assembly Institute of Math and Science for Young Women,94.4,75,87,70,85,88,84,70,32
+13K594,Brooklyn,13,Gotham Professional Arts Academy,75,70,65,73,68,88,82,45,15
+13K595,Brooklyn,13,Bedford Academy High School,100,80,83,76,87,91,86,85,31
+13K605,Brooklyn,13,George Westinghouse Career and Technical Education High School,89.9,69,73,69,73,85,82,53,47
+13K670,Brooklyn,13,Benjamin Banneker Academy,100,77,84,73,82,85,84,63,12
+13K674,Brooklyn,13,"City Polytechnic High School of Engineering, Architecture, and Technology",94.4,71,67,85,70,88,86,4,14
+14K071,Brooklyn,14,Juan Morel Campos Secondary School,78.8,73,83,75,77,81,82,72,44
+14K449,Brooklyn,14,"Brooklyn Latin School, The",99.5,82,87,73,89,80,91,71,30
+14K454,Brooklyn,14,The Williamsburg High School of Art and Technology,89.1,77,91,84,87,91,89,42,8
+14K474,Brooklyn,14,PROGRESS High School for Professional Careers,78.5,73,86,76,82,85,89,44,8
+14K477,Brooklyn,14,East Williamsburg Scholars Academy,85.5,64,87,74,78,81,84,51,6
+14K478,Brooklyn,14,"The High School for Enterprise, Business and Technology",83.9,69,67,70,63,76,75,71,42
+14K488,Brooklyn,14,Brooklyn Preparatory High School,94.6,75,86,81,87,86,90,51,40
+14K558,Brooklyn,14,Williamsburg High School for Architecture and Design,96.1,78,90,83,86,84,92,80,55
+14K561,Brooklyn,14,Williamsburg Preparatory School,95.2,75,80,76,79,85,90,90,37
+14K586,Brooklyn,14,Lyons Community School,75.4,72,82,73,83,95,86,52,8
+14K610,Brooklyn,14,A-Tech High School,81.7,84,89,88,86,85,95,81,56
+14K614,Brooklyn,14,Young Women's Leadership School of Brooklyn,93.4,80,91,74,94,88,88,83,66
+14K685,Brooklyn,14,El Puente Academy for Peace and Justice,73.9,81,91,79,91,94,93,68,40
+15K429,Brooklyn,15,Digital Arts and Cinema Technology High School,98.8,79,74,73,75,85,79,84,64
+15K448,Brooklyn,15,Brooklyn Collaborative Studies,90.8,77,86,75,79,89,85,21,20
+15K462,Brooklyn,15,John Jay School for Law,89,72,62,66,66,80,73,63,14
+15K463,Brooklyn,15,Cyberarts Studio Academy,78.1,76,90,76,84,79,89,52,23
+15K464,Brooklyn,15,Park Slope Collegiate,86.1,76,79,73,78,87,84,72,19
+15K497,Brooklyn,15,The Boerum Hill School for International Studies,86.7,72,77,66,65,80,73,66,24
+15K519,Brooklyn,15,Cobble Hill School of American Studies,85.3,70,82,73,81,88,85,50,19
+15K592,Brooklyn,15,Khalil Gibran International Academy,84.6,79,84,79,89,86,91,89,88
+15K656,Brooklyn,15,Brooklyn High School of the Arts,95.3,78,90,69,87,86,88,85,20
+15K667,Brooklyn,15,Sunset Park High School,89.3,63,59,70,50,79,70,49,17
+15K684,Brooklyn,15,Millennium Brooklyn HS,100,86,90,80,89,87,92,77,28
+16K455,Brooklyn,16,Boys and Girls High School,73.1,82,81,77,81,86,84,58,17
+16K498,Brooklyn,16,Brooklyn High School for Law and Technology,91.8,56,64,64,54,76,74,75,6
+16K688,Brooklyn,16,The Brooklyn Academy of Global Finance,89.2,69,89,78,87,90,91,83,32
+16K765,Brooklyn,16,Nelson Mandela High School,80,59,59,66,53,83,72,66,17
+17K122,Brooklyn,17,Pathways in Technology Early College High School (P-Tech),82.4,69,66,65,64,86,78,23,11
+17K382,Brooklyn,17,Academy for College Preparation and Career Exploration: A College Board School,86.3,73,86,71,90,88,86,54,19
+17K408,Brooklyn,17,Academy of Hospitality and Tourism,86.3,82,89,77,86,84,85,67,31
+17K524,Brooklyn,17,International High School at Prospect Heights,73,83,97,82,96,88,91,73,24
+17K528,Brooklyn,17,The High School for Global Citizenship,95.1,81,88,89,92,96,94,94,72
+17K531,Brooklyn,17,"School for Human Rights, The",87.2,66,76,71,71,86,76,62,66
+17K537,Brooklyn,17,High School for Youth and Community Development at Erasmus,90.7,81,88,77,86,84,86,77,34
+17K539,Brooklyn,17,High School for Service & Learning at Erasmus,91.8,78,86,76,87,90,89,69,14
+17K543,Brooklyn,17,"Science, Technology and Research Early College High School at Erasmus",100,80,83,73,82,86,84,76,16
+17K546,Brooklyn,17,High School for Public Service: Heroes of Tomorrow,93.4,71,88,73,83,87,87,90,66
+17K547,Brooklyn,17,Brooklyn Academy of Science and the Environment,93.4,68,90,71,90,86,88,64,58
+17K548,Brooklyn,17,Brooklyn School for Music & Theatre,78.3,69,75,75,67,72,79,94,63
+17K590,Brooklyn,17,Medgar Evers College Preparatory School,97.4,61,69,56,68,86,71,68,38
+17K600,Brooklyn,17,Clara Barton High School,84.9,72,73,66,70,85,77,67,20
+17K745,Brooklyn,17,Brooklyn Institute for Liberal Arts,88.1,73,76,70,75,84,80,89,76
+17K751,Brooklyn,17,Academy for Health Careers,83.3,58,58,54,52,69,65,93,51
+18K563,Brooklyn,18,It Takes a Village Academy,88.2,60,63,68,59,79,74,58,11
+18K566,Brooklyn,18,Brooklyn Community High School for Excellence and Equity,88.1,69,80,76,71,87,78,65,12
+18K567,Brooklyn,18,Brooklyn Theatre Arts High School,80,65,67,66,64,81,75,93,25
+18K569,Brooklyn,18,Kurt Hahn Expeditionary Learning School,73.8,65,81,72,83,97,83,70,2
+18K576,Brooklyn,18,Victory Collegiate High School,90.6,65,67,74,77,87,85,47,56
+18K617,Brooklyn,18,High School for Innovation in Advertising and Media,90.7,79,78,83,73,95,92,85,80
+18K629,Brooklyn,18,Cultural Academy for the Arts and Sciences,87.2,61,75,74,81,89,86,56,31
+18K633,Brooklyn,18,High School for Medical Professions,85,74,84,73,83,82,83,59,34
+18K637,Brooklyn,18,Academy for Conservation and the Environment,95.5,82,94,77,93,94,91,91,57
+18K642,Brooklyn,18,Urban Action Academy,71.7,66,81,72,82,87,83,67,46
+19K404,Brooklyn,19,Academy for Young Writers,94.9,71,77,67,85,87,82,77,21
+19K409,Brooklyn,19,East New York Family Academy,95,72,87,70,86,88,85,27,19
+19K422,Brooklyn,19,Spring Creek Community School,84.1,65,59,60,63,86,74,60,8
+19K502,Brooklyn,19,FDNY - Captain Vernon A. Richard High School for Fire and Life Safety,92.1,77,85,79,82,81,88,45,24
+19K504,Brooklyn,19,High School for Civil Rights,79.3,62,83,70,81,83,79,80,36
+19K507,Brooklyn,19,Performing Arts and Technology High School,98.5,81,91,80,89,89,91,92,17
+19K510,Brooklyn,19,World Academy for Total Community Health High School,78,62,73,75,75,84,83,75,61
+19K583,Brooklyn,19,Multicultural High School,91.5,77,77,75,72,88,80,94,50
+19K615,Brooklyn,19,Transit Tech Career and Technical Education High School,86.2,75,83,67,80,87,82,55,15
+19K618,Brooklyn,19,Academy of Innovative Technology,94.1,76,79,76,81,87,88,79,30
+19K639,Brooklyn,19,Brooklyn Lab School,99,79,88,77,89,88,89,73,26
+19K659,Brooklyn,19,Cypress Hills Collegiate Preparatory School,98.9,72,76,76,82,89,84,96,39
+19K660,Brooklyn,19,W. H. Maxwell Career and Technical Education High School,76.4,60,86,69,80,81,81,66,14
+19K683,Brooklyn,19,School for Classics High School,82.4,69,79,75,77,89,83,42,12
+19K764,Brooklyn,19,The Urban Assembly School for Collaborative Healthcare,92.3,74,77,75,73,85,83,95,29
+19K953,Brooklyn,19,The East New York Arts and Civics High School,86.1,72,77,73,77,89,80,66,23
+20K445,Brooklyn,20,New Utrecht High School,75.7,73,86,72,83,82,87,56,7
+20K485,Brooklyn,20,High School of Telecommunication Arts and Technology,93,71,72,76,70,81,84,61,20
+20K490,Brooklyn,20,Fort Hamilton High School,89.4,78,85,73,83,76,85,82,47
+20K505,Brooklyn,20,Franklin Delano Roosevelt High School,76.8,72,73,76,69,81,82,66,16
+20K609,Brooklyn,20,Urban Assembly School for Leadership and Empowerment,93.8,75,86,75,85,83,87,89,34
+21K337,Brooklyn,21,International High School at Lafayette,77.9,80,86,83,80,88,89,61,38
+21K344,Brooklyn,21,Rachel Carson High School for Coastal Studies,95,74,79,76,79,80,87,70,32
+21K348,Brooklyn,21,High School of Sports Management,81,55,60,64,61,80,75,48,12
+21K410,Brooklyn,21,Abraham Lincoln High School,89,78,86,76,86,78,86,76,12
+21K468,Brooklyn,21,Kingsborough Early College School,98.1,81,94,73,94,87,88,76,14
+21K525,Brooklyn,21,Edward R. Murrow High School,82.7,75,83,73,76,81,85,64,11
+21K540,Brooklyn,21,John Dewey High School,80.8,74,83,74,82,79,87,59,33
+21K559,Brooklyn,21,Life Academy High School for Film and Music,84.3,59,90,77,90,81,83,61,13
+21K572,Brooklyn,21,Leaders High School,96.7,83,91,79,88,91,89,73,24
+21K620,Brooklyn,21,William E. Grady Career and Technical Education High School,84.5,71,88,72,86,81,87,63,28
+21K690,Brooklyn,21,Brooklyn Studio Secondary School,88,68,67,69,63,82,76,81,14
+22K405,Brooklyn,22,Midwood High School,94.2,74,76,72,75,75,87,66,21
+22K425,Brooklyn,22,James Madison High School,89.6,76,85,75,85,84,86,67,27
+22K535,Brooklyn,22,Leon M. Goldstein High School for the Sciences,94.9,74,74,69,79,85,85,71,13
+22K555,Brooklyn,22,Brooklyn College Academy,97.4,78,91,74,86,87,89,85,34
+22K611,Brooklyn,22,Origins High School,89.1,73,83,71,79,85,82,53,16
+23K493,Brooklyn,23,Brooklyn Collegiate: A College Board School,86.2,71,70,71,80,87,82,92,23
+23K514,Brooklyn,23,Frederick Douglass Academy VII High School,93.5,64,85,74,89,89,84,92,84
+23K644,Brooklyn,23,Eagle Academy for Young Men II,95.3,89,98,86,98,93,93,42,28
+23K697,Brooklyn,23,Teachers Preparatory High School,70.6,71,80,64,70,87,78,59,24
+24Q236,Queens,24,International High School for Health Sciences,75.6,77,85,82,82,89,89,83,82
+24Q264,Queens,24,Academy of Finance and Enterprise,90.8,73,76,70,74,84,80,90,66
+24Q267,Queens,24,High School of Applied Communication,83.3,72,79,71,77,82,84,73,18
+24Q293,Queens,24,Civic Leadership Academy,92,72,75,80,67,82,84,98,69
+24Q296,Queens,24,Pan American International High School,98.4,84,96,83,98,94,94,86,84
+24Q299,Queens,24,Bard High School Early College Queens,98.6,84,76,72,79,84,89,54,17
+24Q455,Queens,24,Newtown High School,75.1,74,85,74,82,80,88,52,20
+24Q485,Queens,24,Grover Cleveland High School,84.8,73,82,74,78,82,83,55,20
+24Q520,Queens,24,Middle College High School at LaGuardia Community College,86,83,80,83,78,82,87,58,12
+24Q530,Queens,24,International High School at LaGuardia Community College,93.6,84,75,93,78,95,89,67,44
+24Q550,Queens,24,High School for Arts and Business,97.3,81,90,80,87,88,90,78,63
+24Q560,Queens,24,"Robert F. Wagner, Jr. Secondary School for Arts and Technology",95.6,70,65,76,67,86,80,71,25
+24Q585,Queens,24,Maspeth High School,96.4,73,89,77,84,84,90,98,15
+24Q600,Queens,24,Queens Technical High School,85.5,74,73,77,72,81,84,94,17
+24Q610,Queens,24,Aviation Career & Technical Education High School,97.6,78,83,76,82,79,85,77,39
+25Q240,Queens,25,Veritas Academy,87.1,72,76,77,83,79,87,96,42
+25Q241,Queens,25,Queens High School for Language Studies,95.1,83,87,85,92,87,94,81,78
+25Q252,Queens,25,"Queens School of Inquiry, The",98.8,78,84,77,83,85,87,78,52
+25Q263,Queens,25,Flushing International High School,88.8,85,94,85,91,87,93,85,61
+25Q281,Queens,25,East-West School of International Studies,96.7,76,76,76,74,81,83,94,71
+25Q285,Queens,25,World Journalism Preparatory: A College Board School,98.9,79,96,71,92,84,87,83,32
+25Q425,Queens,25,John Bowne High School,81.1,72,82,71,78,81,84,58,9
+25Q460,Queens,25,Flushing High School,86,74,80,73,81,82,86,75,37
+25Q525,Queens,25,Townsend Harris High School,99.4,84,85,85,83,85,89,16,28
+25Q670,Queens,25,Robert F. Kennedy Community High School,91.8,79,88,79,82,85,90,77,26
+26Q315,Queens,26,Business Technology Early College High School,99.2,78,88,80,85,92,90,84,42
+26Q415,Queens,26,Benjamin N. Cardozo High School,93.5,77,86,66,79,78,83,57,14
+26Q430,Queens,26,Francis Lewis High School,92.9,79,86,73,81,82,87,62,9
+26Q435,Queens,26,Martin Van Buren High School,83.8,68,69,70,69,82,78,73,29
+26Q495,Queens,26,Bayside High School,99,76,81,72,77,82,86,86,31
+26Q566,Queens,26,"Queens High School of Teaching, Liberal Arts and the Sciences",95.7,64,73,68,64,79,80,62,16
+27Q260,Queens,27,Frederick Douglass Academy VI High School,75,69,77,69,73,82,77,93,33
+27Q262,Queens,27,Channel View School for Research,97.1,72,75,70,76,83,78,64,54
+27Q302,Queens,27,"Queens High School for Information, Research, and Technology",92.5,82,88,80,87,85,90,85,38
+27Q308,Queens,27,Robert H. Goddard High School of Communication Arts and Technology,94.7,83,90,81,88,90,91,78,17
+27Q309,Queens,27,Academy of Medical Technology: A College Board School,83.7,67,58,64,53,84,74,63,11
+27Q314,Queens,27,Epic High School - South,81.3,73,66,73,60,89,78,54,9
+27Q323,Queens,27,Scholars' Academy,98.7,79,71,75,72,89,81,95,64
+27Q324,Queens,27,Rockaway Park High School for Environmental Sustainability,79.4,66,80,72,81,79,84,87,41
+27Q334,Queens,27,Epic High School - North,95.6,64,70,75,71,83,81,75,9
+27Q351,Queens,27,Rockaway Collegiate High School,81.8,66,89,72,81,80,82,54,10
+27Q400,Queens,27,August Martin High School,90.8,74,81,68,81,89,80,63,15
+27Q475,Queens,27,Richmond Hill High School,84.3,73,84,75,81,84,86,48,7
+27Q480,Queens,27,John Adams High School,87.8,73,79,69,77,84,82,53,15
+27Q650,Queens,27,"High School for Construction Trades, Engineering and Architecture",99.3,82,81,75,84,84,84,45,17
+28Q167,Queens,28,Metropolitan Expeditionary Learning School,97.2,75,88,68,86,89,87,57,36
+28Q284,Queens,28,York Early College Academy,100,81,85,71,85,89,85,77,63
+28Q310,Queens,28,Queens Collegiate: A College Board School,90.7,68,70,62,74,83,78,65,21
+28Q325,Queens,28,Hillside Arts & Letters Academy,92.5,83,96,81,93,85,91,66,42
+28Q328,Queens,28,High School for Community Leadership,93.8,84,98,82,95,87,92,62,12
+28Q350,Queens,28,Jamaica Gateway to the Sciences,95.7,77,71,74,70,78,79,48,22
+28Q440,Queens,28,Forest Hills High School,93.3,80,77,77,75,85,88,13,14
+28Q505,Queens,28,Hillcrest High School,84.2,70,74,70,68,84,79,57,49
+28Q620,Queens,28,Thomas A. Edison Career and Technical Education High School,94.8,73,75,76,70,81,83,66,40
+28Q680,Queens,28,Queens Gateway to Health Sciences Secondary School,96.8,78,71,69,67,81,77,75,20
+28Q686,Queens,28,Queens Metropolitan High School,91.5,80,90,78,88,85,90,84,36
+28Q687,Queens,28,Queens High School for the Sciences at York College,100,77,79,75,68,82,81,27,18
+28Q690,Queens,28,High School for Law Enforcement and Public Safety,86.5,65,81,67,82,78,80,57,15
+28Q896,Queens,28,"Young Women's Leadership School, Queens",98.6,76,81,69,81,85,85,42,48
+29Q243,Queens,29,Institute for Health Professions at Cambria Heights,95.8,80,91,76,94,92,89,75,5
+29Q248,Queens,29,Queens Preparatory Academy,84.1,73,73,68,74,85,74,54,15
+29Q259,Queens,29,Pathways College Preparatory School: A College Board School,98.8,66,65,65,70,85,73,59,21
+29Q265,Queens,29,Excelsior Preparatory High School,90.7,78,93,73,89,87,87,45,7
+29Q272,Queens,29,George Washington Carver High School for the Sciences,84.5,64,79,72,78,85,83,41,11
+29Q283,Queens,29,Preparatory Academy for Writers: A College Board School,93.7,71,73,66,81,89,77,60,11
+29Q313,Queens,29,Benjamin Franklin High School for Finance & Information Technology,92.9,82,89,74,80,88,83,63,31
+29Q326,Queens,29,Cambria Heights Academy,95.3,78,91,76,88,91,87,93,62
+29Q327,Queens,29,Eagle Academy for Young Men III,97.4,65,66,66,72,90,75,76,31
+29Q492,Queens,29,"Mathematics, Science Research and Technology Magnet High School",83,82,96,79,93,89,92,60,24
+29Q498,Queens,29,"Health, Arts, Robotics, and Technology High School",92,77,80,81,81,96,90,2,95
+30Q258,Queens,30,Energy Tech High School,97.1,76,72,80,72,88,85,73,15
+30Q286,Queens,30,"Young Women's Leadership School, Astoria",100,75,75,76,70,83,81,39,33
+30Q301,Queens,30,Academy for Careers in Television and Film,98.4,71,74,75,61,91,82,83,47
+30Q445,Queens,30,William Cullen Bryant High School,89,71,77,70,76,89,83,68,28
+30Q450,Queens,30,Long Island City High School,80,62,68,65,64,76,74,62,16
+30Q501,Queens,30,Frank Sinatra School of the Arts High School,99,78,80,78,73,83,88,68,49
+30Q502,Queens,30,Information Technology High School,91.7,69,80,74,82,88,86,69,30
+30Q555,Queens,30,Newcomers High School,73.2,68,69,74,67,81,79,65,28
+30Q575,Queens,30,Academy of American Studies,96,72,75,68,73,85,80,76,16
+30Q580,Queens,30,Baccalaureate School for Global Education,97.7,76,80,74,88,81,87,74,27
+31R028,Staten Island,31,The Eagle Academy for Young Men of Staten Island,75,77,81,69,86,91,81,69,41
+31R047,Staten Island,31,CSI High School for International Studies,97.6,76,79,80,81,85,84,93,59
+31R064,Staten Island,31,Gaynor McCown Expeditionary Learning School,97.4,80,85,77,85,85,88,46,36
+31R080,Staten Island,31,The Michael J. Petrides School,97.6,80,85,69,85,92,84,72,23
+31R440,Staten Island,31,New Dorp High School,90,73,82,71,79,80,85,81,34
+31R445,Staten Island,31,Port Richmond High School,85,82,94,77,91,86,90,78,30
+31R450,Staten Island,31,Curtis High School,82.8,72,85,69,80,81,86,66,17
+31R455,Staten Island,31,Tottenville High School,95.8,79,90,71,85,80,86,77,13
+31R460,Staten Island,31,Susan E. Wagner High School,90.8,74,76,69,70,78,78,74,16
+31R600,Staten Island,31,Ralph R. McKee Career and Technical Education High School,84.3,78,85,76,84,85,87,39,17
+31R605,Staten Island,31,Staten Island Technical High School,99.7,88,90,86,87,79,92,99,85
+32K168,Brooklyn,32,The Brooklyn School for Math and Research,94.1,75,91,75,85,91,89,82,88
+32K403,Brooklyn,32,Academy for Excellence in Leadership,93,67,84,77,81,89,89,69,77
+32K545,Brooklyn,32,EBC High School for Public Service - Bushwick,85.2,87,86,86,89,89,91,1,6
+32K549,Brooklyn,32,The Brooklyn School for Social Justice,89.2,66,66,75,66,91,83,63,55
+32K552,Brooklyn,32,The Academy of Urban Planning and Engineering,94.7,82,91,76,89,86,88,84,33
+32K554,Brooklyn,32,All City Leadership Secondary School,100,82,91,78,85,86,85,67,27
+32K556,Brooklyn,32,Bushwick Leaders High School for Academic Excellence,89.2,68,77,70,76,90,84,69,15

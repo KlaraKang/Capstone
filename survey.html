@@ -1,71 +1,101 @@
 <!DOCTYPE html>
-<head>
+<html>
+  <head>
     <meta charset="utf-8">
-    <title>Capstone Project_Kyoung Kang</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Sans">
+    <title>scatter chart-KyoungKang</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro">
     <script src="https://d3js.org/d3.v7.min.js"></script>
-</head>
-<body>
-  <main>
-    <h4>The 2022-23 NYC School Quality Report and School Survey Results</h4>
-    <h5 style="padding-left:20px; text-align: left; font-size: 14px;">
-        Staten Island surpasses Queens by 5% on Collaborative Teachers and 3% on Effective School Leadership. 
-        Staten Island also surpasses Brooklyn by 4% on Rigorous Instruction. <br>
-        The Bronx, followed by Manhattan, shows the highest percent positive rates on Strong Family-Community Ties among the five boroughs. 
-      </h5>
-    <div class="left_s" style="padding-top: 10px;">
-      <h2 style="font-size: 12px;">The school quality report uses six framework elements to organize and share 
-          the percent positive data from the school quality review and survey results:<br><br>
-          1. Rigorous Instruction: How well the curriculum and instruction engage students
-          and build critical-thinking skills.<br><br> 
-          2. Collaborative Teachers: How well teachers participate in opportunities to develop, 
-          grow, and contribute to the continuous improvement of the school community.<br><br> 
-          3. Supportive Environment:  How well the school establishes a culture where students 
-          feel safe, challenged to grow, and supported to meet high expectations.<br><br>
-          4. Effective School Leadership: How well school leadership inspires the school community
-          with a clear instructional vision and effectively distributes leadership to realize this vision.<br><br>
-          5. Strong Family-Community Ties: How well the school forms effective partnerships with 
-          families to improve the school.<br><br>
-          6. Trust:  Whether the relationships between administrators, educators, students, and families
-          are based on trust and respect.<br><br>
-      </h2>
-    </div> 
-    <div id="container_right" class="right_s"></div> 
-     <br><br>
-    <div id="container_bottom">
-      
-    </div>
-    <script src="survey.js"></script>     
-  </main>   
-  <br>  
-  <div id="footer"> Data Source: NYC DOE Schools InfoHub - School Quality Reports for High Schools
-    <a href="https://infohub.nyced.org/reports/students-and-schools/school-quality/school-quality-reports-and-resources" target="_blank" rel="noopener noreferrer">
-      ("https://infohub.nyced.org/reports/students-and-schools/school-quality/school-quality-reports-and-resources")
-    </a>
-    <br>
-    NYC DOE Schools InfoHub - The 2023 NYC School Survey Results
-    <a href="https://infohub.nyced.org/reports/students-and-schools/school-quality/nyc-school-survey/survey-archives" target="_blank" rel="noopener noreferrer">
-      ("https://infohub.nyced.org/reports/students-and-schools/school-quality/nyc-school-survey/survey-archives")
-    </a>
-  </div>
-  
-  <div >  
-    <button class="prev" onclick="transitionToPage('./fund.html')">  </button>
-  </div>
+  </head>
+  <body>
+    <main>
+      <h4>Graduation Rates and School Survey Results</h4> 
+      <section> 
+      <ul class="two_dropdowns">
+        <li>
+          <div>
+          <label for="dropdown1"> Relationship with Rigorous Instruction<br> Select Borough</label>
+          <select id="dropdown1" name="dropdown1"></select>
+          <div id="container1"></div> 
+        </div>
+        </li>
+        <li>   
+          <div>
+        <label for="dropdown2"> Relationship with Collaborative Teachers<br> Select Borough</label>
+        <select id="dropdown2" name="dropdown2"></select>
+        <div id="container2"></div>
+      </div>               
+        </li>
+      </ul>
+      </section>
+      <section> 
+        <ul class="two_dropdowns">
+          <li>
+            <div>
+            <label for="dropdown3"> Relationship with Supportive Environment<br> Select Borough</label>
+            <select id="dropdown3" name="dropdown3"></select>
+            <div id="container3"></div> 
+          </div>
+          </li>
+          <li>   
+            <div>
+          <label for="dropdown4"> Relationship with Effective Leadership<br> Select Borough</label>
+          <select id="dropdown4" name="dropdown4"></select>
+          <div id="container4"></div>
+        </div>               
+          </li>
+        </ul>
+        </section>
+        <section> 
+          <ul class="two_dropdowns">
+            <li>
+              <div>
+              <label for="dropdown5"> Relationship with Strong Family-Community Ties<br> Select Borough</label>
+              <select id="dropdown5" name="dropdown5"></select>
+              <div id="container5"></div> 
+            </div>
+            </li>
+            <li>   
+              <div>
+            <label for="dropdown6"> Relationship with Trust and Respect<br> Select Borough</label>
+            <select id="dropdown6" name="dropdown6"></select>
+            <div id="container6"></div>
+          </div>               
+            </li>
+          </ul>
+       </section>
 
-  <script>
-    window.transitionToPage = function(href) {
-      document.querySelector('body').style.opacity = 0
-      setTimeout(function() { 
-        window.location.href = href
-      }, 500)
-    }
+         <script src="./survey.js"></script>
+    
+    </main>
+    <br>  
+    <div id="footer"> Data Source: NYC DOE Schools InfoHub - School Quality Reports for High Schools
+      <a href="https://infohub.nyced.org/reports/students-and-schools/school-quality/school-quality-reports-and-resources" target="_blank" rel="noopener noreferrer">
+        ("https://infohub.nyced.org/reports/students-and-schools/school-quality/school-quality-reports-and-resources")
+      </a>
+      <br>
+      NYC DOE Schools InfoHub - The 2023 NYC School Survey Results
+      <a href="https://infohub.nyced.org/reports/students-and-schools/school-quality/nyc-school-survey/survey-archives" target="_blank" rel="noopener noreferrer">
+        ("https://infohub.nyced.org/reports/students-and-schools/school-quality/nyc-school-survey/survey-archives")
+      </a>
+    </div>
+    
+    <div >  
+      <button class="prev" onclick="transitionToPage('./fund.html')">  </button>
+    </div>
   
-    document.addEventListener('DOMContentLoaded', function(event) {
-      document.querySelector('body').style.opacity = 1
-    })
-  </script>
-</body>
+    <script>
+      window.transitionToPage = function(href) {
+        document.querySelector('body').style.opacity = 0
+        setTimeout(function() { 
+          window.location.href = href
+        }, 500)
+      }
+    
+      document.addEventListener('DOMContentLoaded', function(event) {
+        document.querySelector('body').style.opacity = 1
+      })
+    </script>
+  </body>
 
 </html>

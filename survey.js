@@ -8,7 +8,7 @@ const width = window.innerWidth*.9,
 
 // global empty variables
 let colorScale, svg1, svg2, svg3, svg4,svg5, svg6;
-let tooltip1, tooltip2,tooltip3, tooltip4,tooltip5, tooltip6;
+let tooltip1, tooltip2, tooltip3, tooltip4, tooltip5, tooltip6;
 let xScale1, xScale2, xScale3, xScale4, xScale5, xScale6;
 let yScale1, yScale2, yScale3, yScale4,yScale5, yScale6;
 let borough;
@@ -88,7 +88,7 @@ function chart1() {
 
 
     // CALL AXES to draw Axis lines
-   svg1.append("g")
+  svg1.append("g")
       .attr("class","xAxis")
       .attr("transform", `translate(${0},${innerHeight-margin.bottom+margin.top})`)
       .call(xAxis1)
@@ -100,7 +100,7 @@ function chart1() {
          .attr("text-anchor", "middle")
          .text("Chart 33. Rigorous Instruction: % Positive"); 
 
-   svg1.append("g")
+  svg1.append("g")
       .attr("class","yAxis")
       .attr("transform", `translate(${margin.left},${margin.top})`)
       .call(yAxis1)
@@ -112,7 +112,47 @@ function chart1() {
          .attr("text-anchor", "middle")
          .text("Graduation Rate"); 
 
-   
+  /* GRID LINES FOR THE CITY AVERAGE VALUE */
+  svg1.selectAll("line.grid")
+    .data(yScale1.ticks(5))
+    .enter()
+    .append("line")
+      .attr("class", "grid")
+      .attr("x1", margin.left)
+      .attr("y1", yScale1(83.7)+margin.top)
+      .attr("x2", innerWidth/3-margin.right+10)
+      .attr("y2", yScale1(83.7)+margin.top)
+      .style("stroke", "purple")
+      .style("stroke-width", 1)
+      .style("stroke-dasharray", "3 3");
+
+  svg1.append("text")
+      .attr("x", innerWidth/3 - margin.right +15) 
+      .attr("y", yScale1(83.7)+margin.top) 
+      .style("fill","purple")
+      .style("font-size","10px")
+      .text("Average Grad: 83.7%");     
+
+  svg1.selectAll("line.grid2")
+      .data(xScale1.ticks(5))
+      .enter()
+      .append("line")
+        .attr("class", "grid2")
+        .attr("x1", xScale1(74.8))
+        .attr("y1", margin.top+20)//+margin.bottom)
+        .attr("x2", xScale1(74.8))
+        .attr("y2", innerHeight)
+        .style("stroke", "purple")
+        .style("stroke-width", 1)
+        .style("stroke-dasharray", "3 3");
+
+  svg1.append("text")
+    .attr("x", xScale1(74.8)-margin.left) 
+    .attr("y", margin.top+18) 
+    .style("fill","purple")
+    .style("font-size","10px")
+    .text("Average Positive: 74.8%");  
+
   // UI ELEMENT SETUP
     /*manual drop-down menu */
     const options = borough.concat("All").sort(d3.ascending)
@@ -246,6 +286,47 @@ function chart2() {
          .attr("text-anchor", "middle")
          .text("Graduation Rate"); 
 
+  /* GRID LINES FOR THE CITY AVERAGE VALUE */
+  svg2.selectAll("line.grid")
+    .data(yScale2.ticks(5))
+    .enter()
+    .append("line")
+      .attr("class", "grid")
+      .attr("x1", margin.left)
+      .attr("y1", yScale2(83.7)+margin.top)
+      .attr("x2", innerWidth/3-margin.right+10)
+      .attr("y2", yScale2(83.7)+margin.top)
+      .style("stroke", "purple")
+      .style("stroke-width", 1)
+      .style("stroke-dasharray", "3 3");
+
+  svg2.append("text")
+      .attr("x", innerWidth/3 - margin.right +15) 
+      .attr("y", yScale2(83.7)+margin.top) 
+      .style("fill","purple")
+      .style("font-size","10px")
+      .text("Average Grad: 83.7%");     
+
+  svg2.selectAll("line.grid2")
+         .data(xScale2.ticks(5))
+         .enter()
+         .append("line")
+           .attr("class", "grid2")
+           .attr("x1", xScale2(81.2))
+           .attr("y1", margin.top+20)//+margin.bottom)
+           .attr("x2", xScale2(81.2))
+           .attr("y2", innerHeight)
+           .style("stroke", "purple")
+           .style("stroke-width", 1)
+           .style("stroke-dasharray", "3 3");
+   
+  svg2.append("text")
+       .attr("x", xScale2(81.2)-margin.left) 
+       .attr("y", margin.top+18) 
+       .style("fill","purple")
+       .style("font-size","10px")
+       .text("Average Positive: 81.2%");  
+
   const options = borough.concat("All").sort(d3.ascending)       
   const selectElement2 = d3.select("#dropdown2")
   selectElement2.selectAll("option") 
@@ -378,7 +459,47 @@ function chart3() {
            .attr("text-anchor", "middle")
            .text("Graduation Rate"); 
   
-     
+    /* GRID LINES FOR THE CITY AVERAGE VALUE */
+    svg3.selectAll("line.grid")
+    .data(yScale3.ticks(5))
+    .enter()
+    .append("line")
+      .attr("class", "grid")
+      .attr("x1", margin.left)
+      .attr("y1", yScale3(83.7)+margin.top)
+      .attr("x2", innerWidth/3-margin.right+10)
+      .attr("y2", yScale3(83.7)+margin.top)
+      .style("stroke", "purple")
+      .style("stroke-width", 1)
+      .style("stroke-dasharray", "3 3");
+
+  svg3.append("text")
+      .attr("x", innerWidth/3 - margin.right +15) 
+      .attr("y", yScale3(83.7)+margin.top) 
+      .style("fill","purple")
+      .style("font-size","10px")
+      .text("Average Grad: 83.7%");     
+
+  svg3.selectAll("line.grid2")
+         .data(xScale3.ticks(5))
+         .enter()
+         .append("line")
+           .attr("class", "grid2")
+           .attr("x1", xScale3(74.5))
+           .attr("y1", margin.top+20)//+margin.bottom)
+           .attr("x2", xScale3(74.5))
+           .attr("y2", innerHeight)
+           .style("stroke", "purple")
+           .style("stroke-width", 1)
+           .style("stroke-dasharray", "3 3");
+   
+  svg3.append("text")
+       .attr("x", xScale3(74.5)-margin.left) 
+       .attr("y", margin.top+18) 
+       .style("fill","purple")
+       .style("font-size","10px")
+       .text("Average Positive: 74.5%");   
+
     // UI ELEMENT SETUP
       /*manual drop-down menu */
       const options = borough.concat("All").sort(d3.ascending)
@@ -429,8 +550,8 @@ function chart3() {
         })
         .on("mousemove", function(event){
           tooltip3
-            .style("top", event.pageY +15 + "px")
-            .style("left", event.pageX + 0 + "px")
+            .style("top", event.pageY - innerHeight*2+margin.bottom+margin.top+ "px")
+            .style("left", event.pageX - margin.left + 5 + "px")
         })
         .on("mouseout", function(event, d) {
           tooltip3
@@ -511,7 +632,49 @@ function chart3() {
            .attr("font-size","14px")
            .attr("text-anchor", "middle")
            .text("Graduation Rate"); 
-  
+
+  /* GRID LINES FOR THE CITY AVERAGE VALUE */
+  svg4.selectAll("line.grid")
+     .data(yScale4.ticks(5))
+     .enter()
+     .append("line")
+       .attr("class", "grid")
+       .attr("x1", margin.left)
+       .attr("y1", yScale4(83.7)+margin.top)
+       .attr("x2", innerWidth/3-margin.right+10)
+       .attr("y2", yScale4(83.7)+margin.top)
+       .style("stroke", "purple")
+       .style("stroke-width", 1)
+       .style("stroke-dasharray", "3 3");
+ 
+   svg4.append("text")
+       .attr("x", innerWidth/3 - margin.right +15) 
+       .attr("y", yScale4(83.7)+margin.top) 
+       .style("fill","purple")
+       .style("font-size","10px")
+       .text("Average Grad: 83.7%");     
+ 
+   svg4.selectAll("line.grid2")
+          .data(xScale4.ticks(5))
+          .enter()
+          .append("line")
+            .attr("class", "grid2")
+            .attr("x1", xScale4(80))
+            .attr("y1", margin.top+20)//+margin.bottom)
+            .attr("x2", xScale4(80))
+            .attr("y2", innerHeight)
+            .style("stroke", "purple")
+            .style("stroke-width", 1)
+            .style("stroke-dasharray", "3 3");
+    
+   svg4.append("text")
+        .attr("x", xScale4(80)-margin.left) 
+        .attr("y", margin.top+18) 
+        .style("fill","purple")
+        .style("font-size","10px")
+        .text("Average Positive: 80%");    
+
+
     const options = borough.concat("All").sort(d3.ascending)       
     const selectElement4 = d3.select("#dropdown4")
     selectElement4.selectAll("option") 
@@ -643,7 +806,47 @@ function chart5() {
              .attr("text-anchor", "middle")
              .text("Graduation Rate"); 
     
-       
+      /* GRID LINES FOR THE CITY AVERAGE VALUE */
+  svg5.selectAll("line.grid")
+      .data(yScale5.ticks(5))
+      .enter()
+      .append("line")
+        .attr("class", "grid")
+        .attr("x1", margin.left)
+        .attr("y1", yScale5(83.7)+margin.top)
+        .attr("x2", innerWidth/3-margin.right+10)
+        .attr("y2", yScale5(83.7)+margin.top)
+        .style("stroke", "purple")
+        .style("stroke-width", 1)
+        .style("stroke-dasharray", "3 3");
+  
+    svg5.append("text")
+        .attr("x", innerWidth/3 - margin.right +15) 
+        .attr("y", yScale5(83.7)+margin.top) 
+        .style("fill","purple")
+        .style("font-size","10px")
+        .text("Average Grad: 83.7%");     
+  
+    svg5.selectAll("line.grid2")
+           .data(xScale5.ticks(5))
+           .enter()
+           .append("line")
+             .attr("class", "grid2")
+             .attr("x1", xScale5(85.3))
+             .attr("y1", margin.top+20)
+             .attr("x2", xScale5(85.3))
+             .attr("y2", innerHeight)
+             .style("stroke", "purple")
+             .style("stroke-width", 1)
+             .style("stroke-dasharray", "3 3");
+     
+    svg5.append("text")
+         .attr("x", xScale5(85.3)-margin.left) 
+         .attr("y", margin.top+18) 
+         .style("fill","purple")
+         .style("font-size","10px")
+         .text("Average Positive: 85.3%");   
+
   // UI ELEMENT SETUP
   /*manual drop-down menu */
   const options = borough.concat("All").sort(d3.ascending)
@@ -693,8 +896,8 @@ function draw5(){
           })
           .on("mousemove", function(event){
             tooltip5
-              .style("top", event.pageY +15 + "px")
-              .style("left", event.pageX + 0 + "px")
+            .style("top", event.pageY - innerHeight*3-margin.bottom*2-margin.top*2+ "px")
+            .style("left", event.pageX - margin.left + 5 + "px")
           })
           .on("mouseout", function(event, d) {
             tooltip5
@@ -775,6 +978,47 @@ function chart6() {
              .attr("text-anchor", "middle")
              .text("Graduation Rate"); 
     
+    /* GRID LINES FOR THE CITY AVERAGE VALUE */
+  svg6.selectAll("line.grid")
+    .data(yScale6.ticks(5))
+    .enter()
+    .append("line")
+      .attr("class", "grid")
+      .attr("x1", margin.left)
+      .attr("y1", yScale6(83.7)+margin.top)
+      .attr("x2", innerWidth/3-margin.right+10)
+      .attr("y2", yScale6(83.7)+margin.top)
+      .style("stroke", "purple")
+      .style("stroke-width", 1)
+      .style("stroke-dasharray", "3 3");
+
+  svg6.append("text")
+      .attr("x", innerWidth/3 - margin.right +15) 
+      .attr("y", yScale6(83.7)+margin.top) 
+      .style("fill","purple")
+      .style("font-size","10px")
+      .text("Average Grad: 83.7%");     
+
+  svg6.selectAll("line.grid2")
+         .data(xScale6.ticks(5))
+         .enter()
+         .append("line")
+           .attr("class", "grid2")
+           .attr("x1", xScale6(84.8))
+           .attr("y1", margin.top+20)//+margin.bottom)
+           .attr("x2", xScale6(84.8))
+           .attr("y2", innerHeight)
+           .style("stroke", "purple")
+           .style("stroke-width", 1)
+           .style("stroke-dasharray", "3 3");
+   
+  svg6.append("text")
+       .attr("x", xScale6(84.8)-margin.left) 
+       .attr("y", margin.top+18) 
+       .style("fill","purple")
+       .style("font-size","10px")
+       .text("Average Positive: 84.8%");   
+
   const options = borough.concat("All").sort(d3.ascending)       
   const selectElement6 = d3.select("#dropdown6")
   

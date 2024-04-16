@@ -76,7 +76,6 @@ function chart1() {
 
     // SVG ELEMENT
     const container1 = d3.select("#container1")
-                    //  .style("position","relative");
 
   svg1 = container1.append("svg")
       .attr("width", innerWidth/2)
@@ -251,7 +250,6 @@ function chart2() {
    /**** second chart ***/
     // SVG ELEMENT
   const container2 = d3.select("#container2")
-                     // .style("position","relative");
 
   svg2 = container2.append("svg")
       .attr("width", innerWidth/2)
@@ -423,7 +421,6 @@ function chart3() {
   
       // SVG ELEMENT
       const container3 = d3.select("#container3")
-                      .style("position","relative");
   
     svg3 = container3.append("svg")
         .attr("width", innerWidth/2)
@@ -549,9 +546,9 @@ function chart3() {
             .style("visibility", "visible")
         })
         .on("mousemove", function(event){
-          tooltip3
-            .style("top", event.pageY - innerHeight*2+margin.bottom+margin.top+ "px")
-            .style("left", event.pageX - margin.left + 5 + "px")
+          tooltip3            
+          .style("top", event.pageY +15 + "px")
+          .style("left", event.pageX + 0 + "px")
         })
         .on("mouseout", function(event, d) {
           tooltip3
@@ -577,7 +574,6 @@ function chart3() {
       exit => exit
         .transition()
         .duration(500)
-       // .delay(150)
         .attr("r", 0)
         .remove("dot")
   )}
@@ -598,7 +594,6 @@ function chart3() {
      /**** second chart ***/
       // SVG ELEMENT
     const container4 = d3.select("#container4")
-                       // .style("position","relative");
   
     svg4 = container4.append("svg")
         .attr("width", innerWidth/2)
@@ -770,7 +765,6 @@ function chart5() {
     
   // SVG ELEMENT
   const container5 = d3.select("#container5")
-                       .style("position","relative");
     
   svg5 = container5.append("svg")
           .attr("width", innerWidth/2)
@@ -895,9 +889,9 @@ function draw5(){
               .style("visibility", "visible")
           })
           .on("mousemove", function(event){
-            tooltip5
-            .style("top", event.pageY - innerHeight*3-margin.bottom*2-margin.top*2+ "px")
-            .style("left", event.pageX - margin.left + 5 + "px")
+            tooltip5            
+            .style("top", event.pageY +15 + "px")
+            .style("left", event.pageX + 0 + "px")
           })
           .on("mouseout", function(event, d) {
             tooltip5
@@ -943,7 +937,6 @@ function chart6() {
     
   // SVG ELEMENT
   const container6 = d3.select("#container6")
-                         // .style("position","relative");
     
   svg6 = container6.append("svg")
           .attr("width", innerWidth/2)

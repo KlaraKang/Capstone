@@ -26,7 +26,6 @@ selection6: "All",
 };
 
 /* LOAD DATA */
-// DATA PATH
 d3.csv("./Dataset/SchoolSurvey.csv", d => {
     return {
     school_name: d.school_name,
@@ -93,7 +92,7 @@ function chart1() {
       .call(xAxis1)
       .append("text")
          .attr("y", margin.bottom)
-         .attr("x", innerWidth/4+margin.left)
+         .attr("x", innerWidth/4)
          .attr("stroke", "black")
          .attr("font-size","14px")
          .attr("text-anchor", "middle")
@@ -161,8 +160,8 @@ function chart1() {
     selectElement1.selectAll("option") 
             .data(options)
             .join("option")
-            .attr("value", d => d) // what's on the data
-            .text(d=> d) // what user can see
+            .attr("value", d => d)
+            .text(d=> d) 
 
     /* set up event listener to filter data based on dropdown menu selection*/
     selectElement1.on("change", event => {
@@ -266,7 +265,7 @@ function chart2() {
       .call(xAxis2)
       .append("text")
          .attr("y", margin.bottom)
-         .attr("x", innerWidth/4+margin.left)
+         .attr("x", innerWidth/4)
          .attr("stroke", "black")
          .attr("font-size","14px")
          .attr("text-anchor", "middle")
@@ -343,62 +342,61 @@ function chart2() {
 
 function draw2(){
    // FILTER DATA BASED ON STATE
-   const filteredData2 = state.data
+  const filteredData2 = state.data
    .filter(d => state.selection2 === "All" || 
                state.selection2 === d.Borough)
 
-   svg2.selectAll("circle.dot2")
-              .data(filteredData2, d=>d.id) 
-              .attr("id", (d,i)=>i)
-              .join(
-              // HANDLE ENTER SELECTION
-              enter => enter
-              .append("circle")
-              .attr("class","dot2")      
-              .attr("r", 0)
-              .attr("cx", d=> xScale2(d.Collaborative))
+  svg2.selectAll("circle.dot2")
+      .data(filteredData2, d=>d.id) 
+      .attr("id", (d,i)=>i)
+      .join(
+      // HANDLE ENTER SELECTION
+        enter => enter
+          .append("circle")
+          .attr("class","dot2")      
+          .attr("r", 0)
+          .attr("cx", d=> xScale2(d.Collaborative))
+          .attr("cy", d => yScale2(d.Grad_Rate)+margin.top)
+          .attr("fill", "black")
+          .on("mouseover", function(event, d, i){
+            tooltip2
+              .html(`<div>${d.school_name}</div>
+                    <div>${d.Borough}</div>
+                    <div>Graduation: ${d.Grad_Rate}%</div>
+                    <div>Positive: ${d.Collaborative}%</div>`)
+              .style("visibility", "visible")
+          })
+          .on("mousemove", function(event){
+            tooltip2
+              .style("top", event.pageY +15 + "px")
+              .style("left", event.pageX + 0 + "px")
+          })
+          .on("mouseout", function(event, d) {
+            tooltip2
+              .html(``)
+              .style("visibility", "hidden");
+          })
+          .call(
+            enter => enter
+              .transition()
+              .delay((d,i) => i*3)
+              .duration(1000)
+              .attr("r", radius*1.5)
               .attr("cy", d => yScale2(d.Grad_Rate)+margin.top)
-              .attr("fill", "black")
-                .on("mouseover", function(event, d, i){
-                  tooltip2
-                    .html(`<div>${d.school_name}</div>
-                          <div>${d.Borough}</div>
-                          <div>Graduation: ${d.Grad_Rate}%</div>
-                          <div>Positive: ${d.Collaborative}%</div>`)
-                    .style("visibility", "visible")
-                })
-                .on("mousemove", function(event){
-                  tooltip2
-                    .style("top", event.pageY +15 + "px")
-                    .style("left", event.pageX + 0 + "px")
-                })
-                .on("mouseout", function(event, d) {
-                  tooltip2
-                    .html(``)
-                    .style("visibility", "hidden");
-                })
-              .call(
-                enter => enter
-                .transition()
-                .delay((d,i) => i*3)
-                .duration(1000)
-                .attr("r", radius*1.5)
-                .attr("cy", d => yScale2(d.Grad_Rate)+margin.top)
-                .attr("fill", d => colorScale(d.Borough))
-                .style("stroke", "#000")      
-                .attr("opacity", 1)
-                )
-              ,
-              // HANDLE UPDATE SELECTION
-              update => update,
+              .attr("fill", d => colorScale(d.Borough))
+              .style("stroke", "#000")      
+              .attr("opacity", 1)
+            )
+            ,
+            // HANDLE UPDATE SELECTION
+            update => update,
           
-              // HANDLE EXIT SELECTION
-              exit => exit
-                .transition()
-                .duration(500)
-               // .delay(150)
-                .attr("r", 0)
-                .remove("dot")
+            // HANDLE EXIT SELECTION
+            exit => exit
+              .transition()
+              .duration(500)
+              .attr("r", 0)
+              .remove("dot")
 )}
 
 function chart3() {
@@ -438,7 +436,7 @@ function chart3() {
         .call(xAxis3)
         .append("text")
            .attr("y", margin.bottom)
-           .attr("x", innerWidth/4+margin.left)
+           .attr("x", innerWidth/4)
            .attr("stroke", "black")
            .attr("font-size","14px")
            .attr("text-anchor", "middle")
@@ -506,8 +504,8 @@ function chart3() {
       selectElement3.selectAll("option") 
               .data(options)
               .join("option")
-              .attr("value", d => d) // what's on the data
-              .text(d=> d) // what user can see
+              .attr("value", d => d) 
+              .text(d=> d) 
   
       /* set up event listener to filter data based on dropdown menu selection*/
       selectElement3.on("change", event => {
@@ -578,45 +576,45 @@ function chart3() {
         .remove("dot")
   )}
   
-  function chart4() {
+function chart4() {
   
-    xScale4 = d3.scaleLinear()
+  xScale4 = d3.scaleLinear()
             .domain(d3.extent(state.data, d =>d.Leadership)) 
             .range([margin.left, innerWidth/3-margin.right]) 
   
-    yScale4 = d3.scaleLinear()
+  yScale4 = d3.scaleLinear()
             .domain(d3.extent(state.data, d=>d.Grad_Rate))
             .range([innerHeight-margin.bottom, margin.top])
   
-    const xAxis4 = d3.axisBottom(xScale4).ticks(10)
-    const yAxis4 = d3.axisLeft(yScale4).ticks(10)
+  const xAxis4 = d3.axisBottom(xScale4).ticks(10)
+  const yAxis4 = d3.axisLeft(yScale4).ticks(10)
   
-     /**** second chart ***/
-      // SVG ELEMENT
-    const container4 = d3.select("#container4")
+  /**** second chart ***/
+  // SVG ELEMENT
+  const container4 = d3.select("#container4")
   
-    svg4 = container4.append("svg")
+  svg4 = container4.append("svg")
         .attr("width", innerWidth/2)
         .attr("height", height)
   
-    tooltip4 = container4.append("div")
+  tooltip4 = container4.append("div")
         .attr("class", "tooltip")
         .style("visibility", "hidden")
   
-      // CALL AXES to draw Axis lines
-    svg4.append("g")
+  // CALL AXES to draw Axis lines
+  svg4.append("g")
         .attr("class","xAxis")
         .attr("transform", `translate(${0},${innerHeight-margin.bottom+margin.top})`)
         .call(xAxis4)
         .append("text")
            .attr("y", margin.bottom)
-           .attr("x", innerWidth/4+margin.left)
+           .attr("x", innerWidth/4)
            .attr("stroke", "black")
            .attr("font-size","14px")
            .attr("text-anchor", "middle")
            .text("Chart 36. Effective Leadership: % Positive"); 
   
-     svg4.append("g")
+  svg4.append("g")
         .attr("class","yAxis")
         .attr("transform", `translate(${margin.left},${margin.top})`)
         .call(yAxis4)
@@ -642,27 +640,27 @@ function chart3() {
        .style("stroke-width", 1)
        .style("stroke-dasharray", "3 3");
  
-   svg4.append("text")
+  svg4.append("text")
        .attr("x", innerWidth/3 - margin.right +15) 
        .attr("y", yScale4(83.7)+margin.top) 
        .style("fill","purple")
        .style("font-size","10px")
        .text("Average Grad: 83.7%");     
  
-   svg4.selectAll("line.grid2")
+  svg4.selectAll("line.grid2")
           .data(xScale4.ticks(5))
           .enter()
           .append("line")
             .attr("class", "grid2")
             .attr("x1", xScale4(80))
-            .attr("y1", margin.top+20)//+margin.bottom)
+            .attr("y1", margin.top+20)
             .attr("x2", xScale4(80))
             .attr("y2", innerHeight)
             .style("stroke", "purple")
             .style("stroke-width", 1)
             .style("stroke-dasharray", "3 3");
     
-   svg4.append("text")
+  svg4.append("text")
         .attr("x", xScale4(80)-margin.left) 
         .attr("y", margin.top+18) 
         .style("fill","purple")
@@ -670,80 +668,79 @@ function chart3() {
         .text("Average Positive: 80%");    
 
 
-    const options = borough.concat("All").sort(d3.ascending)       
-    const selectElement4 = d3.select("#dropdown4")
-    selectElement4.selectAll("option") 
+  const options = borough.concat("All").sort(d3.ascending)       
+  const selectElement4 = d3.select("#dropdown4")
+  selectElement4.selectAll("option") 
               .data(options) 
               .join("option")
               .attr("value", d => d) 
               .text(d=> d) 
   
-      /* set up event listener to filter data based on dropdown menu selection*/
-      selectElement4.on("change", event => {
-        state.selection4 = event.target.value
-        draw4();
-      });
-      draw4();
-  }
+  /* set up event listener to filter data based on dropdown menu selection*/
+   selectElement4.on("change", event => {
+    state.selection4 = event.target.value
+    draw4();
+  });
+  draw4();
+}
   
-  function draw4(){
-     // FILTER DATA BASED ON STATE
-     const filteredData4 = state.data
+function draw4(){
+  // FILTER DATA BASED ON STATE
+  const filteredData4 = state.data
      .filter(d => state.selection4 === "All" || 
                  state.selection4 === d.Borough)
   
-     svg4.selectAll("circle.dot2")
-                .data(filteredData4, d=>d.id) 
-                .attr("id", (d,i)=>i)
-                .join(
-                // HANDLE ENTER SELECTION
-                enter => enter
-                .append("circle")
-                .attr("class","dot2")      
-                .attr("r", 0)
-                .attr("cx", d=> xScale4(d.Leadership))
-                .attr("cy", d => yScale4(d.Grad_Rate)+margin.top)
-                .attr("fill", "black")
-                  .on("mouseover", function(event, d, i){
-                    tooltip4
-                      .html(`<div>${d.school_name}</div>
-                            <div>${d.Borough}</div>
-                            <div>Graduation: ${d.Grad_Rate}%</div>
-                            <div>Positive: ${d.Leadership}%</div>`)
-                      .style("visibility", "visible")
-                  })
-                  .on("mousemove", function(event){
-                    tooltip4
-                      .style("top", event.pageY +15 + "px")
-                      .style("left", event.pageX + 0 + "px")
-                  })
-                  .on("mouseout", function(event, d) {
-                    tooltip4
-                      .html(``)
-                      .style("visibility", "hidden");
-                  })
-                .call(
-                  enter => enter
-                  .transition()
-                  .delay((d,i) => i*3)
-                  .duration(1000)
-                  .attr("r", radius*1.5)
-                  .attr("cy", d => yScale4(d.Grad_Rate)+margin.top)
-                  .attr("fill", d => colorScale(d.Borough))
-                  .style("stroke", "#000")      
-                  .attr("opacity", 1)
-                  )
-                ,
-                // HANDLE UPDATE SELECTION
-                update => update,
-            
-                // HANDLE EXIT SELECTION
-                exit => exit
-                  .transition()
-                  .duration(500)
-                 // .delay(150)
-                  .attr("r", 0)
-                  .remove("dot")
+  svg4.selectAll("circle.dot2")
+      .data(filteredData4, d=>d.id) 
+      .attr("id", (d,i)=>i)
+      .join(
+      // HANDLE ENTER SELECTION
+      enter => enter
+        .append("circle")
+        .attr("class","dot2")      
+        .attr("r", 0)
+        .attr("cx", d=> xScale4(d.Leadership))
+        .attr("cy", d => yScale4(d.Grad_Rate)+margin.top)
+        .attr("fill", "black")
+        .on("mouseover", function(event, d, i){
+          tooltip4
+          .html(`<div>${d.school_name}</div>
+                <div>${d.Borough}</div>
+                <div>Graduation: ${d.Grad_Rate}%</div>
+                <div>Positive: ${d.Leadership}%</div>`)
+          .style("visibility", "visible")
+        })
+        .on("mousemove", function(event){
+          tooltip4
+          .style("top", event.pageY +15 + "px")
+          .style("left", event.pageX + 0 + "px")
+        })
+        .on("mouseout", function(event, d) {
+          tooltip4
+          .html(``)
+          .style("visibility", "hidden");
+        })
+        .call(
+        enter => enter
+          .transition()
+          .delay((d,i) => i*3)
+          .duration(1000)
+          .attr("r", radius*1.5)
+          .attr("cy", d => yScale4(d.Grad_Rate)+margin.top)
+          .attr("fill", d => colorScale(d.Borough))
+          .style("stroke", "#000")      
+          .attr("opacity", 1)
+        )
+        ,
+        // HANDLE UPDATE SELECTION
+        update => update
+        ,    
+        // HANDLE EXIT SELECTION
+        exit => exit
+          .transition()
+          .duration(500)
+          .attr("r", 0)
+          .remove("dot")
 )}
 
 function chart5() {
@@ -760,7 +757,7 @@ function chart5() {
                  .range(["#4daf4a","#5499C7","#fb8072","#878f99","#8dd3c7"])
     
   // AXES
-  const xAxis5 = d3.axisBottom(xScale5).ticks(10)//.tickFormat(d=>d3.format(".1f")(d))
+  const xAxis5 = d3.axisBottom(xScale5).ticks(10)
   const yAxis5 = d3.axisLeft(yScale5).ticks(10)
     
   // SVG ELEMENT
@@ -782,7 +779,7 @@ function chart5() {
           .call(xAxis5)
           .append("text")
              .attr("y", margin.bottom)
-             .attr("x", innerWidth/4+margin.left)
+             .attr("x", innerWidth/4)
              .attr("stroke", "black")
              .attr("font-size","14px")
              .attr("text-anchor", "middle")
@@ -849,8 +846,8 @@ function chart5() {
   selectElement5.selectAll("option") 
                 .data(options)
                 .join("option")
-                .attr("value", d => d) // what's on the data
-                .text(d=> d) // what user can see
+                .attr("value", d => d) 
+                .text(d=> d) 
     
   /* set up event listener to filter data based on dropdown menu selection*/
   selectElement5.on("change", event => {
@@ -869,7 +866,7 @@ function draw5(){
                      state.selection5 === d.Borough)
       
   svg5.selectAll("circle.dot")
-        .data(filteredData5, d=>d.id) // to match data to unique id
+        .data(filteredData5, d=>d.id)
         .attr("id", (d,i)=>i)
         .join(
         // HANDLE ENTER SELECTION
@@ -899,7 +896,7 @@ function draw5(){
               .style("visibility", "hidden");
           })
         .call(
-          enter => enter
+        enter => enter
           .transition()
           .delay((d,i) => i*3)
           .duration(1000)
@@ -917,7 +914,6 @@ function draw5(){
         exit => exit
           .transition()
           .duration(500)
-         // .delay(150)
           .attr("r", 0)
           .remove("dot")
 )}
@@ -953,7 +949,7 @@ function chart6() {
           .call(xAxis6)
           .append("text")
              .attr("y", margin.bottom)
-             .attr("x", innerWidth/4+margin.left)
+             .attr("x", innerWidth/4)
              .attr("stroke", "black")
              .attr("font-size","14px")
              .attr("text-anchor", "middle")
@@ -998,7 +994,7 @@ function chart6() {
          .append("line")
            .attr("class", "grid2")
            .attr("x1", xScale6(84.8))
-           .attr("y1", margin.top+20)//+margin.bottom)
+           .attr("y1", margin.top+20)
            .attr("x2", xScale6(84.8))
            .attr("y2", innerHeight)
            .style("stroke", "purple")
@@ -1037,9 +1033,9 @@ function draw6(){
                    state.selection6 === d.Borough)
     
   svg6.selectAll("circle.dot2")
-        .data(filteredData6, d=>d.id) 
-        .attr("id", (d,i)=>i)
-        .join(
+      .data(filteredData6, d=>d.id) 
+      .attr("id", (d,i)=>i)
+      .join(
         // HANDLE ENTER SELECTION
         enter => enter
           .append("circle")
@@ -1066,26 +1062,25 @@ function draw6(){
                   .html(``)
                   .style("visibility", "hidden");
               })
-                  .call(
-                    enter => enter
-                    .transition()
-                    .delay((d,i) => i*3)
-                    .duration(1000)
-                    .attr("r", radius*1.5)
-                    .attr("cy", d => yScale6(d.Grad_Rate)+margin.top)
-                    .attr("fill", d => colorScale(d.Borough))
-                    .style("stroke", "#000")      
-                    .attr("opacity", 1)
-                    )
-                  ,
-                  // HANDLE UPDATE SELECTION
-                  update => update,
-              
-                  // HANDLE EXIT SELECTION
-                  exit => exit
-                    .transition()
-                    .duration(500)
-                   // .delay(150)
-                    .attr("r", 0)
-                    .remove("dot")
+          .call(
+            enter => enter
+              .transition()
+              .delay((d,i) => i*3)
+              .duration(1000)
+              .attr("r", radius*1.5)
+              .attr("cy", d => yScale6(d.Grad_Rate)+margin.top)
+              .attr("fill", d => colorScale(d.Borough))
+              .style("stroke", "#000")      
+              .attr("opacity", 1)
+            )
+            ,
+            // HANDLE UPDATE SELECTION
+            update => update
+            ,  
+           // HANDLE EXIT SELECTION
+            exit => exit
+              .transition()
+              .duration(500)
+              .attr("r", 0)
+              .remove("dot")
  )};

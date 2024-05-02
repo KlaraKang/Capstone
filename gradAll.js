@@ -1,5 +1,5 @@
  
-    /* CONSTANTS AND GLOBALS */
+  /* CONSTANTS AND GLOBALS */
 const width = window.innerWidth*.7,
       height = window.innerHeight*.7,
       margin = {top:20, bottom:50, left:50, right:10},
@@ -22,7 +22,6 @@ let state = {
 d3.csv('./Dataset/All.csv', d3.autoType)
     .then(raw_data => {
       state.data = raw_data;
-    //  console.log(state.data) 
     init();
 });
     
@@ -46,13 +45,7 @@ function init() {
   colorScale1 = d3.scaleOrdinal()
           .domain(data1.map(d=> d.Cohort_Year))
           .range(["#154360"])
-
-  /*  // LINE GENERATOR FUNCTION
-  lineGen = d3.line()
-              .curve(d3.curveBasis)
-              .x(d => xScale1(data1.Cohort_Year))
-              .y(d => yScale1(data1.Percent_Grads)) 
-  */      
+    
     /* ELEMENTS */
   const container1 = d3.select("#container")
                     .append("svg")
@@ -63,8 +56,7 @@ function init() {
   
   container1.append("g")
             .call(d3.axisBottom(xScale1).tickSizeOuter(0))
-              .attr("transform", `translate(${0},${innerHeight})`)
-             // .attr("font-size","12px")
+            .attr("transform", `translate(${0},${innerHeight})`)
             .append("text")
               .attr("x",innerWidth/4)
               .attr("y",margin.bottom)
@@ -107,29 +99,11 @@ function init() {
                 .style("fill","#FFFFFF")
                 .attr("text-anchor", "middle")
                 .attr("opacity",1);
-  /*
-  container1.selectAll(".path")
-            .data(data1, d=>d.id)
-            .join("path")
-            .attr("class","line_thick")
-            .attr("d", d => lineGen(d.Percent_Grads))
-            .style("stroke", "red")
-            .call(enter => enter
-              .transition()
-                .duration(1500)
-                .attrTween("stroke-dasharray", function(){
-                  const l = this.getTotalLength(),
-                    i = d3.interpolateString("0,"+l, l+","+l);
-                    return function(t){return i(t)};
-                })
-                .on("end", ()=>{d3.select(this).transition();})
-             );
-  */
+
 // PART 2. Bar Chart: Grad Rates by Ethnicity for all Cohorts
   /* Filter data */
   data2 = state.data.filter(d => d.Category === "Ethnicity")
-  //console.log("data2",data2)
-
+  
       /* SCALES */
   xScale2 = d3.scaleBand()
       .domain(data2.map(d=> d.subCategory))
@@ -164,26 +138,26 @@ function init() {
                   .attr("text-anchor","middle")
                   .attr("font-size","14px")
                   .attr("font-weight","bold")
-                  .text("Chart 7. Graduation Rate by Ethnicity per Cohort Year")
+                  .text("Chart 7. Graduation Rates by Ethnicity per Cohort Year")
   
     // + UI ELEMENT SETUP
     /*manual drop-down menu */  
-    const selectElement = d3.select("#dropdown")
+  const selectElement = d3.select("#dropdown")
 
-    selectElement.selectAll("option") // "option" is a HTML element
-                  .data([
-                  ...new Set(state.data.map(d => d.Cohort_Year).sort(d3.descending))]) 
-                  .join("option")
-                  .attr("value", d => d) // what's on the data
-                  .text(d=> d) // what users can see
+  selectElement.selectAll("option") 
+                .data([
+                ...new Set(state.data.map(d => d.Cohort_Year).sort(d3.descending))]) 
+                .join("option")
+                .attr("value", d => d) 
+                .text(d=> d) 
     
     /* set up event listener to filter data based on dropdown menu selection*/
-    selectElement.on("change", event => {
+  selectElement.on("change", event => {
       state.selection = +event.target.value
       draw(); 
-      });
+  });
 
-    draw();  
+  draw();  
 }
 
 /* DRAW FUNCTION */

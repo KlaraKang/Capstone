@@ -17,12 +17,12 @@ let w = 210, h = 210,
 d3.csv('./Dataset/SchoolsAB.csv')
   .then(rawdata => {
    
-    const BXdata = rawdata.filter(d => d.Borough === "Bronx");
-    const BKdata = rawdata.filter(d => d.Borough === "Brooklyn");
-     const MTdata = rawdata.filter(d => d.Borough === "Manhattan");
-    const QSdata = rawdata.filter(d => d.Borough === "Queens");
-    const SIdata = rawdata.filter(d => d.Borough === "Staten Island");
-    const AllData = rawdata.filter(d => d.Borough === "All");   
+  const BXdata = rawdata.filter(d => d.Borough === "Bronx");
+  const BKdata = rawdata.filter(d => d.Borough === "Brooklyn");
+  const MTdata = rawdata.filter(d => d.Borough === "Manhattan");
+  const QSdata = rawdata.filter(d => d.Borough === "Queens");
+  const SIdata = rawdata.filter(d => d.Borough === "Staten Island");
+  const AllData = rawdata.filter(d => d.Borough === "All");   
     
 /********** Six PIE CHARTS **********/    
   angleGen = d3.pie()
@@ -126,7 +126,7 @@ d3.csv('./Dataset/SchoolsAB.csv')
             .style("font-size", "14px") 
             .style("font-weight", "bold");
     
-    } 
+  } 
   setTimeout(rest1,1000);
 
   /*** CHART 2. SCHOOLS IN BRONX ***/

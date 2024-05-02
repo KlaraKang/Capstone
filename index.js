@@ -1,6 +1,6 @@
 const margin = {top: 30, right: 150, bottom: 20, left: 150},
-    width =  window.innerWidth*.8, //- margin.left - margin.right,
-    height =  window.innerHeight*.8 //- margin.top - margin.bottom;
+    width =  window.innerWidth*.8, 
+    height =  window.innerHeight*.8 
 
 let legendRectSize = 10,
     legendSpacing = 5,
@@ -114,20 +114,6 @@ d3.csv('./Dataset/ProfileEthnicity.csv')
           .on("mousemove", mousemove1)
           .on("mouseout", mouseout1)
     
-/*
-  bars.append("text")
-        .attr("y", d => yAxis(d.data.Cohort_Year)+yAxis.bandwidth()/2)
-        .attr("x", d => xAxis(d[1])+5)
-        .text(d => (d[1]-d[0]).toFixed(1))
-        .style("fill", function(d){    
-            if ((d[1]-d[0]).toFixed(1) > 10){            
-              return "black";}
-            else {
-              return "none";}
-        })
-        .style("font-size","12px")
-        .attr("text-anchor", "start")
-  */ 
   let legend1 = svg1.selectAll(".legend")
         .data(d3.reverse(ethnicities))
         .enter()          
@@ -259,16 +245,7 @@ d3.csv('./Dataset/ProfileLocation.csv')
           .on("mouseover", mouseover)
           .on("mousemove", mousemove)
           .on("mouseout", mouseout)
-    
-/*
-  bars.append("text")
-        .attr("y", d => yAxis(d.data.Cohort_Year)+yAxis.bandwidth()/2)
-        .attr("x", d => xAxis(d[1])+5)
-        .text(d => (d[1]-d[0]).toFixed(1))
-        .style("fill","black")
-        .style("font-size","12px")
-        .attr("text-anchor", "start")
-*/
+
   let legend2 = svg2.selectAll(".legend")
         .data(d3.reverse(boroughs))
         .enter()          
@@ -388,13 +365,13 @@ function init(){
 
   // manual drop-down menu for year selection
   const selectElement = d3.select("#dropdown")      
-  selectElement.selectAll("option") // "option" is a HTML element
-                  .data([
-                  ...new Set(state.years.map(d => d.Cohort_Year).sort(d3.descending))]) 
-                  .join("option")
-                  .attr("value", d => d) // what's on the data
-                  .text(d=> d) // what users can see
-                  .style("font-weight", "bold")
+  selectElement.selectAll("option") 
+                .data([
+                ...new Set(state.years.map(d => d.Cohort_Year).sort(d3.descending))]) 
+                .join("option")
+                .attr("value", d => d)
+                .text(d=> d) 
+                .style("font-weight", "bold")
 
   // set up event listener to filter data based on dropdown menu selection
   selectElement.on("change", event => {
@@ -416,8 +393,7 @@ function draw() {
   
   /* UPDATE DOMAIN FOR COLOR SCALE */ 
  let legendColor3 = d3.scaleOrdinal()
-    //  .domain(filteredPoverty.map(d=>d.subCategory))
-      .range(["#E8590B","#909F9D"])//, "#5A6346","#D9B282","#41CCD7","#58FAF4","orange"]);
+      .range(["#E8590B","#909F9D"])
 
   svg3.selectAll("path.arc")
   .data(ECOdata, d=>d.id)
@@ -511,7 +487,7 @@ function draw() {
   ELLdata = angleGen(filteredLanguage);
 
   let legendColor4 = d3.scaleOrdinal()
-   .range(["#FDD538","#D9B282","#909F9D"])//"#5A6346","#58FAF4","orange""#41CCD7"]);
+   .range(["#FDD538","#D9B282","#909F9D"])
 
   svg4.selectAll("path.arc")
     .data(ELLdata, d=>d.id)
@@ -604,9 +580,9 @@ function draw() {
         .filter(d => d.Cohort_Year === state.selectYear)
   
   SWDdata = angleGen(filteredDisability); 
-console.log(SWDdata)
+
   let legendColor5 = d3.scaleOrdinal()
-                  .range(["#58FAF4","#909F9D"]);//"#5A6346",,"#41CCD7"
+                  .range(["#58FAF4","#909F9D"]);
 
   svg5.selectAll("path.arc")
       .data(SWDdata, d=>d.id)
@@ -638,10 +614,10 @@ console.log(SWDdata)
       ) 
   let rest5 = function() {
 
-    svg5.selectAll("text.newText")
-        .data(SWDdata, d=>d.id)
-        .join(
-         enter=>enter
+  svg5.selectAll("text.newText")
+      .data(SWDdata, d=>d.id)
+      .join(
+      enter=>enter
           .append("text")
           .attr("class","newText")
           .call (
@@ -653,27 +629,27 @@ console.log(SWDdata)
           .attr("dy", ".4em")
           .attr("x", 0)
           .attr("text-anchor", "middle")                 
-       ),
-       update => update
+      ),
+      update => update
          .style("opacity",1)
          .text(d=>((d.endAngle-d.startAngle)/(2*Math.PI)*100).toFixed(1)+"%")
          .attr("x",40)
          .attr("y",-10)
-       ,
-       exit => exit
+      ,
+      exit => exit
        .transition()
        .duration(50)
        .remove("newText")   
      )
 
-   legend5 = svg5.selectAll(".legend")
+  legend5 = svg5.selectAll(".legend")
      .data(SWDdata)
      .enter()          
      .append("g")
      .attr("class","legend")
      .attr("transform", (d,i) => `translate(-60,${((i*legendHeight)-40)})`) 
 
-   legend5.append("rect") 
+  legend5.append("rect") 
      .attr("width", legendRectSize)
      .attr("height", legendRectSize)
      .attr("rx", 5)
@@ -683,7 +659,7 @@ console.log(SWDdata)
      .style("fill", d=>legendColor5(d.data.subCategory))
      .style("stroke", legendColor5)
 
-   legend5.append("text")
+  legend5.append("text")
      .attr("x", 22)
      .attr("y", 28)
      .text(d=> d.data.subCategory)

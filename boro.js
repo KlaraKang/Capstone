@@ -344,16 +344,7 @@ let colorScale3 = d3.scaleOrdinal()
   tooltip = container4.append("div")              
             .attr("class", "tooltip")
             .style("visibility", "hidden")
-  /*          .attr("x",0)
-            .attr("y",0)
-            .style("top", 0)
-            .style("left", 0)              
-            .style("background-color", "white")
-            .style("border", "solid")
-            .style("border-width", "1px")
-            .style("border-radius", "2px")
-            .style("padding", "0.5px")
-*/
+
   tooltip.append("text")
         .attr("fill","black")
         .style("pointer-events","none");

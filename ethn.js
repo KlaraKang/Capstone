@@ -25,32 +25,32 @@ d3.csv('./Dataset/GradBoroEth.csv', d3.autoType)
 function init() {
 
   /* Filter data */
-const filteredData = state.data.filter(d => d.Borough === "All")
+  const filteredData = state.data.filter(d => d.Borough === "All")
 
   /* SCALES */
-xScale1 = d3.scaleBand()
+  xScale1 = d3.scaleBand()
     .domain(filteredData.map(d=> d.subCategory))
     .range([0, innerWidth/2])
     .padding(.3)          
 
-yScale1 = d3.scaleLinear()
+  yScale1 = d3.scaleLinear()
     .domain([60, 100])
     .range([innerHeight/2, margin.top])
           
-colorScale1 = d3.scaleOrdinal()
+  colorScale1 = d3.scaleOrdinal()
     .domain(filteredData.map(d=> d.subCategory))
     .range(["#358d8f","#8ac082","#2471A3","#f16b69","#32c1d7","#eea057"])
 
 /* ELEMENTS */
-const container1 = d3.select("#container_top")
+  const container1 = d3.select("#container_top")
 
-svg1 = container1.append("svg")
+  svg1 = container1.append("svg")
                     .attr("width",width/2)
                     .attr("height",height/2)
                   .append("g")
                     .attr("transform",`translate(${0},${0})`);
 
-xAxisGroup1 = svg1.append("g")
+  xAxisGroup1 = svg1.append("g")
           .call(d3.axisBottom(xScale1).tickSizeOuter(0))
             .attr("transform", `translate(${margin.left},${innerHeight/2-margin.bottom})`)            
           .append("text")
@@ -64,20 +64,20 @@ xAxisGroup1 = svg1.append("g")
 
   // + UI ELEMENT SETUP
   /*manual drop-down menu */  
-const selectElement = d3.select("#dropdown")
-console.log(borough)
-selectElement.selectAll("option") // "option" is a HTML element
+  const selectElement = d3.select("#dropdown")
+  console.log(borough)
+  selectElement.selectAll("option") 
                 .data([...new Set(state.data.map(d => d.Borough))]) 
                 .join("option")
-                .attr("value", d => d) // what's on the data
-                .text(d=> d) // what users can see
+                .attr("value", d => d) 
+                .text(d=> d)
                 .style("font-weight", "bold")
 
   /* set up event listener to filter data based on dropdown menu selection*/
-selectElement.on("change", event => {
+  selectElement.on("change", event => {
     state.selection = event.target.value
     draw(); 
-});
+  });
 
   draw();  
 }
@@ -86,14 +86,13 @@ selectElement.on("change", event => {
 function draw() {
 
   // + FILTER DATA BASED ON STATE     
-const filteredData = state.data.filter(d => d.Borough === state.selection)
+  const filteredData = state.data.filter(d => d.Borough === state.selection)
 
-console.log(filteredData)
   // + UPDATE DOMAINS, if needed
-xScale1.domain(filteredData.map(d=>d.subCategory))
-colorScale1.domain(filteredData.map(d=>d.subCategory))
+  xScale1.domain(filteredData.map(d=>d.subCategory))
+  colorScale1.domain(filteredData.map(d=>d.subCategory))
 
-svg1.selectAll("rect.bar")
+  svg1.selectAll("rect.bar")
       .data(filteredData, d => d.id)
       .join(
       // + HANDLE ENTER SELECTION

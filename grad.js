@@ -7,15 +7,15 @@ const width = window.innerWidth*.8,
       innerHeight = height - margin.top - margin.bottom;
   
   /* LOAD DATA */
-d3.csv('./Dataset/GradDistict.csv', d3.autoType)
+d3.csv('./Dataset/GradDistrict.csv', d3.autoType)
     .then(data => {
 
    /* Filter data */
-  const ethnicity = [... new Set(data.map(d=>d.subCategory))];
-  const district = [... new Set(data.map(d=>d.District))];
+  const data1 =  data.filter(d=>d.Category === "Ethnicity");
+  const ethnicity = [... new Set(data1.map(d=>d.subCategory))];
+  const district = [... new Set(data1.map(d=>d.District))];
 
   console.log("ethnicity",ethnicity)
-  console.log("district",district)
 
 /* HEATMAP1: POPULATION BY ETHNICITY FOR ALL SCHOOL DISTRICTS  */
    /* APPEND SVG */
@@ -96,7 +96,7 @@ d3.csv('./Dataset/GradDistict.csv', d3.autoType)
                
    /* SELECT - JOIN - DATA FOR THE SQUARES */
    svg2.selectAll("rect")
-     .data(data, d=>d.id)
+     .data(data1, d=>d.id)
      .join(
        enter => enter
        .append("rect")
@@ -202,7 +202,7 @@ d3.csv('./Dataset/GradDistict.csv', d3.autoType)
               
   /* SELECT - JOIN - DATA FOR THE SQUARES */
   svg3.selectAll("rect")
-    .data(data, d=>d.id)
+    .data(data1, d=>d.id)
     .join(
       enter => enter
       .append("rect")
@@ -227,23 +227,17 @@ d3.csv('./Dataset/GradDistict.csv', d3.autoType)
         .style("font-weight", "bold")
         .text("Chart 21. Graduation Rates by Ethnicity in Each District");  
     
-})
-
-
-
-  /* LOAD DATA */
-  d3.csv('./Dataset/GradDistByCategory.csv', d3.autoType)
-  .then(data => {
+  const data2 = data.filter(d=>d.Category !== "Ethnicity");
+  console.log("data2", data2)
 
  /* Filter data */
-  const poverty = [... new Set(data.filter(d=>d.Category === "Poverty")
+  const poverty = [... new Set(data2.filter(d=>d.Category === "Poverty")
                                  .map(d=>d.subCategory))];
-  const language = [... new Set(data.filter(d=>d.Category === "English")
+  const language = [... new Set(data2.filter(d=>d.Category === "English")
                                   .map(d=>d.subCategory))];
-  const disability = [... new Set(data.filter(d=>d.Category === "Disability")
+  const disability = [... new Set(data2.filter(d=>d.Category === "Disability")
                                     .map(d=>d.subCategory).reverse())];
-  const district = [... new Set(data.map(d=>d.District))];
-
+  
   const category = poverty.concat(language).concat(disability);
 
 /*** HEATMAP 3: POPULATION BY DEMOGRAPHICS FOR ALL SCHOOL DISTRICTS ***/
@@ -326,7 +320,7 @@ d3.csv('./Dataset/GradDistict.csv', d3.autoType)
          
     /* SELECT - JOIN - DATA FOR THE SQUARES */
     svg4.selectAll()
-       .data(data, d=>d.id)
+       .data(data2, d=>d.id)
        .join(
          enter => enter
          .append("rect")
@@ -344,23 +338,7 @@ d3.csv('./Dataset/GradDistict.csv', d3.autoType)
           .on("mousemove", mousemove4)
           .on("mouseleave", mouseleave4)
        )
-     /*
-       .on("mouseover", function(event, d){
-           tooltip
-             .html(`${d.Percent_Grads}+"%"`)
-             .style("visibility", "visible")
-         }) 
-       .on("mousemove", function(event){
-           tooltip
-             .style("left", (event.pageX + 30 + "px"))
-             .style("top", (event.pageY + "px"))
-         })         
-       .on("mouseout", function(event,d){
-           tooltip
-           .html(``)
-           .style("visibility", "hidden");
-         }) 
-     */
+
     /* HEATMAP TITLE */
     svg4.append("text")
        .attr("x", width/4)
@@ -449,7 +427,7 @@ d3.csv('./Dataset/GradDistict.csv', d3.autoType)
         
    /* SELECT - JOIN - DATA FOR THE SQUARES */
    svg5.selectAll()
-      .data(data, d=>d.id)
+      .data(data2, d=>d.id)
       .join(
         enter => enter
         .append("rect")
@@ -467,23 +445,7 @@ d3.csv('./Dataset/GradDistict.csv', d3.autoType)
          .on("mousemove", mousemove5)
          .on("mouseleave", mouseleave5)
       )
-    /*
-      .on("mouseover", function(event, d){
-          tooltip
-            .html(`${d.Percent_Grads}+"%"`)
-            .style("visibility", "visible")
-        }) 
-      .on("mousemove", function(event){
-          tooltip
-            .style("left", (event.pageX + 30 + "px"))
-            .style("top", (event.pageY + "px"))
-        })         
-      .on("mouseout", function(event,d){
-          tooltip
-          .html(``)
-          .style("visibility", "hidden");
-        }) 
-    */
+
    /* HEATMAP TITLE */
    svg5.append("text")
       .attr("x", width/4)

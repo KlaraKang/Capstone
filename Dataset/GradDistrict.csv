@@ -1,0 +1,415 @@
+id,District,Category,subCategory,Cohort_Year,Cohort,Total_Cohort,Percent_Cohort,Number_Grads,Percent_Grads
+1,1,Ethnicity,Asian,2019,4 year August,247,25.8,193,78.1
+2,1,Ethnicity,Black,2019,4 year August,158,16.5,114,72.2
+3,1,Ethnicity,Hispanic,2019,4 year August,374,39,237,63.4
+4,1,Ethnicity,Multi-Racial,2019,4 year August,14,1.5,13,92.9
+5,1,Ethnicity,Native,2019,4 year August,7,0.7,5,71.4
+6,1,Ethnicity,White,2019,4 year August,158,16.5,146,92.4
+7,2,Ethnicity,Asian,2019,4 year August,1494,18,1415,94.7
+8,2,Ethnicity,Black,2019,4 year August,1535,18.5,1190,77.5
+9,2,Ethnicity,Hispanic,2019,4 year August,3733,45,2909,77.9
+10,2,Ethnicity,Multi-Racial,2019,4 year August,183,2.2,169,92.3
+11,2,Ethnicity,Native,2019,4 year August,67,0.8,54,80.6
+12,2,Ethnicity,White,2019,4 year August,1277,15.4,1177,92.2
+13,3,Ethnicity,Asian,2019,4 year August,298,12.5,291,97.7
+14,3,Ethnicity,Black,2019,4 year August,460,19.3,384,83.5
+15,3,Ethnicity,Hispanic,2019,4 year August,866,36.3,704,81.3
+16,3,Ethnicity,Multi-Racial,2019,4 year August,72,3,67,93.1
+17,3,Ethnicity,Native,2019,4 year August,18,0.8,16,88.9
+18,3,Ethnicity,White,2019,4 year August,674,28.2,657,97.5
+19,4,Ethnicity,Asian,2019,4 year August,122,12.9,118,96.7
+20,4,Ethnicity,Black,2019,4 year August,242,25.6,202,83.5
+21,4,Ethnicity,Hispanic,2019,4 year August,509,53.8,453,89
+22,4,Ethnicity,Multi-Racial,2019,4 year August,7,0.7,6,85.7
+23,4,Ethnicity,Native,2019,4 year August,12,1.3,10,83.3
+24,4,Ethnicity,White,2019,4 year August,54,5.7,51,94.4
+25,5,Ethnicity,Asian,2019,4 year August,56,6.5,52,92.9
+26,5,Ethnicity,Black,2019,4 year August,388,44.8,278,71.6
+27,5,Ethnicity,Hispanic,2019,4 year August,320,36.9,233,72.8
+28,5,Ethnicity,Multi-Racial,2019,4 year August,16,1.8,14,87.5
+29,5,Ethnicity,Native,2019,4 year August,14,1.6,12,85.7
+30,5,Ethnicity,White,2019,4 year August,73,8.4,65,89
+31,6,Ethnicity,Asian,2019,4 year August,15,1.2,10,66.7
+32,6,Ethnicity,Black,2019,4 year August,187,15.4,149,79.7
+33,6,Ethnicity,Hispanic,2019,4 year August,979,80.8,823,84.1
+34,6,Ethnicity,Multi-Racial,2019,4 year August,6,0.5,2,33.3
+35,6,Ethnicity,Native,2019,4 year August,6,0.5,5,83.3
+36,6,Ethnicity,White,2019,4 year August,19,1.6,12,63.2
+37,7,Ethnicity,Asian,2019,4 year August,27,1.6,24,88.9
+38,7,Ethnicity,Black,2019,4 year August,475,28.8,332,69.9
+39,7,Ethnicity,Hispanic,2019,4 year August,1094,66.4,785,71.8
+40,7,Ethnicity,Multi-Racial,2019,4 year August,13,0.8,12,92.3
+41,7,Ethnicity,Native,2019,4 year August,13,0.8,9,69.2
+42,7,Ethnicity,White,2019,4 year August,26,1.6,17,65.4
+43,8,Ethnicity,Asian,2019,4 year August,95,5.6,82,86.3
+44,8,Ethnicity,Black,2019,4 year August,421,24.8,313,74.3
+45,8,Ethnicity,Hispanic,2019,4 year August,1037,61.2,765,73.8
+46,8,Ethnicity,Multi-Racial,2019,4 year August,12,0.7,3,25
+47,8,Ethnicity,Native,2019,4 year August,33,1.9,26,78.8
+48,8,Ethnicity,White,2019,4 year August,97,5.7,76,78.4
+49,9,Ethnicity,Asian,2019,4 year August,36,1.8,32,88.9
+50,9,Ethnicity,Black,2019,4 year August,552,28.2,395,71.6
+51,9,Ethnicity,Hispanic,2019,4 year August,1332,68.1,1092,82
+52,9,Ethnicity,Multi-Racial,2019,4 year August,8,0.4,6,75
+53,9,Ethnicity,Native,2019,4 year August,14,0.7,11,78.6
+54,9,Ethnicity,White,2019,4 year August,15,0.8,11,73.3
+55,10,Ethnicity,Asian,2019,4 year August,600,16.6,590,98.3
+56,10,Ethnicity,Black,2019,4 year August,584,16.2,500,85.6
+57,10,Ethnicity,Hispanic,2019,4 year August,2036,56.4,1711,84
+58,10,Ethnicity,Multi-Racial,2019,4 year August,37,1,34,91.9
+59,10,Ethnicity,Native,2019,4 year August,40,1.1,30,75
+60,10,Ethnicity,White,2019,4 year August,312,8.6,290,92.9
+61,11,Ethnicity,Asian,2019,4 year August,118,5.7,106,89.8
+62,11,Ethnicity,Black,2019,4 year August,802,38.6,649,80.9
+63,11,Ethnicity,Hispanic,2019,4 year August,978,47.1,779,79.7
+64,11,Ethnicity,Multi-Racial,2019,4 year August,9,0.4,5,55.6
+65,11,Ethnicity,Native,2019,4 year August,28,1.3,21,75
+66,11,Ethnicity,White,2019,4 year August,141,6.8,104,73.8
+67,12,Ethnicity,Asian,2019,4 year August,27,2.1,25,92.6
+68,12,Ethnicity,Black,2019,4 year August,317,24.9,202,63.7
+69,12,Ethnicity,Hispanic,2019,4 year August,892,70.2,674,75.6
+70,12,Ethnicity,Native,2019,4 year August,12,0.9,10,83.3
+71,12,Ethnicity,White,2019,4 year August,23,1.8,12,52.2
+72,13,Ethnicity,Asian,2019,4 year August,1009,35.8,978,96.9
+73,13,Ethnicity,Black,2019,4 year August,932,33.1,805,86.4
+74,13,Ethnicity,Hispanic,2019,4 year August,413,14.7,348,84.3
+75,13,Ethnicity,Multi-Racial,2019,4 year August,31,1.1,28,90.3
+76,13,Ethnicity,Native,2019,4 year August,23,0.8,22,95.7
+77,13,Ethnicity,White,2019,4 year August,410,14.5,399,97.3
+78,14,Ethnicity,Asian,2019,4 year August,123,9,122,99.2
+79,14,Ethnicity,Black,2019,4 year August,365,26.8,313,85.8
+80,14,Ethnicity,Hispanic,2019,4 year August,759,55.6,644,84.8
+81,14,Ethnicity,Multi-Racial,2019,4 year August,24,1.8,23,95.8
+82,14,Ethnicity,Native,2019,4 year August,8,0.6,6,75
+83,14,Ethnicity,White,2019,4 year August,85,6.2,75,88.2
+84,15,Ethnicity,Asian,2019,4 year August,135,8.6,114,84.4
+85,15,Ethnicity,Black,2019,4 year August,486,30.9,400,82.3
+86,15,Ethnicity,Hispanic,2019,4 year August,677,43.1,513,75.8
+87,15,Ethnicity,Multi-Racial,2019,4 year August,36,2.3,29,80.6
+88,15,Ethnicity,Native,2019,4 year August,8,0.5,6,75
+89,15,Ethnicity,White,2019,4 year August,229,14.6,188,82.1
+90,16,Ethnicity,Asian,2019,4 year August,9,2.1,5,55.6
+91,16,Ethnicity,Black,2019,4 year August,279,66.6,177,63.4
+92,16,Ethnicity,Hispanic,2019,4 year August,114,27.2,73,64
+93,16,Ethnicity,Multi-Racial,2019,4 year August,7,1.7,4,57.1
+94,16,Ethnicity,Native,2019,4 year August,4,1,3,75
+95,16,Ethnicity,White,2019,4 year August,6,1.4,4,66.7
+96,17,Ethnicity,Asian,2019,4 year August,67,3.7,62,92.5
+97,17,Ethnicity,Black,2019,4 year August,1378,76.5,1160,84.2
+98,17,Ethnicity,Hispanic,2019,4 year August,280,15.5,199,71.1
+99,17,Ethnicity,Multi-Racial,2019,4 year August,8,0.4,6,75
+100,17,Ethnicity,Native,2019,4 year August,23,1.3,14,60.9
+101,17,Ethnicity,White,2019,4 year August,45,2.5,36,80
+102,18,Ethnicity,Asian,2019,4 year August,19,2.3,12,63.2
+103,18,Ethnicity,Black,2019,4 year August,684,82.3,496,72.5
+104,18,Ethnicity,Hispanic,2019,4 year August,80,9.6,46,57.5
+105,18,Ethnicity,Native,2019,4 year August,15,1.8,9,60
+106,18,Ethnicity,White,2019,4 year August,33,4,24,72.7
+107,19,Ethnicity,Asian,2019,4 year August,89,6.6,83,93.3
+108,19,Ethnicity,Black,2019,4 year August,632,46.6,531,84
+109,19,Ethnicity,Hispanic,2019,4 year August,573,42.3,490,85.5
+110,19,Ethnicity,Multi-Racial,2019,4 year August,15,1.1,10,66.7
+111,19,Ethnicity,Native,2019,4 year August,22,1.6,19,86.4
+112,19,Ethnicity,White,2019,4 year August,25,1.8,22,88
+113,20,Ethnicity,Asian,2019,4 year August,1094,34.7,941,86
+114,20,Ethnicity,Black,2019,4 year August,135,4.3,118,87.4
+115,20,Ethnicity,Hispanic,2019,4 year August,1118,35.5,811,72.5
+116,20,Ethnicity,Multi-Racial,2019,4 year August,27,0.9,18,66.7
+117,20,Ethnicity,Native,2019,4 year August,22,0.7,17,77.3
+118,20,Ethnicity,White,2019,4 year August,754,23.9,646,85.7
+119,21,Ethnicity,Asian,2019,4 year August,596,21.1,506,84.9
+120,21,Ethnicity,Black,2019,4 year August,668,23.7,563,84.3
+121,21,Ethnicity,Hispanic,2019,4 year August,783,27.8,610,77.9
+122,21,Ethnicity,Multi-Racial,2019,4 year August,35,1.2,31,88.6
+123,21,Ethnicity,Native,2019,4 year August,27,1,24,88.9
+124,21,Ethnicity,White,2019,4 year August,712,25.2,603,84.7
+125,22,Ethnicity,Asian,2019,4 year August,622,25.6,567,91.2
+126,22,Ethnicity,Black,2019,4 year August,560,23.1,473,84.5
+127,22,Ethnicity,Hispanic,2019,4 year August,388,16,324,83.5
+128,22,Ethnicity,Multi-Racial,2019,4 year August,23,0.9,21,91.3
+129,22,Ethnicity,Native,2019,4 year August,14,0.6,11,78.6
+130,22,Ethnicity,White,2019,4 year August,818,33.7,734,89.7
+131,23,Ethnicity,Asian,2019,4 year August,4,0.9,2,50
+132,23,Ethnicity,Black,2019,4 year August,354,77.8,220,62.1
+133,23,Ethnicity,Hispanic,2019,4 year August,80,17.6,31,38.8
+134,23,Ethnicity,Multi-Racial,2019,4 year August,1,0.2,0,0
+135,23,Ethnicity,Native,2019,4 year August,6,1.3,2,33.3
+136,23,Ethnicity,White,2019,4 year August,10,2.2,4,40
+137,24,Ethnicity,Asian,2019,4 year August,581,17.4,534,91.9
+138,24,Ethnicity,Black,2019,4 year August,152,4.6,114,75
+139,24,Ethnicity,Hispanic,2019,4 year August,2178,65.3,1823,83.7
+140,24,Ethnicity,Multi-Racial,2019,4 year August,33,1,27,81.8
+141,24,Ethnicity,Native,2019,4 year August,16,0.5,13,81.3
+142,24,Ethnicity,White,2019,4 year August,375,11.2,331,88.3
+143,25,Ethnicity,Asian,2019,4 year August,715,30.7,653,91.3
+144,25,Ethnicity,Black,2019,4 year August,256,11,202,78.9
+145,25,Ethnicity,Hispanic,2019,4 year August,1072,46,826,77.1
+146,25,Ethnicity,Multi-Racial,2019,4 year August,43,1.8,38,88.4
+147,25,Ethnicity,Native,2019,4 year August,23,1,20,87
+148,25,Ethnicity,White,2019,4 year August,221,9.5,188,85.1
+149,26,Ethnicity,Asian,2019,4 year August,1472,45.1,1397,94.9
+150,26,Ethnicity,Black,2019,4 year August,580,17.8,534,92.1
+151,26,Ethnicity,Hispanic,2019,4 year August,728,22.3,647,88.9
+152,26,Ethnicity,Multi-Racial,2019,4 year August,45,1.4,40,88.9
+153,26,Ethnicity,Native,2019,4 year August,53,1.6,51,96.2
+154,26,Ethnicity,White,2019,4 year August,386,11.8,339,87.8
+155,27,Ethnicity,Asian,2019,4 year August,670,23.5,566,84.5
+156,27,Ethnicity,Black,2019,4 year August,751,26.3,623,83
+157,27,Ethnicity,Hispanic,2019,4 year August,1122,39.3,939,83.7
+158,27,Ethnicity,Multi-Racial,2019,4 year August,39,1.4,36,92.3
+159,27,Ethnicity,Native,2019,4 year August,58,2,45,77.6
+160,27,Ethnicity,White,2019,4 year August,215,7.5,178,82.8
+161,28,Ethnicity,Asian,2019,4 year August,1138,32.2,1074,94.4
+162,28,Ethnicity,Black,2019,4 year August,632,17.9,545,86.2
+163,28,Ethnicity,Hispanic,2019,4 year August,1143,32.4,979,85.7
+164,28,Ethnicity,Multi-Racial,2019,4 year August,41,1.2,36,87.8
+165,28,Ethnicity,Native,2019,4 year August,136,3.8,117,86
+166,28,Ethnicity,White,2019,4 year August,443,12.5,402,90.7
+167,29,Ethnicity,Asian,2019,4 year August,78,7.5,61,78.2
+168,29,Ethnicity,Black,2019,4 year August,732,70.5,632,86.3
+169,29,Ethnicity,Hispanic,2019,4 year August,145,14,111,76.6
+170,29,Ethnicity,Multi-Racial,2019,4 year August,21,2,17,81
+171,29,Ethnicity,Native,2019,4 year August,42,4,36,85.7
+172,29,Ethnicity,White,2019,4 year August,21,2,14,66.7
+173,30,Ethnicity,Asian,2019,4 year August,440,18.7,403,91.6
+174,30,Ethnicity,Black,2019,4 year August,170,7.2,137,80.6
+175,30,Ethnicity,Hispanic,2019,4 year August,1292,54.8,1094,84.7
+176,30,Ethnicity,Multi-Racial,2019,4 year August,52,2.2,49,94.2
+177,30,Ethnicity,Native,2019,4 year August,9,0.4,6,66.7
+178,30,Ethnicity,White,2019,4 year August,393,16.7,363,92.4
+179,31,Ethnicity,Asian,2019,4 year August,605,13.2,568,93.9
+180,31,Ethnicity,Black,2019,4 year August,591,12.9,456,77.2
+181,31,Ethnicity,Hispanic,2019,4 year August,1364,29.8,1077,79
+182,31,Ethnicity,Multi-Racial,2019,4 year August,71,1.5,62,87.3
+183,31,Ethnicity,Native,2019,4 year August,23,0.5,18,78.3
+184,31,Ethnicity,White,2019,4 year August,1929,42.1,1788,92.7
+185,32,Ethnicity,Asian,2019,4 year August,13,1.9,11,84.6
+186,32,Ethnicity,Black,2019,4 year August,106,15.8,80,75.5
+187,32,Ethnicity,Hispanic,2019,4 year August,521,77.6,432,82.9
+188,32,Ethnicity,Multi-Racial,2019,4 year August,6,0.9,5,83.3
+189,32,Ethnicity,Native,2019,4 year August,3,0.4,2,66.7
+190,32,Ethnicity,White,2019,4 year August,22,3.3,20,90.9
+191,1,Poverty,Econ Disadv,2019,4 year August,633,66.1,452,71.4
+192,1,Poverty,No EconDisad,2019,4 year August,325,33.9,256,78.8
+193,2,Poverty,Econ Disadv,2019,4 year August,5574,67.2,4522,81.1
+194,2,Poverty,No EconDisad,2019,4 year August,2715,32.8,2392,88.1
+195,3,Poverty,Econ Disadv,2019,4 year August,1301,54.5,1087,83.6
+196,3,Poverty,No EconDisad,2019,4 year August,1087,45.5,1032,94.9
+197,4,Poverty,Econ Disadv,2019,4 year August,779,82.3,692,88.8
+198,4,Poverty,No EconDisad,2019,4 year August,167,17.7,148,88.6
+199,5,Poverty,Econ Disadv,2019,4 year August,609,70.2,441,72.4
+200,5,Poverty,No EconDisad,2019,4 year August,258,29.8,213,82.6
+201,6,Poverty,Econ Disadv,2019,4 year August,1062,87.6,890,83.8
+202,6,Poverty,No EconDisad,2019,4 year August,150,12.4,111,74
+203,7,Poverty,Econ Disadv,2019,4 year August,1481,89.9,1060,71.6
+204,7,Poverty,No EconDisad,2019,4 year August,167,10.1,119,71.3
+205,8,Poverty,Econ Disadv,2019,4 year August,1375,81.1,1016,73.9
+206,8,Poverty,No EconDisad,2019,4 year August,320,18.9,249,77.8
+207,9,Poverty,Econ Disadv,2019,4 year August,1743,89.1,1395,80
+208,9,Poverty,No EconDisad,2019,4 year August,214,10.9,152,71
+209,10,Poverty,Econ Disadv,2019,4 year August,2730,75.6,2360,86.4
+210,10,Poverty,No EconDisad,2019,4 year August,879,24.4,795,90.4
+211,11,Poverty,Econ Disadv,2019,4 year August,1654,79.7,1318,79.7
+212,11,Poverty,No EconDisad,2019,4 year August,422,20.3,346,82
+213,12,Poverty,Econ Disadv,2019,4 year August,1131,89,830,73.4
+214,12,Poverty,No EconDisad,2019,4 year August,140,11,93,66.4
+215,13,Poverty,Econ Disadv,2019,4 year August,1902,67.5,1704,89.6
+216,13,Poverty,No EconDisad,2019,4 year August,916,32.5,876,95.6
+217,14,Poverty,Econ Disadv,2019,4 year August,1071,78.5,921,86
+218,14,Poverty,No EconDisad,2019,4 year August,293,21.5,262,89.4
+219,15,Poverty,Econ Disadv,2019,4 year August,1173,74.7,917,78.2
+220,15,Poverty,No EconDisad,2019,4 year August,398,25.3,333,83.7
+221,16,Poverty,Econ Disadv,2019,4 year August,343,81.9,216,63
+222,16,Poverty,No EconDisad,2019,4 year August,76,18.1,50,65.8
+223,17,Poverty,Econ Disadv,2019,4 year August,1486,82.5,1218,82
+224,17,Poverty,No EconDisad,2019,4 year August,315,17.5,259,82.2
+225,18,Poverty,Econ Disadv,2019,4 year August,671,80.7,463,69
+226,18,Poverty,No EconDisad,2019,4 year August,160,19.3,124,77.5
+227,19,Poverty,Econ Disadv,2019,4 year August,1120,82.6,959,85.6
+228,19,Poverty,No EconDisad,2019,4 year August,236,17.4,196,83.1
+229,20,Poverty,Econ Disadv,2019,4 year August,2417,76.7,1989,82.3
+230,20,Poverty,No EconDisad,2019,4 year August,733,23.3,562,76.7
+231,21,Poverty,Econ Disadv,2019,4 year August,2185,77.5,1775,81.2
+232,21,Poverty,No EconDisad,2019,4 year August,636,22.5,562,88.4
+233,22,Poverty,Econ Disadv,2019,4 year August,1757,72.5,1523,86.7
+234,22,Poverty,No EconDisad,2019,4 year August,668,27.5,607,90.9
+235,23,Poverty,Econ Disadv,2019,4 year August,383,84.2,209,54.6
+236,23,Poverty,No EconDisad,2019,4 year August,72,15.8,50,69.4
+237,24,Poverty,Econ Disadv,2019,4 year August,2489,74.6,2131,85.6
+238,24,Poverty,No EconDisad,2019,4 year August,846,25.4,711,84
+239,25,Poverty,Econ Disadv,2019,4 year August,1756,75.4,1456,82.9
+240,25,Poverty,No EconDisad,2019,4 year August,574,24.6,471,82.1
+241,26,Poverty,Econ Disadv,2019,4 year August,2310,70.8,2138,92.6
+242,26,Poverty,No EconDisad,2019,4 year August,954,29.2,870,91.2
+243,27,Poverty,Econ Disadv,2019,4 year August,2112,74,1777,84.1
+244,27,Poverty,No EconDisad,2019,4 year August,743,26,610,82.1
+245,28,Poverty,Econ Disadv,2019,4 year August,2612,73.9,2332,89.3
+246,28,Poverty,No EconDisad,2019,4 year August,921,26.1,821,89.1
+247,29,Poverty,Econ Disadv,2019,4 year August,759,73.1,645,85
+248,29,Poverty,No EconDisad,2019,4 year August,280,26.9,226,80.7
+249,30,Poverty,Econ Disadv,2019,4 year August,1760,74.7,1525,86.6
+250,30,Poverty,No EconDisad,2019,4 year August,596,25.3,527,88.4
+251,31,Poverty,Econ Disadv,2019,4 year August,2822,61.6,2333,82.7
+252,31,Poverty,No EconDisad,2019,4 year August,1761,38.4,1636,92.9
+253,32,Poverty,Econ Disadv,2019,4 year August,567,84.5,469,82.7
+254,32,Poverty,No EconDisad,2019,4 year August,104,15.5,81,77.9
+255,1,English,ELL,2019,4 year August,180,18.8,62,34.4
+256,1,English,Former ELL,2019,4 year August,28,2.9,25,89.3
+257,1,English,Not ELL,2019,4 year August,750,78.3,621,82.8
+258,2,English,ELL,2019,4 year August,794,9.6,326,41.1
+259,2,English,Former ELL,2019,4 year August,349,4.2,325,93.1
+260,2,English,Not ELL,2019,4 year August,7146,86.2,6263,87.6
+261,3,English,ELL,2019,4 year August,63,2.6,35,55.6
+262,3,English,Former ELL,2019,4 year August,44,1.8,36,81.8
+263,3,English,Not ELL,2019,4 year August,2281,95.5,2048,89.8
+264,4,English,ELL,2019,4 year August,65,6.9,52,80
+265,4,English,Former ELL,2019,4 year August,32,3.4,32,100
+266,4,English,Not ELL,2019,4 year August,849,89.7,756,89
+267,5,English,ELL,2019,4 year August,44,5.1,19,43.2
+268,5,English,Former ELL,2019,4 year August,21,2.4,18,85.7
+269,5,English,Not ELL,2019,4 year August,802,92.5,617,76.9
+270,6,English,ELL,2019,4 year August,346,28.5,267,77.2
+271,6,English,Former ELL,2019,4 year August,104,8.6,98,94.2
+272,6,English,Not ELL,2019,4 year August,762,62.9,636,83.5
+273,7,English,ELL,2019,4 year August,230,14,137,59.6
+274,7,English,Former ELL,2019,4 year August,83,5,73,88
+275,7,English,Not ELL,2019,4 year August,1335,81,969,72.6
+276,8,English,ELL,2019,4 year August,268,15.8,169,63.1
+277,8,English,Former ELL,2019,4 year August,85,5,80,94.1
+278,8,English,Not ELL,2019,4 year August,1342,79.2,1016,75.7
+279,9,English,ELL,2019,4 year August,369,18.9,279,75.6
+280,9,English,Former ELL,2019,4 year August,143,7.3,136,95.1
+281,9,English,Not ELL,2019,4 year August,1445,73.8,1132,78.3
+282,10,English,ELL,2019,4 year August,585,16.2,423,72.3
+283,10,English,Former ELL,2019,4 year August,201,5.6,191,95
+284,10,English,Not ELL,2019,4 year August,2823,78.2,2541,90
+285,11,English,ELL,2019,4 year August,249,12,176,70.7
+286,11,English,Former ELL,2019,4 year August,145,7,136,93.8
+287,11,English,Not ELL,2019,4 year August,1682,81,1352,80.4
+288,12,English,ELL,2019,4 year August,240,18.9,172,71.7
+289,12,English,Former ELL,2019,4 year August,71,5.6,66,93
+290,12,English,Not ELL,2019,4 year August,960,75.5,685,71.4
+291,13,English,ELL,2019,4 year August,82,2.9,61,74.4
+292,13,English,Former ELL,2019,4 year August,43,1.5,38,88.4
+293,13,English,Not ELL,2019,4 year August,2693,95.6,2481,92.1
+294,14,English,ELL,2019,4 year August,124,9.1,78,62.9
+295,14,English,Former ELL,2019,4 year August,45,3.3,43,95.6
+296,14,English,Not ELL,2019,4 year August,1195,87.6,1062,88.9
+297,15,English,ELL,2019,4 year August,115,7.3,60,52.2
+298,15,English,Former ELL,2019,4 year August,66,4.2,57,86.4
+299,15,English,Not ELL,2019,4 year August,1390,88.5,1133,81.5
+300,16,English,ELL,2019,4 year August,29,6.9,17,58.6
+301,16,English,Former ELL,2019,4 year August,12,2.9,10,83.3
+302,16,English,Not ELL,2019,4 year August,378,90.2,239,63.2
+303,17,English,ELL,2019,4 year August,145,8.1,91,62.8
+304,17,English,Former ELL,2019,4 year August,50,2.8,43,86
+305,17,English,Not ELL,2019,4 year August,1606,89.2,1343,83.6
+306,18,English,ELL,2019,4 year August,57,6.9,31,54.4
+307,18,English,Former ELL,2019,4 year August,27,3.2,25,92.6
+308,18,English,Not ELL,2019,4 year August,747,89.9,531,71.1
+309,19,English,ELL,2019,4 year August,232,17.1,187,80.6
+310,19,English,Former ELL,2019,4 year August,72,5.3,68,94.4
+311,19,English,Not ELL,2019,4 year August,1052,77.6,900,85.6
+312,20,English,ELL,2019,4 year August,556,17.7,269,48.4
+313,20,English,Former ELL,2019,4 year August,329,10.4,306,93
+314,20,English,Not ELL,2019,4 year August,2265,71.9,1976,87.2
+315,21,English,ELL,2019,4 year August,371,13.2,228,61.5
+316,21,English,Former ELL,2019,4 year August,229,8.1,186,81.2
+317,21,English,Not ELL,2019,4 year August,2221,78.7,1923,86.6
+318,22,English,ELL,2019,4 year August,146,6,84,57.5
+319,22,English,Former ELL,2019,4 year August,120,4.9,103,85.8
+320,22,English,Not ELL,2019,4 year August,2159,89,1943,90
+321,23,English,ELL,2019,4 year August,21,4.6,4,19
+322,23,English,Former ELL,2019,4 year August,3,0.7,2,66.7
+323,23,English,Not ELL,2019,4 year August,431,94.7,253,58.7
+324,24,English,ELL,2019,4 year August,558,16.7,373,66.8
+325,24,English,Former ELL,2019,4 year August,222,6.7,209,94.1
+326,24,English,Not ELL,2019,4 year August,2555,76.6,2260,88.5
+327,25,English,ELL,2019,4 year August,393,16.9,247,62.8
+328,25,English,Former ELL,2019,4 year August,133,5.7,122,91.7
+329,25,English,Not ELL,2019,4 year August,1804,77.4,1558,86.4
+330,26,English,ELL,2019,4 year August,254,7.8,185,72.8
+331,26,English,Former ELL,2019,4 year August,155,4.7,152,98.1
+332,26,English,Not ELL,2019,4 year August,2855,87.5,2671,93.6
+333,27,English,ELL,2019,4 year August,348,12.2,200,57.5
+334,27,English,Former ELL,2019,4 year August,118,4.1,115,97.5
+335,27,English,Not ELL,2019,4 year August,2389,83.7,2072,86.7
+336,28,English,ELL,2019,4 year August,278,7.9,156,56.1
+337,28,English,Former ELL,2019,4 year August,179,5.1,170,95
+338,28,English,Not ELL,2019,4 year August,3076,87.1,2827,91.9
+339,29,English,ELL,2019,4 year August,74,7.1,47,63.5
+340,29,English,Former ELL,2019,4 year August,47,4.5,45,95.7
+341,29,English,Not ELL,2019,4 year August,918,88.4,779,84.9
+342,30,English,ELL,2019,4 year August,328,13.9,217,66.2
+343,30,English,Former ELL,2019,4 year August,171,7.3,162,94.7
+344,30,English,Not ELL,2019,4 year August,1857,78.8,1673,90.1
+345,31,English,ELL,2019,4 year August,260,5.7,156,60
+346,31,English,Former ELL,2019,4 year August,121,2.6,101,83.5
+347,31,English,Not ELL,2019,4 year August,4202,91.7,3712,88.3
+348,32,English,ELL,2019,4 year August,164,24.4,130,79.3
+349,32,English,Former ELL,2019,4 year August,35,5.2,32,91.4
+350,32,English,Not ELL,2019,4 year August,472,70.3,388,82.2
+351,1,Disability,Not SWD,2019,4 year August,748,78.1,584,78.1
+352,1,Disability,SWD,2019,4 year August,210,21.9,124,59
+353,2,Disability,Not SWD,2019,4 year August,6808,82.1,5826,85.6
+354,2,Disability,SWD,2019,4 year August,1481,17.9,1088,73.5
+355,3,Disability,Not SWD,2019,4 year August,2003,83.9,1851,92.4
+356,3,Disability,SWD,2019,4 year August,385,16.1,268,69.6
+357,4,Disability,Not SWD,2019,4 year August,699,73.9,671,96
+358,4,Disability,SWD,2019,4 year August,247,26.1,169,68.4
+359,5,Disability,Not SWD,2019,4 year August,628,72.4,525,83.6
+360,5,Disability,SWD,2019,4 year August,239,27.6,129,54
+361,6,Disability,Not SWD,2019,4 year August,961,79.3,845,87.9
+362,6,Disability,SWD,2019,4 year August,251,20.7,156,62.2
+363,7,Disability,Not SWD,2019,4 year August,1150,69.8,895,77.8
+364,7,Disability,SWD,2019,4 year August,498,30.2,284,57
+365,8,Disability,Not SWD,2019,4 year August,1252,73.9,1002,80
+366,8,Disability,SWD,2019,4 year August,443,26.1,263,59.4
+367,9,Disability,Not SWD,2019,4 year August,1421,72.6,1228,86.4
+368,9,Disability,SWD,2019,4 year August,536,27.4,319,59.5
+369,10,Disability,Not SWD,2019,4 year August,2923,81,2676,91.5
+370,10,Disability,SWD,2019,4 year August,686,19,479,69.8
+371,11,Disability,Not SWD,2019,4 year August,1535,73.9,1365,88.9
+372,11,Disability,SWD,2019,4 year August,541,26.1,299,55.3
+373,12,Disability,Not SWD,2019,4 year August,934,73.5,745,79.8
+374,12,Disability,SWD,2019,4 year August,337,26.5,178,52.8
+375,13,Disability,Not SWD,2019,4 year August,2515,89.2,2362,93.9
+376,13,Disability,SWD,2019,4 year August,303,10.8,218,71.9
+377,14,Disability,Not SWD,2019,4 year August,1099,80.6,995,90.5
+378,14,Disability,SWD,2019,4 year August,265,19.4,188,70.9
+379,15,Disability,Not SWD,2019,4 year August,1205,76.7,1025,85.1
+380,15,Disability,SWD,2019,4 year August,366,23.3,225,61.5
+381,16,Disability,Not SWD,2019,4 year August,270,64.4,195,72.2
+382,16,Disability,SWD,2019,4 year August,149,35.6,71,47.7
+383,17,Disability,Not SWD,2019,4 year August,1447,80.3,1261,87.1
+384,17,Disability,SWD,2019,4 year August,354,19.7,216,61
+385,18,Disability,Not SWD,2019,4 year August,628,75.6,482,76.8
+386,18,Disability,SWD,2019,4 year August,203,24.4,105,51.7
+387,19,Disability,Not SWD,2019,4 year August,982,72.4,905,92.2
+388,19,Disability,SWD,2019,4 year August,374,27.6,250,66.8
+389,20,Disability,Not SWD,2019,4 year August,2639,83.8,2229,84.5
+390,20,Disability,SWD,2019,4 year August,511,16.2,322,63
+391,21,Disability,Not SWD,2019,4 year August,2288,81.1,1974,86.3
+392,21,Disability,SWD,2019,4 year August,533,18.9,363,68.1
+393,22,Disability,Not SWD,2019,4 year August,1988,82,1829,92
+394,22,Disability,SWD,2019,4 year August,437,18,301,68.9
+395,23,Disability,Not SWD,2019,4 year August,294,64.6,192,65.3
+396,23,Disability,SWD,2019,4 year August,161,35.4,67,41.6
+397,24,Disability,Not SWD,2019,4 year August,2794,83.8,2491,89.2
+398,24,Disability,SWD,2019,4 year August,541,16.2,351,64.9
+399,25,Disability,Not SWD,2019,4 year August,1964,84.3,1683,85.7
+400,25,Disability,SWD,2019,4 year August,366,15.7,244,66.7
+401,26,Disability,Not SWD,2019,4 year August,2768,84.8,2610,94.3
+402,26,Disability,SWD,2019,4 year August,496,15.2,398,80.2
+403,27,Disability,Not SWD,2019,4 year August,2290,80.2,1994,87.1
+404,27,Disability,SWD,2019,4 year August,565,19.8,393,69.6
+405,28,Disability,Not SWD,2019,4 year August,2976,84.2,2758,92.7
+406,28,Disability,SWD,2019,4 year August,557,15.8,395,70.9
+407,29,Disability,Not SWD,2019,4 year August,793,76.3,735,92.7
+408,29,Disability,SWD,2019,4 year August,246,23.7,136,55.3
+409,30,Disability,Not SWD,2019,4 year August,1967,83.5,1775,90.2
+410,30,Disability,SWD,2019,4 year August,389,16.5,277,71.2
+411,31,Disability,Not SWD,2019,4 year August,3475,75.8,3205,92.2
+412,31,Disability,SWD,2019,4 year August,1108,24.2,764,69
+413,32,Disability,Not SWD,2019,4 year August,514,76.6,447,87
+414,32,Disability,SWD,2019,4 year August,157,23.4,103,65.6
